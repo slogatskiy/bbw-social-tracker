@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Build-A-Bear (BBW) — Social Demand Tracker</title>
+  <meta name="description" content="Independent social-demand signals on the adult Build-A-Bear fandom." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="eyebrow">Social Demand Tracker · <span class="tick" id="tick">NYSE: BBW</span></span>
+      <h1>Is the <span class="accent">adult</span> Build-A-Bear fandom real, growing, and durable?</h1>
+      <p class="lede" id="lede">Loading thesis…</p>
+      <span class="status-badge" id="status">Loading…</span>
+    </header>
+
+    <!-- KPIs -->
+    <section id="kpis">
+      <div class="sec-head"><span class="sec-num">00</span><h2>The setup, in numbers</h2></div>
+      <p class="sec-sub">High brand recognition, a large loyalty base, and a customer mix that is already ~40% teens &amp; adults. The question is whether the <em>adult</em> demand is accelerating — that is what the signals below test.</p>
+      <div class="kpi-grid" id="kpi-grid"></div>
+    </section>
+
+    <!-- Signal 1: Google Trends -->
+    <section id="trends">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Search interest</h2><span class="tag illustrative" id="trends-tag">illustrative</span></div>
+      <p class="sec-sub">Google search is the broadest, most passive demand signal — people search when they intend to buy or engage. We track the core brand plus a licensed collab (Pokémon) that skews adult-collector.</p>
+      <div class="card">
+        <div class="chart-meta">
+          <span class="chart-title">U.S. search interest — Build-A-Bear vs. licensed collab</span>
+          <span class="tag" id="trends-src">Google Trends</span>
+        </div>
+        <div class="chart-box"><canvas id="trendsChart"></canvas></div>
+        <div class="chart-note" id="trends-note"></div>
+      </div>
+    </section>
+
+    <!-- Signal 2: Reddit -->
+    <section id="reddit">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Community growth — Reddit</h2><span class="tag illustrative" id="reddit-tag">illustrative</span></div>
+      <p class="sec-sub">A subreddit is where a fandom organizes itself. r/buildabear calls itself "the internet's largest Build-A-Bear community… whether you are a newbie or you have a collection of over 300 bears." Member growth is a clean proxy for committed adult fans.</p>
+      <div class="two-col">
+        <div class="card">
+          <div class="chart-meta">
+            <span class="chart-title">r/buildabear subscribers over time</span>
+            <span class="tag" id="reddit-src">Wayback + Reddit API</span>
+          </div>
+          <div class="chart-box"><canvas id="redditChart"></canvas></div>
+          <div class="chart-note" id="reddit-note"></div>
+        </div>
+        <div class="card stat-stack" id="reddit-stats"></div>
+      </div>
+    </section>
+
+    <!-- Signal 3: TikTok / culture (qualitative) -->
+    <section id="culture">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Culture &amp; TikTok</h2><span class="tag emerging">emerging signal</span></div>
+      <p class="sec-sub">The adult Build-A-Bear phenomenon is, in large part, a TikTok phenomenon — "stuffing parties," limited-drop hype, and collector hauls. These are qualitative anchors today; the next build wires hashtag view counts as a tracked series.</p>
+      <div class="q-grid" id="culture-grid"></div>
+    </section>
+
+    <!-- Convergence -->
+    <section id="converge">
+      <div class="sec-head"><span class="sec-num">04</span><h2>Signal convergence</h2></div>
+      <div class="converge">
+        <p id="converge-note">Loading…</p>
+        <ul>
+          <li><b>Search</b> — broad, passive intent across the brand and licensed collabs.</li>
+          <li><b>Community</b> — a self-organizing subreddit of committed collectors, growing steadily.</li>
+          <li><b>Culture</b> — TikTok-native hype cycles that pull older buyers into limited drops.</li>
+          <li><b>Money</b> — ~40% adult sales mix, double-digit revenue growth, and a ~20M-member loyalty base.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="method">
+      <div class="sec-head"><span class="sec-num">05</span><h2>Methodology &amp; data sources</h2></div>
+      <div class="method">
+        <p><b>Search interest.</b> Google Trends, U.S., monthly, normalized 0–100. Pulled by manual CSV export (Google blocks automated access) and ingested via <code>scripts/ingest_google_trends.py</code>.</p>
+        <p><b>Reddit community.</b> Historical subscriber counts reconstructed from Wayback Machine snapshots of old.reddit.com; current counts via the Reddit API. The Dec-2023 anchor (27,351) is verified.</p>
+        <p><b>Culture.</b> Qualitative evidence from TikTok, Entrepreneur, and Suzy coverage of the adult-collector trend. View-count tracking is the next signal to be automated.</p>
+        <p><b>Financial anchors.</b> Customer mix, loyalty base, awareness, and revenue from BBW SEC filings (8-K) and BBW investor presentations (2024).</p>
+        <p><b>Status.</b> KPI cards use real, cited figures. Time-series charts marked <span class="tag illustrative">illustrative</span> are seeded for design and are overwritten with live data when the collector scripts are run.</p>
+        <p><b>Why convergence.</b> Any one platform can spike on a fad. Independent sources moving together is what distinguishes a durable fandom from noise.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="sources" id="sources">
+        Sources: BBW SEC filings &amp; investor presentations ·
+        <a href="https://www.entrepreneur.com/business-news/build-a-bear-attracts-adult-consumers-thanks-to-tiktok/440642">Entrepreneur</a> ·
+        <a href="https://www.suzy.com/blog/stuffed-with-success">Suzy</a> ·
+        Google Trends · Reddit · Wayback Machine.
+      </div>
+      <p>Built for internal research. Last updated <span id="updated">—</span>. Not investment advice. · <a href="https://github.com/">source on GitHub</a></p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

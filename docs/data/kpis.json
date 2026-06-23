@@ -1,0 +1,53 @@
+{
+  "last_updated": "2026-06-23",
+  "cards": [
+    {
+      "label": "Adult & teen share of sales",
+      "value": "~40%",
+      "sub": "of sales are tweens, teens & adults (kidults)",
+      "trend": "up",
+      "source": "BBW investor materials / trade press",
+      "real": true
+    },
+    {
+      "label": "BBW stock, 5-year return",
+      "value": "+~2,000%",
+      "sub": "~+60% YTD in 2025, outpacing top growth stocks",
+      "trend": "up",
+      "source": "Market data, 2025",
+      "real": true
+    },
+    {
+      "label": "U.S. aided brand awareness",
+      "value": "90%+",
+      "sub": "#1 North American toy retailer by recognition",
+      "trend": "flat",
+      "source": "BBW investor presentation, 2024",
+      "real": true
+    },
+    {
+      "label": "Loyalty members (Bonus Club)",
+      "value": "~20M",
+      "sub": "rewards members; early access to limited drops",
+      "trend": "up",
+      "source": "BBW investor presentation, 2024",
+      "real": true
+    },
+    {
+      "label": "Store & web visits / year",
+      "value": "~100M",
+      "sub": "annual visits across stores and online",
+      "trend": "up",
+      "source": "BBW investor presentation, 2024",
+      "real": true
+    },
+    {
+      "label": "Q1 FY2025 revenue",
+      "value": "$128.4M",
+      "sub": "+11.9% YoY — double-digit growth continues",
+      "trend": "up",
+      "source": "BBW 8-K, May 2025",
+      "real": true
+    }
+  ]
+}
