@@ -1,0 +1,16 @@
+{
+  "stamp": "2026-06-23_1155",
+  "date": "2026-06-23",
+  "note": "v0.3 \u2014 institutional multi-signal rebuild (Roblox, resale, retail, convergence)",
+  "files": [
+    "google_trends.json",
+    "kpis.json",
+    "manifest.json",
+    "reddit_subscribers.json",
+    "reddit_topics.json",
+    "resale.json",
+    "retail.json",
+    "roblox.json",
+    "social.json"
+  ]
+}

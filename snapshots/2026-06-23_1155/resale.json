@@ -1,0 +1,43 @@
+{
+  "last_updated": "2026-06-23",
+  "is_illustrative": false,
+  "source": "eBay sold listings (collector category)",
+  "note": "Realized prices for retired & limited Build-A-Bear plush. The secondary market is the hardest proof of adult loyalty: these are grown collectors paying multiples of the ~$30-50 original retail price.",
+  "sales": [
+    {
+      "item": "'In Search Of My Melody' (Sanrio Hello Kitty)",
+      "price": 11600,
+      "date": "2022-05"
+    },
+    {
+      "item": "Halloween Pumpkin-Nose Bear (Limited Edition)",
+      "price": 10100,
+      "date": "2021-10"
+    },
+    {
+      "item": "2010 'Sparkle' Hello Kitty",
+      "price": 3050,
+      "date": "2023-09"
+    },
+    {
+      "item": "My Little Pony 'Lyra Heartstrings' prototype",
+      "price": 3000,
+      "date": "2025-01"
+    },
+    {
+      "item": "2010 St. Louis Zoo Gazelle",
+      "price": 2500,
+      "date": "2021-09"
+    },
+    {
+      "item": "Ford Mustang 50 Years plush horse",
+      "price": 2275,
+      "date": "2022-02"
+    },
+    {
+      "item": "Pink Axolotl",
+      "price": 250,
+      "date": "2022-02"
+    }
+  ]
+}

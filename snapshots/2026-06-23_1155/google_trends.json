@@ -1,0 +1,345 @@
+{
+  "signal": "google_trends",
+  "geo": "US",
+  "unit": "search interest (0-100)",
+  "source": "Google Trends \u2014 manual CSV export (trends.google.com)",
+  "is_illustrative": true,
+  "note": "ILLUSTRATIVE seed showing typical BBW holiday seasonality (Nov-Dec peaks). The bold line is a 12-month moving average (underlying trend). Replace with real data via scripts/ingest_google_trends.py.",
+  "last_updated": "2026-06-23",
+  "queries": [
+    "Build-A-Bear",
+    "Build-A-Bear Pokemon"
+  ],
+  "series": [
+    {
+      "date": "2021-01",
+      "Build-A-Bear": 66,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-02",
+      "Build-A-Bear": 59,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-03",
+      "Build-A-Bear": 48,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-04",
+      "Build-A-Bear": 37,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-05",
+      "Build-A-Bear": 30,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-06",
+      "Build-A-Bear": 27,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-07",
+      "Build-A-Bear": 31,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-08",
+      "Build-A-Bear": 40,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-09",
+      "Build-A-Bear": 51,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-10",
+      "Build-A-Bear": 63,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-11",
+      "Build-A-Bear": 71,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2021-12",
+      "Build-A-Bear": 75,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-01",
+      "Build-A-Bear": 72,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-02",
+      "Build-A-Bear": 65,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-03",
+      "Build-A-Bear": 54,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-04",
+      "Build-A-Bear": 44,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-05",
+      "Build-A-Bear": 36,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-06",
+      "Build-A-Bear": 34,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-07",
+      "Build-A-Bear": 37,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-08",
+      "Build-A-Bear": 46,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-09",
+      "Build-A-Bear": 57,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-10",
+      "Build-A-Bear": 69,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2022-11",
+      "Build-A-Bear": 78,
+      "Build-A-Bear Pokemon": 25
+    },
+    {
+      "date": "2022-12",
+      "Build-A-Bear": 81,
+      "Build-A-Bear Pokemon": 28
+    },
+    {
+      "date": "2023-01",
+      "Build-A-Bear": 79,
+      "Build-A-Bear Pokemon": 26
+    },
+    {
+      "date": "2023-02",
+      "Build-A-Bear": 71,
+      "Build-A-Bear Pokemon": 21
+    },
+    {
+      "date": "2023-03",
+      "Build-A-Bear": 61,
+      "Build-A-Bear Pokemon": 13
+    },
+    {
+      "date": "2023-04",
+      "Build-A-Bear": 50,
+      "Build-A-Bear Pokemon": 5
+    },
+    {
+      "date": "2023-05",
+      "Build-A-Bear": 43,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2023-06",
+      "Build-A-Bear": 40,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2023-07",
+      "Build-A-Bear": 44,
+      "Build-A-Bear Pokemon": 0
+    },
+    {
+      "date": "2023-08",
+      "Build-A-Bear": 52,
+      "Build-A-Bear Pokemon": 7
+    },
+    {
+      "date": "2023-09",
+      "Build-A-Bear": 64,
+      "Build-A-Bear Pokemon": 15
+    },
+    {
+      "date": "2023-10",
+      "Build-A-Bear": 75,
+      "Build-A-Bear Pokemon": 24
+    },
+    {
+      "date": "2023-11",
+      "Build-A-Bear": 84,
+      "Build-A-Bear Pokemon": 31
+    },
+    {
+      "date": "2023-12",
+      "Build-A-Bear": 87,
+      "Build-A-Bear Pokemon": 33
+    },
+    {
+      "date": "2024-01",
+      "Build-A-Bear": 85,
+      "Build-A-Bear Pokemon": 32
+    },
+    {
+      "date": "2024-02",
+      "Build-A-Bear": 77,
+      "Build-A-Bear Pokemon": 26
+    },
+    {
+      "date": "2024-03",
+      "Build-A-Bear": 67,
+      "Build-A-Bear Pokemon": 18
+    },
+    {
+      "date": "2024-04",
+      "Build-A-Bear": 56,
+      "Build-A-Bear Pokemon": 10
+    },
+    {
+      "date": "2024-05",
+      "Build-A-Bear": 49,
+      "Build-A-Bear Pokemon": 5
+    },
+    {
+      "date": "2024-06",
+      "Build-A-Bear": 46,
+      "Build-A-Bear Pokemon": 3
+    },
+    {
+      "date": "2024-07",
+      "Build-A-Bear": 50,
+      "Build-A-Bear Pokemon": 6
+    },
+    {
+      "date": "2024-08",
+      "Build-A-Bear": 58,
+      "Build-A-Bear Pokemon": 12
+    },
+    {
+      "date": "2024-09",
+      "Build-A-Bear": 70,
+      "Build-A-Bear Pokemon": 21
+    },
+    {
+      "date": "2024-10",
+      "Build-A-Bear": 82,
+      "Build-A-Bear Pokemon": 29
+    },
+    {
+      "date": "2024-11",
+      "Build-A-Bear": 90,
+      "Build-A-Bear Pokemon": 36
+    },
+    {
+      "date": "2024-12",
+      "Build-A-Bear": 94,
+      "Build-A-Bear Pokemon": 39
+    },
+    {
+      "date": "2025-01",
+      "Build-A-Bear": 91,
+      "Build-A-Bear Pokemon": 37
+    },
+    {
+      "date": "2025-02",
+      "Build-A-Bear": 84,
+      "Build-A-Bear Pokemon": 31
+    },
+    {
+      "date": "2025-03",
+      "Build-A-Bear": 73,
+      "Build-A-Bear Pokemon": 23
+    },
+    {
+      "date": "2025-04",
+      "Build-A-Bear": 63,
+      "Build-A-Bear Pokemon": 16
+    },
+    {
+      "date": "2025-05",
+      "Build-A-Bear": 55,
+      "Build-A-Bear Pokemon": 10
+    },
+    {
+      "date": "2025-06",
+      "Build-A-Bear": 53,
+      "Build-A-Bear Pokemon": 8
+    },
+    {
+      "date": "2025-07",
+      "Build-A-Bear": 56,
+      "Build-A-Bear Pokemon": 11
+    },
+    {
+      "date": "2025-08",
+      "Build-A-Bear": 65,
+      "Build-A-Bear Pokemon": 17
+    },
+    {
+      "date": "2025-09",
+      "Build-A-Bear": 76,
+      "Build-A-Bear Pokemon": 26
+    },
+    {
+      "date": "2025-10",
+      "Build-A-Bear": 88,
+      "Build-A-Bear Pokemon": 35
+    },
+    {
+      "date": "2025-11",
+      "Build-A-Bear": 97,
+      "Build-A-Bear Pokemon": 41
+    },
+    {
+      "date": "2025-12",
+      "Build-A-Bear": 100,
+      "Build-A-Bear Pokemon": 44
+    },
+    {
+      "date": "2026-01",
+      "Build-A-Bear": 98,
+      "Build-A-Bear Pokemon": 42
+    },
+    {
+      "date": "2026-02",
+      "Build-A-Bear": 90,
+      "Build-A-Bear Pokemon": 37
+    },
+    {
+      "date": "2026-03",
+      "Build-A-Bear": 79,
+      "Build-A-Bear Pokemon": 29
+    },
+    {
+      "date": "2026-04",
+      "Build-A-Bear": 69,
+      "Build-A-Bear Pokemon": 21
+    },
+    {
+      "date": "2026-05",
+      "Build-A-Bear": 61,
+      "Build-A-Bear Pokemon": 15
+    },
+    {
+      "date": "2026-06",
+      "Build-A-Bear": 59,
+      "Build-A-Bear Pokemon": 13
+    }
+  ]
+}

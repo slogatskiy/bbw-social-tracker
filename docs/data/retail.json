@@ -1,0 +1,46 @@
+{
+  "last_updated": "2026-06-23",
+  "is_illustrative": false,
+  "source": "BBW SEC filings (8-K), FY2024 & FY2025",
+  "locations": {
+    "as_of": "Q1 FY2025",
+    "total": 604,
+    "mix": [
+      {
+        "type": "Corporately-managed",
+        "value": 369
+      },
+      {
+        "type": "Partner-operated",
+        "value": 148
+      },
+      {
+        "type": "Franchise (international)",
+        "value": 87
+      }
+    ],
+    "fy2024_end": {
+      "total": 589,
+      "net_new": 64
+    },
+    "guidance": "FY2025: at least 50 net new global experience locations"
+  },
+  "segments_fy2024": [
+    {
+      "segment": "Net retail sales",
+      "value": 211.3,
+      "pct": 93.2
+    },
+    {
+      "segment": "Commercial",
+      "value": 13.3,
+      "pct": 5.9
+    },
+    {
+      "segment": "International franchising",
+      "value": 1.9,
+      "pct": 0.9
+    }
+  ],
+  "segments_note": "FY2024 total revenue $226.5M. In FY2025 the commercial + international-franchising segments combined for $43.9M, up 21.6% YoY (Q4 +37.5%) \u2014 the asset-light, higher-margin growth engine."
+}

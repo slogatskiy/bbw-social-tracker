@@ -1,5 +1,10 @@
 [
   {
+    "stamp": "2026-06-23_1155",
+    "date": "2026-06-23",
+    "note": "v0.3 \u2014 institutional multi-signal rebuild (Roblox, resale, retail, convergence)"
+  },
+  {
     "stamp": "2026-06-23_1034",
     "date": "2026-06-23",
     "note": "v0.2 \u2014 smoother Trends seed + 12-mo moving-average trend line; snapshot system added"

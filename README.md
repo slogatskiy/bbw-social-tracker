@@ -25,12 +25,14 @@ docs/                 # the static site (GitHub Pages serves this folder)
   data/               # the data the page reads (versioned in git)
     manifest.json     # thesis, status, last-updated
     kpis.json         # headline figures (real, cited)
-    google_trends.json
-    reddit_subscribers.json
+    google_trends.json reddit_subscribers.json reddit_topics.json
+    social.json roblox.json resale.json retail.json
 scripts/              # data collectors — you run these to refresh data/
+  fetch_roblox.py            # live Roblox "Build-A-Bear Tycoon" visits
   fetch_reddit.py            # current subreddit size (Reddit API)
   backfill_reddit_wayback.py # subscriber history (Wayback Machine)
   ingest_google_trends.py    # parse Google Trends CSV exports
+  snapshot.py                # dated data save points
 data_raw/             # (git-ignored) drop Google Trends CSVs here
 ```
 
@@ -38,26 +40,35 @@ Data lives as JSON **inside the repo**, so every refresh is a git commit — the
 demand history is visible in the git log, and the dashboard is re-runnable and
 diffable over time.
 
-## Current status (MVP)
+## Sections
 
-- **KPI cards** use real, cited figures (SEC filings, BBW investor presentations, trade press).
-- **Time-series charts** are seeded *illustratively* so the design is visible.
-  They flip to **live** the moment you run the collectors below. The Reddit
-  Dec-2023 point (27,351) is already a real anchor.
+Search · Community (Reddit) · Social · Digital (Roblox) · Resale · Retail &
+commercial · Signal convergence · Methodology. Each analytical section ends with
+a "What this shows & why it matters" institutional read-through.
+
+- **Real / live data:** KPI strip, retail & commercial segments and locations
+  (SEC filings), Roblox visits (live API), resale prices (eBay sold).
+- **Illustrative (flagged on the page):** the Google Trends and Reddit
+  time-series and the Reddit conversation taxonomy — seeded for design and
+  overwritten when the collectors run. The Reddit Dec-2023 point (27,351) and
+  the latest Roblox point are real anchors.
 
 ## Refresh the data
 
 ```bash
 pip install -r requirements.txt
 
-# 1) Reddit — current community size  (needs a free Reddit "script" app)
+# 1) Roblox — live "Build-A-Bear Tycoon" visits (no keys needed)
+python scripts/fetch_roblox.py
+
+# 2) Reddit — current community size  (needs a free Reddit "script" app)
 export REDDIT_CLIENT_ID=xxxx REDDIT_CLIENT_SECRET=xxxx
 python scripts/fetch_reddit.py
 
-# 2) Reddit — historical growth from Wayback Machine
+# 3) Reddit — historical growth from Wayback Machine
 python scripts/backfill_reddit_wayback.py
 
-# 3) Google Trends — export CSVs to data_raw/, then:
+# 4) Google Trends — export CSVs to data_raw/, then:
 python scripts/ingest_google_trends.py
 
 git add docs/data && git commit -m "data: refresh signals"
