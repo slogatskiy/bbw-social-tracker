@@ -69,18 +69,47 @@ function renderKPIs(kpis) {
   }).join("");
 }
 
+function movingAvg(values, window) {
+  return values.map((_, i) => {
+    const start = Math.max(0, i - window + 1);
+    const slice = values.slice(start, i + 1).filter(v => v != null);
+    if (!slice.length) return null;
+    return Math.round(slice.reduce((a, b) => a + b, 0) / slice.length);
+  });
+}
+
 function renderTrends(gt) {
   tagFor(gt.is_illustrative, document.getElementById("trends-tag"));
   document.getElementById("trends-src").textContent = "Google Trends";
   document.getElementById("trends-note").textContent = gt.note || "";
   const labels = gt.series.map(r => r.date);
-  const datasets = gt.queries.map((q, i) => ({
-    label: q,
-    data: gt.series.map(r => r[q]),
-    borderColor: i === 0 ? COLORS.accent : COLORS.accent2,
-    backgroundColor: "transparent",
-    borderWidth: 2, pointRadius: 0, tension: 0.35,
-  }));
+  const main = gt.queries[0];
+  const mainVals = gt.series.map(r => r[main]);
+
+  // thin raw series (shows seasonality) + a bold 12-month moving average (trend)
+  const datasets = [
+    {
+      label: `${main} (12-mo avg)`,
+      data: movingAvg(mainVals, 12),
+      borderColor: COLORS.accent, backgroundColor: "rgba(255,178,62,.10)",
+      borderWidth: 3, pointRadius: 0, tension: 0.4, fill: true, order: 0,
+    },
+    {
+      label: `${main} (monthly)`,
+      data: mainVals,
+      borderColor: "rgba(255,178,62,.45)", backgroundColor: "transparent",
+      borderWidth: 1.25, pointRadius: 0, tension: 0.35, order: 1,
+    },
+  ];
+  if (gt.queries[1]) {
+    const q2 = gt.queries[1];
+    datasets.push({
+      label: `${q2} (monthly)`,
+      data: gt.series.map(r => r[q2]),
+      borderColor: "rgba(255,93,115,.7)", backgroundColor: "transparent",
+      borderWidth: 1.5, pointRadius: 0, tension: 0.35, order: 2,
+    });
+  }
   new Chart(document.getElementById("trendsChart"), {
     type: "line", data: { labels, datasets }, options: chartBase(),
   });

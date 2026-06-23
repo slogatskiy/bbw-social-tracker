@@ -66,6 +66,39 @@ git push
 
 Each script header explains its 30-second setup.
 
+## Saving & rollback
+
+Everything is versioned, at two levels:
+
+**1. Named project save points (git tags).** Each milestone is tagged (see
+`CHANGELOG.md`). To look at or roll the whole repo back to one:
+
+```bash
+git tag                       # list save points (v0.1.0, v0.2.0, …)
+git checkout v0.1.0           # inspect that exact version
+git checkout main             # back to latest
+# to truly revert main to an old version:
+git revert --no-commit v0.2.0..HEAD && git commit -m "roll back to v0.1.0"
+```
+
+**2. Data snapshots (browsable files).** Before/after any data change, run:
+
+```bash
+python scripts/snapshot.py "what changed"
+git add snapshots && git commit -m "snapshot: ..."
+```
+
+This drops a dated copy of every `docs/data/*.json` into `snapshots/<stamp>/`
+(visible as plain files on GitHub) and logs it in `snapshots/README.md`. Restore
+one file with:
+
+```bash
+cp snapshots/<stamp>/reddit_subscribers.json docs/data/
+```
+
+Because data also lives in git, the full history is in `git log` too — snapshots
+just make specific results easy to find and compare.
+
 ## Roadmap
 
 1. ✅ MVP — search + Reddit + culture, on GitHub Pages.

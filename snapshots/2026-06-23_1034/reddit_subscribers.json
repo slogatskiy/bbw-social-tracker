@@ -1,0 +1,62 @@
+{
+  "signal": "reddit_subscribers",
+  "subreddit": "buildabear",
+  "unit": "subscribers",
+  "source": "Wayback Machine snapshots of old.reddit.com/r/buildabear + Reddit API (live)",
+  "is_illustrative": true,
+  "anchor": "Dec-2023 value (27,351) is REAL (subredditstats.com). Other points are illustrative until backfill_reddit_wayback.py runs.",
+  "note": "ILLUSTRATIVE seed except the Dec-2023 anchor. Replace by running scripts/backfill_reddit_wayback.py and scripts/fetch_reddit.py.",
+  "last_updated": "2026-06-23",
+  "series": [
+    {
+      "date": "2019-02",
+      "value": 4200,
+      "real": false
+    },
+    {
+      "date": "2020-02",
+      "value": 7100,
+      "real": false
+    },
+    {
+      "date": "2021-02",
+      "value": 11800,
+      "real": false
+    },
+    {
+      "date": "2022-02",
+      "value": 17500,
+      "real": false
+    },
+    {
+      "date": "2023-02",
+      "value": 23200,
+      "real": false
+    },
+    {
+      "date": "2023-12",
+      "value": 27351,
+      "real": true
+    },
+    {
+      "date": "2024-06",
+      "value": 31500,
+      "real": false
+    },
+    {
+      "date": "2025-02",
+      "value": 37800,
+      "real": false
+    },
+    {
+      "date": "2025-12",
+      "value": 45200,
+      "real": false
+    },
+    {
+      "date": "2026-06",
+      "value": 51000,
+      "real": false
+    }
+  ]
+}
