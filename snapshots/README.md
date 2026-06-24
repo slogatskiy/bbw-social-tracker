@@ -8,6 +8,7 @@ cp snapshots/<stamp>/<file>.json docs/data/<file>.json
 
 | Snapshot | Date | Note |
 |---|---|---|
+| `2026-06-24_1259` | 2026-06-24 | v0.7 — real Google Trends (Search now live, +90% YoY, 5-yr high spring 2026) |
 | `2026-06-24_1245` | 2026-06-24 | v0.6 — real Reddit anchor 37k + TL;DR + caveats |
 | `2026-06-24_1211` | 2026-06-24 | v0.5 — online-first restructure + e-commerce section + resale shrunk |
 | `2026-06-24_1153` | 2026-06-24 | v0.4.1 hotfix — correct FY2024/FY2025 revenue (was H1 mislabeled as FY2024) |

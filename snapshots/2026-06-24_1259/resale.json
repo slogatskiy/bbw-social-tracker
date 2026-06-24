@@ -1,0 +1,52 @@
+{
+  "last_updated": "2026-06-24",
+  "is_illustrative": false,
+  "source": "eBay sold listings (documented notable sales)",
+  "methodology": "A curated sample of documented, realized eBay sold prices for retired & limited Build-A-Bear plush (not asking prices). Ongoing comps are ingested via scripts/ingest_resale.py. The market is broad: eBay lists 1,700+ Build-A-Bear Pokemon plush alone.",
+  "retail_context": "Original retail is typically $30\u201350 (e.g., the 2023 Pok\u00e9mon Charmander bear launched at $32).",
+  "retail_anchor": 40,
+  "sales": [
+    {
+      "item": "'In Search Of My Melody' (Sanrio Hello Kitty)",
+      "category": "Sanrio / Hello Kitty",
+      "price": 11600,
+      "date": "2022-05"
+    },
+    {
+      "item": "Halloween Pumpkin-Nose Bear (Limited Edition)",
+      "category": "Limited / Seasonal",
+      "price": 10100,
+      "date": "2021-10"
+    },
+    {
+      "item": "2010 'Sparkle' Hello Kitty",
+      "category": "Sanrio / Hello Kitty",
+      "price": 3050,
+      "date": "2023-09"
+    },
+    {
+      "item": "My Little Pony 'Lyra Heartstrings' prototype",
+      "category": "My Little Pony",
+      "price": 3000,
+      "date": "2025-01"
+    },
+    {
+      "item": "2010 St. Louis Zoo Gazelle",
+      "category": "Zoo / Exclusive",
+      "price": 2500,
+      "date": "2021-09"
+    },
+    {
+      "item": "Ford Mustang 50 Years plush horse",
+      "category": "Licensed / Auto",
+      "price": 2275,
+      "date": "2022-02"
+    },
+    {
+      "item": "Pink Axolotl",
+      "category": "Other",
+      "price": 250,
+      "date": "2022-02"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "stamp": "2026-06-24_1259",
+  "date": "2026-06-24",
+  "note": "v0.7 \u2014 real Google Trends (Search now live, +90% YoY, 5-yr high spring 2026)",
+  "files": [
+    "ecommerce.json",
+    "google_trends.json",
+    "kpis.json",
+    "manifest.json",
+    "reddit_subscribers.json",
+    "reddit_topics.json",
+    "resale.json",
+    "retail.json",
+    "roblox.json",
+    "social.json"
+  ]
+}

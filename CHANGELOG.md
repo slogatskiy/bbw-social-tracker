@@ -3,6 +3,13 @@
 Named save points for the whole project. Roll the entire repo back to any of
 these with `git checkout <tag>` (see README → "Saving & rollback").
 
+## v0.7.0 — 2026-06-24
+- **Search is now REAL** — ingested the live Google Trends export (U.S., 5y).
+  Headline finding: U.S. "Build-A-Bear" search hit a 5-year high in spring 2026,
+  trailing 12-month average ~+90% YoY. Dropped the all-zero "Pokemon" sub-query.
+- Bottom-line TL;DR + caveats updated to fold in the search surge.
+- ingest_google_trends.py now aggregates weekly->monthly and drops empty columns.
+
 ## v0.6.0 — 2026-06-24
 - Reddit re-anchored on a 2nd verified point (~37,000 current members) — the
   trajectory now sits between two real anchors (27.4K Dec-2023 → ~37K today).

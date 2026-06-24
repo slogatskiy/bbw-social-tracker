@@ -18,28 +18,39 @@ RAW = ROOT / "data_raw"
 
 
 def parse_trends_csv(path: Path):
-    """Return (queries, rows) from a Google Trends multiTimeline.csv export."""
+    """Return (queries, rows) from a Google Trends multiTimeline.csv export.
+
+    Weekly exports are aggregated to monthly averages; columns that are entirely
+    zero (e.g. a tiny sub-query that registers ~0 at brand scale) are dropped.
+    """
+    import collections, statistics
     lines = [ln for ln in path.read_text().splitlines() if ln.strip()]
-    # find the header row: starts with "Month" or "Week" or "Day"
     hdr_idx = next((i for i, ln in enumerate(lines)
                     if ln.split(",")[0].strip().strip('"') in ("Month", "Week", "Day")), None)
     if hdr_idx is None:
         return None, None
     reader = list(csv.reader(lines[hdr_idx:]))
     header = reader[0]
-    # column names look like "Build-A-Bear: (United States)" -> strip the suffix
     queries = [h.split(":")[0].strip() for h in header[1:]]
-    rows = []
+    buckets = collections.defaultdict(lambda: collections.defaultdict(list))
     for r in reader[1:]:
         if not r or not r[0]:
             continue
-        date = r[0][:7]  # YYYY-MM
-        rec = {"date": date}
+        ym = r[0][:7]
         for q, v in zip(queries, r[1:]):
             v = v.strip().replace("<1", "0")
-            rec[q] = int(v) if v.isdigit() else None
+            if v.isdigit():
+                buckets[ym][q].append(int(v))
+    # drop all-zero queries
+    kept = [q for q in queries if any(buckets[m][q] and max(buckets[m][q]) > 0 for m in buckets)]
+    rows = []
+    for ym in sorted(buckets):
+        rec = {"date": ym}
+        for q in kept:
+            vals = buckets[ym][q]
+            rec[q] = round(statistics.mean(vals)) if vals else None
         rows.append(rec)
-    return queries, rows
+    return kept, rows
 
 
 def main() -> int:
