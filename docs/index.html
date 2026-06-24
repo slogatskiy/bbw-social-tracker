@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build-A-Bear Workshop (BBW) — Demand & Brand-Equity Tracker</title>
-  <meta name="description" content="Independent demand signals on Build-A-Bear Workshop: search, community, social, digital, resale, retail and commercial." />
+  <meta name="description" content="Independent demand signals on Build-A-Bear Workshop: social, community, search, digital, online and resale — the online-led adult fandom." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,10 +13,11 @@
       <span class="brand"><b>BBW</b> · Demand &amp; Brand-Equity Tracker</span>
       <nav>
         <a href="#summary">Summary</a>
-        <a href="#search">Search</a>
-        <a href="#community">Community</a>
         <a href="#social">Social</a>
-        <a href="#digital">Digital</a>
+        <a href="#community">Reddit</a>
+        <a href="#search">Search</a>
+        <a href="#digital">Roblox</a>
+        <a href="#ecommerce">Online</a>
         <a href="#resale">Resale</a>
         <a href="#retail">Retail</a>
         <a href="#convergence">Convergence</a>
@@ -38,25 +39,29 @@
       <div class="kpi-strip" id="kpi-strip"></div>
     </header>
 
-    <!-- 01 Search -->
-    <section id="search">
-      <div class="sec-head"><span class="sec-num">01</span><h2>Search interest</h2><span class="badge illustrative" id="search-badge">illustrative</span></div>
-      <p class="sec-sub">Google search is the broadest passive demand signal. Build-A-Bear carries strong holiday seasonality (Nov–Dec peaks); the bold line is a 12-month moving average isolating the underlying trend, tracked alongside a licensed collab that skews adult-collector.</p>
-      <div class="card">
-        <div class="chart-meta"><span class="chart-title">U.S. search interest — brand vs. licensed collab</span><span class="badge" id="search-src">Google Trends</span></div>
-        <div class="chart-box"><canvas id="trendsChart"></canvas></div>
-        <div class="chart-note" id="trends-note"></div>
+    <!-- 01 Social & TikTok -->
+    <section id="social">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Social &amp; TikTok</h2><span class="badge real" id="social-badge">owned audience</span></div>
+      <p class="sec-sub">The adult Build-A-Bear fandom lives online, and it is largely a TikTok phenomenon — "stuffing parties," limited-drop hype, and collector hauls. The brand's owned footprint is large and TikTok-led, and it markets an explicit adults-only line.</p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="chart-meta"><span class="chart-title">Owned audience by platform</span><span class="badge" id="social-src">Official profiles</span></div>
+          <div class="chart-box"><canvas id="socialChart"></canvas></div>
+          <div class="chart-note" id="social-note"></div>
+        </div>
+        <div class="card scorecards" id="social-scorecards"></div>
       </div>
-      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>Search is a leading indicator of intent. A rising 12-month average through repeated holiday cycles points to a structural lift in brand interest, not a one-off seasonal spike — and the licensed-collab line shows demand is being pulled in by adult-targeted IP.</p></div>
+      <div class="q-grid" id="social-grid" style="margin-top:16px"></div>
+      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A TikTok-led owned audience plus an 18+ product line shows the brand actively cultivating adults online — lowering customer-acquisition cost and converting passive 90%+ awareness into active, higher-spend demand that does not depend on mall foot traffic.</p></div>
     </section>
 
     <!-- 02 Community -->
     <section id="community">
       <div class="sec-head"><span class="sec-num">02</span><h2>Community demand — Reddit</h2><span class="badge illustrative" id="reddit-badge">illustrative</span></div>
-      <p class="sec-sub">A subreddit is where a fandom organizes. r/buildabear describes itself as "the internet's largest Build-A-Bear community… whether you are a newbie or you have a collection of over 300 bears." Member growth and conversation mix proxy committed adult fans.</p>
+      <p class="sec-sub">A subreddit is where a fandom organizes. r/buildabear calls itself "the internet's largest Build-A-Bear community… whether you are a newbie or you have a collection of over 300 bears." Member growth and conversation mix proxy committed adult fans. (History is estimated pending the Wayback backfill; the Dec-2023 point is verified.)</p>
       <div class="grid-2">
         <div class="card">
-          <div class="chart-meta"><span class="chart-title">r/buildabear subscribers over time</span><span class="badge" id="reddit-src">Wayback + Reddit API</span></div>
+          <div class="chart-meta"><span class="chart-title">r/buildabear subscribers over time</span><span class="badge" id="reddit-src">Wayback (est.)</span></div>
           <div class="chart-box"><canvas id="redditChart"></canvas></div>
           <div class="chart-note" id="reddit-note"></div>
         </div>
@@ -69,20 +74,16 @@
       <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>Compounding membership plus a conversation mix dominated by hauls, customization and licensed-drop trading is the signature of a <em>collector</em> community — high-frequency, high-intent adults — rather than a one-time children's purchase.</p></div>
     </section>
 
-    <!-- 03 Social -->
-    <section id="social">
-      <div class="sec-head"><span class="sec-num">03</span><h2>Social &amp; creator ecosystem</h2><span class="badge real" id="social-badge">owned audience</span></div>
-      <p class="sec-sub">The adult Build-A-Bear phenomenon is largely a TikTok phenomenon — "stuffing parties," limited-drop hype, and collector hauls. The brand's owned social footprint is large and TikTok-led, and it runs an explicit adults-only product line.</p>
-      <div class="grid-2">
-        <div class="card">
-          <div class="chart-meta"><span class="chart-title">Owned audience by platform</span><span class="badge" id="social-src">Official profiles</span></div>
-          <div class="chart-box"><canvas id="socialChart"></canvas></div>
-          <div class="chart-note" id="social-note"></div>
-        </div>
-        <div class="card scorecards" id="social-scorecards"></div>
+    <!-- 03 Search -->
+    <section id="search">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Search interest</h2><span class="badge illustrative" id="search-badge">illustrative</span></div>
+      <p class="sec-sub">Google search is the broadest passive demand signal. Build-A-Bear carries strong holiday seasonality (Nov–Dec peaks); the bold line is a 12-month moving average isolating the underlying trend, tracked alongside a licensed collab that skews adult-collector.</p>
+      <div class="card">
+        <div class="chart-meta"><span class="chart-title">U.S. search interest — brand vs. licensed collab</span><span class="badge" id="search-src">Google Trends</span></div>
+        <div class="chart-box"><canvas id="trendsChart"></canvas></div>
+        <div class="chart-note" id="trends-note"></div>
       </div>
-      <div class="q-grid" id="social-grid" style="margin-top:16px"></div>
-      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A 0.8M-follower, TikTok-led owned audience plus an 18+ product line shows the brand actively cultivating adults — lowering customer-acquisition cost and converting passive 90%+ awareness into active, higher-spend demand.</p></div>
+      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>Search is a leading indicator of intent. A rising 12-month average through repeated holiday cycles points to a structural lift in brand interest, not a one-off seasonal spike — and the licensed-collab line shows demand is being pulled in by adult-targeted IP.</p></div>
     </section>
 
     <!-- 04 Digital -->
@@ -100,10 +101,25 @@
       <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A 24M-visit owned game keeps the brand resident in the digital lives of the next cohort of buyers at near-zero marginal cost — the same compounding fan-recruitment dynamic that powers durable franchises.</p></div>
     </section>
 
-    <!-- 05 Resale -->
+    <!-- 05 Online demand / e-commerce -->
+    <section id="ecommerce">
+      <div class="sec-head"><span class="sec-num">05</span><h2>Online demand — e-commerce</h2><span class="badge real" id="ecom-badge">SEC filings</span></div>
+      <p class="sec-sub">Adults skew to buying online rather than visiting mall stores, so e-commerce is the clearest financial read on the adult channel. Demand is choppy quarter to quarter but is reported directly by the company.</p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="chart-meta"><span class="chart-title">E-commerce demand growth by quarter (FY2025)</span><span class="badge" id="ecom-src">BBW results</span></div>
+          <div class="chart-box"><canvas id="ecomChart"></canvas></div>
+          <div class="chart-note" id="ecom-note"></div>
+        </div>
+        <div class="card scorecards" id="ecom-scorecards"></div>
+      </div>
+      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>E-commerce demand is the adult-channel proxy: online buyers skew older and higher-spend, and the company explicitly leans on digital and social to reach them. Quarter-to-quarter volatility is expected around drop timing; the structural point is that the adult engine is online, not in-store.</p></div>
+    </section>
+
+    <!-- 06 Resale (compact) -->
     <section id="resale">
-      <div class="sec-head"><span class="sec-num">05</span><h2>Secondary market — resale</h2><span class="badge real" id="resale-badge">real sales</span></div>
-      <p class="sec-sub">The resale market is the hardest proof of adult loyalty: grown collectors paying multiples of the ~$30–50 original retail price for retired and limited plush. Realized eBay sold prices, not asking prices; the secondary market is broad (1,700+ Build-A-Bear Pokémon plush listed alone).</p>
+      <div class="sec-head"><span class="sec-num">06</span><h2>Secondary market — resale</h2><span class="badge real" id="resale-badge">real sales</span></div>
+      <p class="sec-sub">A supporting signal: grown collectors pay 50–290× the ~$30–50 original retail for retired and limited plush. Realized eBay sold prices (a documented sample), not asking prices.</p>
       <div class="grid-2">
         <div class="card">
           <div class="chart-meta"><span class="chart-title">Realized resale prices over time, by category</span><span class="badge" id="resale-src">eBay sold</span></div>
@@ -112,17 +128,13 @@
         </div>
         <div class="card scorecards" id="resale-scorecards"></div>
       </div>
-      <div class="card" style="margin-top:16px">
-        <div class="chart-meta"><span class="chart-title">Documented notable sales</span><span class="badge real">realized prices</span></div>
-        <table class="resale" id="resale-table"></table>
-      </div>
-      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A liquid secondary market with four- and five-figure clears — 50–290× original retail — signals genuine scarcity value and an emotionally committed adult base: the demand profile of a collectible brand, not a discretionary toy.</p></div>
+      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>Four- and five-figure clears for retired plush signal genuine scarcity value and an emotionally committed adult base — the demand profile of a collectible brand, not a discretionary toy.</p></div>
     </section>
 
-    <!-- 06 Retail & commercial -->
+    <!-- 07 Retail & commercial -->
     <section id="retail">
-      <div class="sec-head"><span class="sec-num">06</span><h2>Retail &amp; commercial expansion</h2><span class="badge real" id="retail-badge">SEC filings</span></div>
-      <p class="sec-sub">The business model has diversified away from company-owned mall stores toward an asset-light mix of partner-operated and franchised locations, plus high-margin commercial (wholesale/licensing) revenue.</p>
+      <div class="sec-head"><span class="sec-num">07</span><h2>Retail &amp; commercial — context</h2><span class="badge real" id="retail-badge">SEC filings</span></div>
+      <p class="sec-sub">The physical/financial backdrop: stores skew family and tourist traffic, while the business diversifies toward an asset-light mix of partner-operated and franchised locations plus high-margin commercial revenue.</p>
       <div class="grid-2 even">
         <div class="card">
           <div class="chart-meta"><span class="chart-title">FY2025 revenue mix by segment</span><span class="badge real">FY2025</span></div>
@@ -136,29 +148,29 @@
         </div>
       </div>
       <div class="card scorecards" id="retail-scorecards" style="margin-top:16px"></div>
-      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>With the U.S. mall base mature, growth is shifting to capital-light channels — commercial and international franchising grew 21.6% in FY2025 (Q4 +37.5%). This re-rates the business from a melting mall retailer toward a brand-licensing model with structurally higher returns on capital.</p></div>
+      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>With the U.S. mall base mature, growth is shifting to capital-light channels — commercial and international franchising grew 21.6% in FY2025 (Q4 +37.5%) on a record $529.8M of revenue. This re-rates the business from a melting mall retailer toward a brand-licensing model with structurally higher returns on capital.</p></div>
     </section>
 
-    <!-- 07 Convergence -->
+    <!-- 08 Convergence -->
     <section id="convergence">
-      <div class="sec-head"><span class="sec-num">07</span><h2>Signal convergence</h2></div>
+      <div class="sec-head"><span class="sec-num">08</span><h2>Signal convergence</h2></div>
       <div class="converge">
         <p class="lead" id="conv-lead">Loading…</p>
         <div class="conv-grid" id="conv-grid"></div>
       </div>
     </section>
 
-    <!-- 08 Method -->
+    <!-- 09 Method -->
     <section id="method">
-      <div class="sec-head"><span class="sec-num">08</span><h2>Methodology &amp; data sources</h2></div>
+      <div class="sec-head"><span class="sec-num">09</span><h2>Methodology &amp; data sources</h2></div>
       <div class="method">
-        <p><b>Search.</b> Google Trends, U.S., monthly, normalized 0–100; manual CSV export ingested via <code>scripts/ingest_google_trends.py</code>. A 12-month moving average isolates trend from seasonality.</p>
-        <p><b>Community.</b> Subscriber history from Wayback Machine snapshots of old.reddit.com; current counts via the Reddit API. Conversation taxonomy is illustrative pending a classification pass.</p>
         <p><b>Social.</b> Owned-audience follower counts from the official TikTok, Instagram and Facebook profiles (dated snapshots, manually updated). Public TikTok hashtag view counts are no longer exposed; #buildabear scale is tracked via TikTok Creative Center (roadmap).</p>
-        <p><b>Resale.</b> Curated, documented eBay sold prices (realized, not asking); ongoing comps ingested via <code>scripts/ingest_resale.py</code>.</p>
+        <p><b>Community.</b> Subscriber history reconstructed from Wayback Machine snapshots of old.reddit.com (run <code>scripts/backfill_reddit_wayback.py</code> from an open network); the Dec-2023 point (27,351) is verified. Conversation taxonomy is illustrative pending a classification pass.</p>
+        <p><b>Search.</b> Google Trends, U.S., monthly, normalized 0–100; manual CSV export ingested via <code>scripts/ingest_google_trends.py</code>. A 12-month moving average isolates trend from seasonality.</p>
         <p><b>Digital.</b> Cumulative visits for "Build-A-Bear Tycoon" (universe 4107870885) pulled live from the Roblox public games API via <code>scripts/fetch_roblox.py</code>.</p>
-        <p><b>Retail &amp; commercial.</b> Location counts and segment revenue from BBW SEC filings (8-K), FY2024–FY2025.</p>
-        <p><b>Comparison windows.</b> Where used: YoY = latest vs. prior year; multi-year = compound annual growth (CAGR).</p>
+        <p><b>Online demand.</b> E-commerce demand growth by quarter as reported in BBW FY2025 results.</p>
+        <p><b>Resale.</b> Curated, documented eBay sold prices (realized, not asking); ongoing comps ingested via <code>scripts/ingest_resale.py</code>.</p>
+        <p><b>Retail &amp; commercial.</b> Location counts and full-year segment revenue from BBW SEC filings &amp; press releases, FY2024–FY2025.</p>
         <p><b>Status &amp; convergence.</b> Charts marked <span class="badge illustrative">illustrative</span> are seeded for design and overwritten when collectors run; <span class="badge real">real</span> / <span class="badge live">live</span> use cited or live data. Independent sources moving together is what distinguishes durable demand from a single-channel fad.</p>
       </div>
     </section>

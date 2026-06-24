@@ -144,8 +144,9 @@ function renderSocial(s) {
   });
   const tt = p.find(x => x.platform === "TikTok");
   $("social-scorecards").innerHTML =
-    scorecard(fmt(tt.followers), `TikTok followers · ${tt.extra}`, "amber") +
-    scorecard(fmt(p.reduce((a, x) => a + x.followers, 0)), "total owned followers", "pos") +
+    scorecard(fmt(tt.followers), "TikTok followers (@buildabear)", "amber") +
+    scorecard(tt.extra || "—", "total TikTok likes", "pos") +
+    scorecard("13M+", "views on a single viral BBW TikTok", "pos") +
     scorecard("18+", "'Bear Cave' adults-only product line");
   $("social-grid").innerHTML = s.cards.map(c =>
     `<div class="q-card"><h4>${c.h}</h4><p>${c.p}</p><div class="src">${c.s}</div></div>`).join("");
@@ -204,7 +205,8 @@ function renderResale(rs) {
     }),
   });
   const rows = rs.sales.slice().sort((a, b) => b.price - a.price);
-  $("resale-table").innerHTML =
+  const tbl = $("resale-table");
+  if (tbl) tbl.innerHTML =
     `<thead><tr><th>Item</th><th>Category</th><th>Sold</th><th>Price</th></tr></thead><tbody>` +
     rows.map(s => `<tr><td>${s.item}</td><td style="color:${CAT_COLORS[s.category] || "#8b97bf"}">${s.category}</td><td class="date">${s.date}</td><td class="price">${money(s.price)}</td></tr>`).join("") +
     `</tbody>`;
@@ -240,18 +242,40 @@ function renderRetail(rt) {
     scorecard("+21.6%", "commercial + franchising rev YoY", "pos");
 }
 
+/* ---------- 05 online demand (e-commerce) ---------- */
+function renderEcommerce(ec) {
+  $("ecom-note").textContent = ec.note || "";
+  const labels = ec.series.map(r => r.q), vals = ec.series.map(r => r.change);
+  new Chart($("ecomChart"), {
+    type: "bar",
+    data: { labels, datasets: [{ label: "e-commerce demand YoY %", data: vals,
+      backgroundColor: vals.map(v => v >= 0 ? "rgba(56,199,147,.8)" : "rgba(255,107,107,.8)"),
+      borderRadius: 5 }] },
+    options: chartBase({
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.raw > 0 ? "+" : ""}${c.raw}% YoY` } } },
+      scales: { x: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 12 } } },
+        y: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 11 }, callback: v => v + "%" } } },
+    }),
+  });
+  const latest = ec.series.at(-1), best = ec.series.reduce((a, b) => b.change > a.change ? b : a);
+  $("ecom-scorecards").innerHTML =
+    scorecard(`${best.change > 0 ? "+" : ""}${best.change}%`, `best quarter (${best.q})`, "pos") +
+    scorecard(`${latest.change > 0 ? "+" : ""}${latest.change}%`, `latest (${latest.q})`, latest.change >= 0 ? "pos" : "") +
+    scorecard("online", "the adult purchase channel", "amber");
+}
+
 /* ---------- 07 convergence ---------- */
 function renderConvergence(m) {
   $("conv-lead").textContent = m.convergence;
   const cells = [
-    { sig: "Search", read: "Trend rising through seasonality", dir: "↑ structural", cls: "trend-up" },
+    { sig: "Social / TikTok", read: "0.8M TikTok-led audience; 18+ line", dir: "↑ growing", cls: "trend-up" },
     { sig: "Community", read: "Subscribers compounding; collector mix", dir: "↑ growing", cls: "trend-up" },
+    { sig: "Search", read: "Trend rising through seasonality", dir: "↑ structural", cls: "trend-up" },
     { sig: "Digital", read: "24M+ Roblox visits, always-on", dir: "↑ growing", cls: "trend-up" },
+    { sig: "Online / e-comm", read: "Adult channel; +15.1% in Q2 FY25", dir: "↑ choppy", cls: "trend-up" },
     { sig: "Resale", read: "Four/five-figure clears for retired plush", dir: "↑ scarcity value", cls: "trend-up" },
-    { sig: "Social", read: "0.8M TikTok-led audience; 18+ line", dir: "↑ growing", cls: "trend-up" },
     { sig: "Retail mix", read: "Asset-light commercial + franchise", dir: "↑ +21.6% FY25", cls: "trend-up" },
     { sig: "Loyalty", read: "~20M Bonus Club, early-access drops", dir: "→ large base", cls: "trend-flat" },
-    { sig: "Awareness", read: "90%+ aided, #1 NA toy retailer", dir: "→ near-ceiling", cls: "trend-flat" },
   ];
   $("conv-grid").innerHTML = cells.map(c =>
     `<div class="conv-cell"><div class="c-sig">${c.sig}</div><div class="c-read">${c.read}</div>
@@ -261,17 +285,19 @@ function renderConvergence(m) {
 /* ---------- boot ---------- */
 (async function () {
   try {
-    const [m, kpis, gt, rd, topics, social, rb, rs, rt] = await Promise.all([
+    const [m, kpis, gt, rd, topics, social, rb, rs, rt, ec] = await Promise.all([
       loadJSON("data/manifest.json"), loadJSON("data/kpis.json"),
       loadJSON("data/google_trends.json"), loadJSON("data/reddit_subscribers.json"),
       loadJSON("data/reddit_topics.json"), loadJSON("data/social.json"),
       loadJSON("data/roblox.json"), loadJSON("data/resale.json"), loadJSON("data/retail.json"),
+      loadJSON("data/ecommerce.json"),
     ]);
     renderHeader(m, kpis);
     renderTrends(gt);
     renderReddit(rd, topics);
     renderSocial(social);
     renderRoblox(rb);
+    renderEcommerce(ec);
     renderResale(rs);
     renderRetail(rt);
     renderConvergence(m);

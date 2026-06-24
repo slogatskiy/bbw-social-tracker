@@ -8,6 +8,7 @@ cp snapshots/<stamp>/<file>.json docs/data/<file>.json
 
 | Snapshot | Date | Note |
 |---|---|---|
+| `2026-06-24_1211` | 2026-06-24 | v0.5 — online-first restructure + e-commerce section + resale shrunk |
 | `2026-06-24_1153` | 2026-06-24 | v0.4.1 hotfix — correct FY2024/FY2025 revenue (was H1 mislabeled as FY2024) |
 | `2026-06-24_0544` | 2026-06-24 | v0.4 — real Social (followers) + Resale timeline/categories |
 | `2026-06-23_1155` | 2026-06-23 | v0.3 — institutional multi-signal rebuild (Roblox, resale, retail, convergence) |

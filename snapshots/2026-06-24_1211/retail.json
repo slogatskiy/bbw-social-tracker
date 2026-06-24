@@ -1,0 +1,24 @@
+{
+  "last_updated": "2026-06-24",
+  "is_illustrative": false,
+  "source": "BBW SEC filings & press releases (FY2024-FY2025)",
+  "fiscal_year": "FY2025",
+  "total_revenue": 529.8,
+  "segments": [
+    { "segment": "Net retail sales", "value": 486.0, "pct": 91.7 },
+    { "segment": "Commercial + international franchising", "value": 43.8, "pct": 8.3 }
+  ],
+  "segments_note": "FY2025 total revenue was a record $529.8M (+6.7%) — a 5th consecutive record year. Net retail sales were $486.0M (+5.6%). The capital-light commercial + international-franchising segments combined for ~$43.9M, up ~21.6% YoY (from $36.1M in FY2024); Q4 alone +37.5%.",
+  "locations": {
+    "as_of": "Q1 FY2025",
+    "total": 604,
+    "mix": [
+      { "type": "Corporately-managed", "value": 369 },
+      { "type": "Partner-operated", "value": 148 },
+      { "type": "Franchise (international)", "value": 87 }
+    ],
+    "net_new_recent": "60+",
+    "guidance": "60+ net new global experience locations delivered for a 2nd straight year (guidance: at least 50)"
+  },
+  "ecommerce_note": "E-commerce demand (online orders) is choppy quarter to quarter: Q1 FY25 +0.5%, Q2 +15.1%, Q3 -10.8%."
+}

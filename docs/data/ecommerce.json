@@ -1,0 +1,20 @@
+{
+  "last_updated": "2026-06-24",
+  "is_illustrative": false,
+  "source": "BBW FY2025 quarterly results (press releases)",
+  "note": "E-commerce demand = online orders fulfilled from the company's warehouses or its stores. Reported YoY growth per quarter.",
+  "series": [
+    {
+      "q": "Q1 FY25",
+      "change": 0.5
+    },
+    {
+      "q": "Q2 FY25",
+      "change": 15.1
+    },
+    {
+      "q": "Q3 FY25",
+      "change": -10.8
+    }
+  ]
+}

@@ -3,6 +3,22 @@
 Named save points for the whole project. Roll the entire repo back to any of
 these with `git checkout <tag>` (see README → "Saving & rollback").
 
+## v0.5.0 — 2026-06-24
+- **Online-first restructure** (thesis: adult demand is online/community-led, not
+  mall-driven). Section order: Social/TikTok → Reddit → Search → Roblox →
+  E-commerce → Resale → Retail (now framed as context, last).
+- New **Online demand (e-commerce)** section: quarterly e-commerce demand growth
+  (FY2025: +0.5% / +15.1% / −10.8%) from BBW results.
+- **Social/TikTok** strengthened: TikTok likes (14.1M) + a cited 13M-view viral
+  moment as scorecards.
+- **Resale shrunk** to a compact supporting widget (scatter + scorecards only).
+- Exec summary + convergence reframed around online channels.
+
+## v0.4.1 — 2026-06-24
+- Data correctness hotfix: corrected mislabeled revenue (FY2025 total $529.8M
+  record; net retail $486.0M; commercial+franchising ~$43.9M +21.6%). The prior
+  $226.5M "FY2024" figure was actually H1.
+
 ## v0.4.0 — 2026-06-24
 - **Social section** upgraded to real owned-audience data: TikTok 834.7K (14.1M
   likes), Instagram 813K, Facebook 2.8M — follower bar chart + scorecards, plus
