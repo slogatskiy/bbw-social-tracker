@@ -217,7 +217,7 @@ function renderResale(rs) {
 
 /* ---------- 06 retail & commercial ---------- */
 function renderRetail(rt) {
-  const segs = rt.segments_fy2024, maxPct = Math.max(...segs.map(s => s.pct));
+  const segs = rt.segments, maxPct = Math.max(...segs.map(s => s.pct));
   $("segbars").innerHTML = segs.map((s, i) => `
     <div class="segbar ${i ? "alt" : ""}">
       <div class="seg-top"><span>${s.segment}</span><b>$${s.value}M · ${s.pct}%</b></div>
@@ -234,10 +234,10 @@ function renderRetail(rt) {
   $("loc-note").textContent = loc.guidance;
 
   $("retail-scorecards").innerHTML =
+    scorecard(`$${rt.total_revenue}M`, `${rt.fiscal_year} total revenue — record`, "pos") +
     scorecard(fmt(loc.total), "global experience locations", "amber") +
-    scorecard(`+${loc.fy2024_end.net_new}`, "net new locations in FY2024", "pos") +
-    scorecard("+21.6%", "commercial + franchising rev, FY2025", "pos") +
-    scorecard("+37.5%", "those segments in Q4 FY2025", "pos");
+    scorecard(`${loc.net_new_recent}`, "net new locations (2nd straight yr)", "pos") +
+    scorecard("+21.6%", "commercial + franchising rev YoY", "pos");
 }
 
 /* ---------- 07 convergence ---------- */
