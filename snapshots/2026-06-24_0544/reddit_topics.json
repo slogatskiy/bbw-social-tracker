@@ -1,0 +1,49 @@
+{
+  "last_updated": "2026-06-23",
+  "is_illustrative": true,
+  "note": "Illustrative conversation mix for r/buildabear, modeled on collector-community patterns. Replace with a real post/comment classification pass (roadmap).",
+  "topics": [
+    {
+      "emoji": "\ud83e\uddf8",
+      "name": "Hauls & Collections",
+      "share": 34.0,
+      "trend": "up",
+      "insight": "Adults showing shelves of retired & limited bears."
+    },
+    {
+      "emoji": "\ud83c\udfa8",
+      "name": "Customization & DIY",
+      "share": 19.0,
+      "trend": "up",
+      "insight": "Restuffing, outfits, mods \u2014 hobby depth."
+    },
+    {
+      "emoji": "\u2b50",
+      "name": "Licensed drops & restocks",
+      "share": 17.0,
+      "trend": "up",
+      "insight": "Pok\u00e9mon, Sanrio, Star Wars hype and trades."
+    },
+    {
+      "emoji": "\u2753",
+      "name": "Help / identification",
+      "share": 12.0,
+      "trend": "flat",
+      "insight": "Dating & valuing older bears."
+    },
+    {
+      "emoji": "\ud83d\udecd\ufe0f",
+      "name": "Stores & events",
+      "share": 9.0,
+      "trend": "flat",
+      "insight": "In-store drops, lines, exclusives."
+    },
+    {
+      "emoji": "\ud83d\udcac",
+      "name": "General & off-topic",
+      "share": 9.0,
+      "trend": "flat",
+      "insight": "Community chatter."
+    }
+  ]
+}

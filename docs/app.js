@@ -118,6 +118,35 @@ function renderReddit(rd, topics) {
 
 /* ---------- 03 social ---------- */
 function renderSocial(s) {
+  const p = s.platforms;
+  $("social-note").textContent = s.hashtag_note || "";
+  new Chart($("socialChart"), {
+    type: "bar",
+    data: {
+      labels: p.map(x => x.platform),
+      datasets: [{
+        label: "followers",
+        data: p.map(x => x.followers),
+        backgroundColor: p.map(x => x.accent ? C.accent : "rgba(79,140,255,.7)"),
+        borderRadius: 5, barThickness: 26,
+      }],
+    },
+    options: chartBase({
+      indexAxis: "y",
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: (c) => " " + fmt(c.raw) + " followers" } } },
+      scales: {
+        x: { grid: { color: C.grid }, beginAtZero: true,
+          ticks: { color: C.text, font: { size: 11 }, callback: v => v >= 1e6 ? (v / 1e6) + "M" : (v / 1e3) + "K" } },
+        y: { grid: { display: false }, ticks: { color: C.text, font: { size: 12 } } },
+      },
+    }),
+  });
+  const tt = p.find(x => x.platform === "TikTok");
+  $("social-scorecards").innerHTML =
+    scorecard(fmt(tt.followers), `TikTok followers · ${tt.extra}`, "amber") +
+    scorecard(fmt(p.reduce((a, x) => a + x.followers, 0)), "total owned followers", "pos") +
+    scorecard("18+", "'Bear Cave' adults-only product line");
   $("social-grid").innerHTML = s.cards.map(c =>
     `<div class="q-card"><h4>${c.h}</h4><p>${c.p}</p><div class="src">${c.s}</div></div>`).join("");
 }
@@ -143,18 +172,47 @@ function renderRoblox(rb) {
 }
 
 /* ---------- 05 resale ---------- */
+const CAT_COLORS = {
+  "Sanrio / Hello Kitty": "#ff5d9e", "Limited / Seasonal": "#f5a623",
+  "My Little Pony": "#9b8cff", "Zoo / Exclusive": "#38c793",
+  "Licensed / Auto": "#4f8cff", "Other": "#8b97bf",
+};
+const dateToYear = (d) => Number(d.slice(0, 4)) + (Number(d.slice(5, 7)) - 1) / 12;
+
 function renderResale(rs) {
+  $("resale-note").textContent = rs.methodology || "";
+  const cats = [...new Set(rs.sales.map(s => s.category))];
+  const datasets = cats.map(cat => ({
+    label: cat,
+    data: rs.sales.filter(s => s.category === cat).map(s => ({ x: dateToYear(s.date), y: s.price, item: s.item, date: s.date })),
+    backgroundColor: CAT_COLORS[cat] || "#8b97bf",
+    pointRadius: 6, pointHoverRadius: 8,
+  }));
+  new Chart($("resaleChart"), {
+    type: "scatter",
+    data: { datasets },
+    options: chartBase({
+      plugins: {
+        legend: { labels: { color: C.text, usePointStyle: true, boxWidth: 8, font: { size: 11 } } },
+        tooltip: { callbacks: { label: (c) => ` ${c.raw.item}: ${money(c.raw.y)} (${c.raw.date})` } },
+      },
+      scales: {
+        x: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 11 }, stepSize: 1, callback: v => Math.round(v) }, min: 2021, max: 2026 },
+        y: { type: "logarithmic", grid: { color: C.grid },
+          ticks: { color: C.text, font: { size: 11 }, callback: v => ([100, 250, 1000, 3000, 10000].includes(v) ? money(v) : null) } },
+      },
+    }),
+  });
   const rows = rs.sales.slice().sort((a, b) => b.price - a.price);
   $("resale-table").innerHTML =
-    `<thead><tr><th>Item</th><th>Sold</th><th>Price</th></tr></thead><tbody>` +
-    rows.map(s => `<tr><td>${s.item}</td><td class="date">${s.date}</td><td class="price">${money(s.price)}</td></tr>`).join("") +
+    `<thead><tr><th>Item</th><th>Category</th><th>Sold</th><th>Price</th></tr></thead><tbody>` +
+    rows.map(s => `<tr><td>${s.item}</td><td style="color:${CAT_COLORS[s.category] || "#8b97bf"}">${s.category}</td><td class="date">${s.date}</td><td class="price">${money(s.price)}</td></tr>`).join("") +
     `</tbody>`;
-  const top = rows[0].price, n = rows.length;
-  const aboveRetail = Math.round(top / 40); // ~ vs $40 original retail
+  const top = rows[0].price, retail = rs.retail_anchor || 40;
   $("resale-scorecards").innerHTML =
     scorecard(money(top), "top realized sale", "pos") +
-    scorecard(`~${aboveRetail}×`, "vs. ~$40 original retail", "amber") +
-    scorecard(n, "four/five-figure clears tracked");
+    scorecard(`~${Math.round(top / retail)}×`, `vs. ~$${retail} original retail`, "amber") +
+    scorecard(rows.filter(s => s.price >= 1000).length, "four/five-figure clears tracked");
 }
 
 /* ---------- 06 retail & commercial ---------- */
@@ -190,7 +248,7 @@ function renderConvergence(m) {
     { sig: "Community", read: "Subscribers compounding; collector mix", dir: "↑ growing", cls: "trend-up" },
     { sig: "Digital", read: "24M+ Roblox visits, always-on", dir: "↑ growing", cls: "trend-up" },
     { sig: "Resale", read: "Four/five-figure clears for retired plush", dir: "↑ scarcity value", cls: "trend-up" },
-    { sig: "Social", read: "TikTok-driven adult acquisition", dir: "↑ emerging", cls: "trend-up" },
+    { sig: "Social", read: "0.8M TikTok-led audience; 18+ line", dir: "↑ growing", cls: "trend-up" },
     { sig: "Retail mix", read: "Asset-light commercial + franchise", dir: "↑ +21.6% FY25", cls: "trend-up" },
     { sig: "Loyalty", read: "~20M Bonus Club, early-access drops", dir: "→ large base", cls: "trend-flat" },
     { sig: "Awareness", read: "90%+ aided, #1 NA toy retailer", dir: "→ near-ceiling", cls: "trend-flat" },

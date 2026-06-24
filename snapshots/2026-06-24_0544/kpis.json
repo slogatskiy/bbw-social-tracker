@@ -1,0 +1,61 @@
+{
+  "last_updated": "2026-06-23",
+  "cards": [
+    {
+      "label": "Adult & teen share of sales",
+      "value": "~40%",
+      "sub": "tweens, teens & adults (kidults)",
+      "trend": "up",
+      "source": "BBW investor materials"
+    },
+    {
+      "label": "Global experience locations",
+      "value": "604",
+      "sub": "369 corporate \u00b7 148 partner \u00b7 87 franchise (Q1 FY25)",
+      "trend": "up",
+      "source": "BBW 8-K, FY2025"
+    },
+    {
+      "label": "Commercial + franchising rev.",
+      "value": "+21.6%",
+      "sub": "FY2025 combined; Q4 +37.5% \u2014 diversification",
+      "trend": "up",
+      "source": "BBW FY2025 results"
+    },
+    {
+      "label": "Roblox 'Build-A-Bear Tycoon' visits",
+      "value": "24.3M",
+      "sub": "cumulative; 115K favorites",
+      "trend": "up",
+      "source": "Roblox API, Jun 2026"
+    },
+    {
+      "label": "Loyalty members (Bonus Club)",
+      "value": "~20M",
+      "sub": "early access to limited drops",
+      "trend": "up",
+      "source": "BBW investor presentation, 2024"
+    },
+    {
+      "label": "U.S. aided brand awareness",
+      "value": "90%+",
+      "sub": "#1 North American toy retailer",
+      "trend": "flat",
+      "source": "BBW investor presentation, 2024"
+    },
+    {
+      "label": "5-year equity return",
+      "value": "+~2,000%",
+      "sub": "record FY2025; dividend increased",
+      "trend": "up",
+      "source": "Market data / BBW FY2025"
+    },
+    {
+      "label": "Secondary-market top sale",
+      "value": "$11,600",
+      "sub": "retired Sanrio 'My Melody' bear, eBay",
+      "trend": "up",
+      "source": "eBay sold listing, 2022"
+    }
+  ]
+}

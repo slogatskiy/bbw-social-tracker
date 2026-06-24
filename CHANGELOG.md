@@ -3,6 +3,16 @@
 Named save points for the whole project. Roll the entire repo back to any of
 these with `git checkout <tag>` (see README → "Saving & rollback").
 
+## v0.4.0 — 2026-06-24
+- **Social section** upgraded to real owned-audience data: TikTok 834.7K (14.1M
+  likes), Instagram 813K, Facebook 2.8M — follower bar chart + scorecards, plus
+  the 'Bear Cave' 18+ adults-only line as a hard adult-targeting anchor.
+- **Resale section** upgraded with a price-over-time scatter (log scale) colored
+  by category, a categorized sales table, and a 50–290× premium-vs-retail read.
+- New collector `scripts/ingest_resale.py` (analyst-maintained eBay sold comps).
+- Honesty note: TikTok hashtag view counts are not public; tracked manually via
+  Creative Center (roadmap) rather than fabricated.
+
 ## v0.3.0 — 2026-06-23
 - Major rebuild into an institutional, multi-signal dashboard modeled on the
   reference: dark masthead with sticky TOC nav, signal pills, executive summary,
