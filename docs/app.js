@@ -61,6 +61,7 @@ function renderHeader(m, kpis) {
   $("headline").textContent = m.project;
   $("exec").textContent = m.summary;
   $("updated").textContent = m.generated;
+  if (m.bottom_line) $("bottomline").innerHTML = `<b>Bottom line.</b> ${m.bottom_line.replace(/^Bottom line:\s*/, "")}`;
   $("pills").innerHTML = (m.signals || []).map(s => `<span>${s}</span>`).join("");
   $("kpi-strip").innerHTML = kpis.cards.map(c => {
     const [g, cls] = ARROW[c.trend] || ARROW.flat;
@@ -280,6 +281,10 @@ function renderConvergence(m) {
   $("conv-grid").innerHTML = cells.map(c =>
     `<div class="conv-cell"><div class="c-sig">${c.sig}</div><div class="c-read">${c.read}</div>
      <div class="c-dir ${c.cls}">${c.dir}</div></div>`).join("");
+  if (m.caveats && m.caveats.length) {
+    $("caveats").innerHTML = `<h4>Caveats &amp; what we're watching</h4><ul>` +
+      m.caveats.map(c => `<li>${c}</li>`).join("") + `</ul>`;
+  }
 }
 
 /* ---------- boot ---------- */

@@ -56,6 +56,20 @@ h1 { font-size: 33px; line-height: 1.12; margin: 12px 0 14px; letter-spacing: -.
 }
 .exec { color: var(--muted); max-width: 880px; font-size: 15.5px; }
 
+/* ---------- bottom line (TL;DR) ---------- */
+.bottomline {
+  margin-top: 18px; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  background: var(--accent-soft); border-radius: 0 12px 12px 0; padding: 14px 18px;
+  color: var(--text); font-size: 15px; max-width: 880px;
+}
+.bottomline b { color: var(--accent); }
+
+/* ---------- caveats ---------- */
+.caveats { margin-top: 16px; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: var(--bg-soft); }
+.caveats h4 { margin: 0 0 8px; font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-family: var(--mono); }
+.caveats ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.caveats li { margin: 5px 0; font-size: 13px; }
+
 /* ---------- KPI strip ---------- */
 .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 26px; }
 .kpi {

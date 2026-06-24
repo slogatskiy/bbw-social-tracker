@@ -3,6 +3,12 @@
 Named save points for the whole project. Roll the entire repo back to any of
 these with `git checkout <tag>` (see README → "Saving & rollback").
 
+## v0.6.0 — 2026-06-24
+- Reddit re-anchored on a 2nd verified point (~37,000 current members) — the
+  trajectory now sits between two real anchors (27.4K Dec-2023 → ~37K today).
+- Added a **Bottom line** TL;DR at the top and a **Caveats & what we're watching**
+  box (bear-case transparency) for the PM audience.
+
 ## v0.5.0 — 2026-06-24
 - **Online-first restructure** (thesis: adult demand is online/community-led, not
   mall-driven). Section order: Social/TikTok → Reddit → Search → Roblox →

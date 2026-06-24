@@ -1,0 +1,52 @@
+{
+  "last_updated": "2026-06-24",
+  "is_illustrative": false,
+  "source": "Official account profiles (TikTok, Instagram, Facebook), 2025-2026",
+  "platforms": [
+    {
+      "platform": "TikTok",
+      "handle": "@buildabear",
+      "followers": 834700,
+      "extra": "14.1M likes",
+      "as_of": "2026-06",
+      "accent": true
+    },
+    {
+      "platform": "Instagram",
+      "handle": "@buildabear",
+      "followers": 813000,
+      "extra": "",
+      "as_of": "2025-11"
+    },
+    {
+      "platform": "Facebook",
+      "handle": "Build-A-Bear",
+      "followers": 2800000,
+      "extra": "",
+      "as_of": "2025-11"
+    }
+  ],
+  "hashtag_note": "Public TikTok hashtag view counts are no longer exposed by the platform; #buildabear scale is tracked manually via TikTok Creative Center (roadmap).",
+  "cards": [
+    {
+      "h": "An adults-only product line",
+      "p": "Build-A-Bear runs 'The Bear Cave' \u2014 an 18+ online line of 'gifts just for adults,' promoted directly on its TikTok. Explicit adult targeting, not incidental.",
+      "s": "@buildabear TikTok, 2025"
+    },
+    {
+      "h": "TikTok drives adult demand",
+      "p": "Influencer 'stuffing parties' and limited drops sell fast; older buyers are not discount-driven and make multiple purchases.",
+      "s": "Entrepreneur, 2024"
+    },
+    {
+      "h": "From kids' toy to collectible",
+      "p": "Points + early access to limited drops make loyalty feel like a collector's club, not a rewards card.",
+      "s": "Suzy, 2024-25"
+    },
+    {
+      "h": "Licensed collabs anchor hype",
+      "p": "Collector demand concentrates in Pok\u00e9mon, Sanrio/Hello Kitty, Star Wars, My Little Pony and How to Train Your Dragon lines.",
+      "s": "Trade coverage / eBay, 2025"
+    }
+  ]
+}
