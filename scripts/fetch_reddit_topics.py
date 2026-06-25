@@ -33,6 +33,8 @@ BUCKETS = [
     ("🎨", "Customization & DIY", ["custom", "diy", "restuff", "mod", "outfit", "sew", "repair", "clean"]),
     ("⭐", "Licensed drops & restocks", ["drop", "restock", "release", "pokemon", "pokémon", "sanrio",
                                         "hello kitty", "star wars", "collab", "limited", "exclusive", "preorder"]),
+    ("💰", "Resale, selling & trading", ["resell", "resale", "selling", "for sale", "wts", "wtt", "wtb",
+                                         "trade", "trading", "ebay", "mercari", "depop", "marketplace", "price check", "how much"]),
     ("❓", "Help / identification", ["help", "question", "id ", "identify", "what is", "which", "worth",
                                      "value", "name?", "vintage", "old"]),
     ("🛍️", "Stores & events", ["store", "event", "line", "in-store", "workshop", "party", "visit"]),
