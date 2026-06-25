@@ -142,12 +142,20 @@ function renderReddit(rd, topics) {
     scorecard(`+${((a1.value / a0.value - 1) * 100).toFixed(0)}%`,
       `vs. verified Dec-2023 (${fmt(a0.value)})`, "pos") +
     scorecard(`+${cagr(a0.value, a1.value, yrs).toFixed(0)}%`, "CAGR between verified anchors", "pos");
-  badge($("reddit-tax-badge"), topics.is_illustrative);
+  // Qualitative mode (no real post classification yet): show themes WITHOUT
+  // invented percentages or trend arrows. The collector flips this to real shares.
+  const qualitative = topics.qualitative || topics.is_illustrative;
+  const tb = $("reddit-tax-badge");
+  if (tb) { tb.textContent = qualitative ? "qualitative" : "real"; tb.className = "badge " + (qualitative ? "illustrative" : "real"); }
   if (topics.note) { const n = $("reddit-tax-note"); if (n) n.textContent = topics.note; }
   $("reddit-tax").innerHTML = topics.topics.map(t => {
-    const [g, cls] = TREND[t.trend] || TREND.flat;
+    let nums = "";
+    if (!qualitative && t.share != null) {
+      const [g, cls] = TREND[t.trend] || TREND.flat;
+      nums = ` <span class="t-share">${t.share}%</span> <span class="${cls}">${g}</span>`;
+    }
     return `<div class="tax-row"><div class="emoji">${t.emoji}</div><div>
-      <div class="t-name">${t.name} <span class="t-share">${t.share}%</span> <span class="${cls}">${g}</span></div>
+      <div class="t-name">${t.name}${nums}</div>
       <div class="t-ins">${t.insight}</div></div></div>`;
   }).join("");
 }
