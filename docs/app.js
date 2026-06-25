@@ -322,6 +322,69 @@ function renderConvergence(m) {
   }
 }
 
+/* ---------- 08b convergence: indexed chart + cross-signal table ---------- */
+function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
+  const BASE_YEAR = 2023.0; // common baseline: Jan 2023 = 100
+  const indexSeries = (pts) => {
+    const inWin = pts.filter(p => p.y != null).sort((a, b) => a.x - b.x).filter(p => p.x >= BASE_YEAR - 0.001);
+    if (!inWin.length) return [];
+    const base = inWin[0].y;
+    return inWin.map(p => ({ x: p.x, y: +(p.y / base * 100).toFixed(1) }));
+  };
+  const sv = gt.series.map(r => r[gt.queries[0]]);
+  const s3 = movingAvg(sv, 3); // 3-mo avg keeps the spring-2026 spike visible (12-mo would flatten it)
+  const searchPts = gt.series.map((r, i) => ({ x: dateToYear(r.date), y: s3[i] }));
+  const redditPts = rd.series.map(r => ({ x: dateToYear(r.date), y: r.value }));
+  const robloxPts = rb.series.filter(r => r.visits > 0).map(r => ({ x: dateToYear(r.date), y: r.visits }));
+  const mk = (label, pts, color) => ({ label, data: indexSeries(pts), borderColor: color,
+    backgroundColor: "transparent", borderWidth: 2.5, pointRadius: 0, tension: .35 });
+  new Chart($("convChart"), {
+    type: "line",
+    data: { datasets: [
+      mk("Search (3-mo avg)", searchPts, C.accent),
+      mk("Reddit members", redditPts, "#ff5d9e"),
+      mk("Roblox visits", robloxPts, C.blue),
+    ] },
+    options: chartBase({
+      plugins: { legend: { labels: { color: C.text, usePointStyle: true, boxWidth: 8, font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => ` ${c.dataset.label}: ${c.raw.y} (index)` } } },
+      scales: {
+        x: { type: "linear", min: 2023, max: 2026.5, grid: { color: C.grid },
+          ticks: { color: C.text, stepSize: 1, callback: v => Math.round(v), font: { size: 11 } }, title: axT("Year") },
+        y: { type: "logarithmic", min: 90, grid: { color: C.grid },
+          ticks: { color: C.text, font: { size: 11 }, callback: v => ([100, 200, 400, 800].includes(v) ? v : null) },
+          title: axT("Indexed, log scale (Jan 2023 = 100)") },
+      },
+    }),
+  });
+
+  // ---- cross-signal growth table ----
+  const pct = (a, b) => (b / a - 1) * 100;
+  const cagrPct = (a, b, yrs) => (Math.pow(b / a, 1 / yrs) - 1) * 100;
+  const last12 = sv.slice(-12).reduce((x, y) => x + y, 0) / 12;
+  const prev12 = sv.slice(-24, -12).reduce((x, y) => x + y, 0) / 12;
+  const reals = rd.series.filter(p => p.real), r0 = reals[0], r1 = reals.at(-1);
+  const ryrs = yearsBetween(r0.date, r1.date);
+  const rb0 = rb.series.find(p => p.date === "2023-12") || rb.series.filter(p => p.visits > 0)[0];
+  const rbyrs = yearsBetween(rb0.date, rb.current.updated.slice(0, 7));
+  const best = ec.series.reduce((a, b) => b.change > a.change ? b : a);
+  const top = rs.sales.slice().sort((a, b) => b.price - a.price)[0];
+  const tt = social.platforms.find(p => p.platform === "TikTok");
+  const rows = [
+    { sig: "Search interest", base: `${prev12.toFixed(0)} (12-mo)`, now: `${last12.toFixed(0)} (12-mo)`, chg: `+${pct(prev12, last12).toFixed(0)}%`, win: "YoY", conf: "✓", pos: true },
+    { sig: "Reddit members", base: `${fmt(r0.value)} · ${r0.date}`, now: `${fmt(r1.value)} · ${r1.date}`, chg: `+${pct(r0.value, r1.value).toFixed(0)}% · ${cagrPct(r0.value, r1.value, ryrs).toFixed(0)}%/yr`, win: `${ryrs.toFixed(1)}y`, conf: "✓", pos: true },
+    { sig: "Roblox visits", base: `${(rb0.visits / 1e6).toFixed(1)}M · ${rb0.date}`, now: `${(rb.current.visits / 1e6).toFixed(1)}M · live`, chg: `+${pct(rb0.visits, rb.current.visits).toFixed(0)}% · ${cagrPct(rb0.visits, rb.current.visits, rbyrs).toFixed(0)}%/yr`, win: `${rbyrs.toFixed(1)}y`, conf: "~", pos: true },
+    { sig: "TikTok followers", base: "—", now: `${(tt.followers / 1e3).toFixed(0)}K · ${tt.extra}`, chg: "—", win: "snapshot", conf: "—", pos: null },
+    { sig: "E-commerce demand", base: "—", now: `best +${best.change}% (${best.q})`, chg: `+${best.change}% / −10.8%`, win: "QoQ", conf: "✓", pos: true },
+    { sig: "Resale top clear", base: `~$${rs.retail_anchor} retail`, now: `${money(top.price)}`, chg: `~${Math.round(top.price / rs.retail_anchor)}×`, win: "sample", conf: "—", pos: true },
+    { sig: "FY2025 revenue", base: `$${(rt.total_revenue / 1.067).toFixed(0)}M · FY24`, now: `$${rt.total_revenue}M`, chg: "+6.7% · record", win: "FY", conf: "✓", pos: true },
+  ];
+  $("conv-table").innerHTML =
+    `<thead><tr><th>Signal</th><th>Baseline</th><th>Latest</th><th>Change</th><th>Win</th><th>±</th></tr></thead><tbody>` +
+    rows.map(r => `<tr><td>${r.sig}</td><td class="num">${r.base}</td><td class="num">${r.now}</td><td class="num ${r.pos === true ? "pos" : r.pos === false ? "neg" : ""}">${r.chg}</td><td class="num">${r.win}</td><td class="num">${r.conf}</td></tr>`).join("") +
+    `</tbody>`;
+}
+
 /* ---------- boot ---------- */
 (async function () {
   try {
@@ -341,6 +404,7 @@ function renderConvergence(m) {
     renderResale(rs);
     renderRetail(rt);
     renderConvergence(m);
+    renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt);
     linkifySources();
   } catch (e) {
     $("exec").innerHTML = `<b style="color:#ff6b6b">Failed to load data:</b> ${e.message}`;
