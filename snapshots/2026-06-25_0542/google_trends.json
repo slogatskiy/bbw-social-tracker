@@ -1,0 +1,258 @@
+{
+  "signal": "google_trends",
+  "geo": "US",
+  "unit": "search interest (0-100)",
+  "source": "Google Trends \u2014 U.S., weekly export aggregated to monthly (trends.google.com)",
+  "is_illustrative": false,
+  "note": "Real Google Trends data. Search interest reached its highest level in 5 years in spring 2026 (monthly peak 2026-04 = 73). The trailing 12-month average is up 90% YoY. The 'Build-A-Bear Pokemon' sub-query registers near-zero at brand scale and is omitted.",
+  "last_updated": "2026-06-24",
+  "queries": [
+    "Build-A-Bear"
+  ],
+  "series": [
+    {
+      "date": "2021-06",
+      "Build-A-Bear": 28
+    },
+    {
+      "date": "2021-07",
+      "Build-A-Bear": 26
+    },
+    {
+      "date": "2021-08",
+      "Build-A-Bear": 18
+    },
+    {
+      "date": "2021-09",
+      "Build-A-Bear": 18
+    },
+    {
+      "date": "2021-10",
+      "Build-A-Bear": 17
+    },
+    {
+      "date": "2021-11",
+      "Build-A-Bear": 22
+    },
+    {
+      "date": "2021-12",
+      "Build-A-Bear": 24
+    },
+    {
+      "date": "2022-01",
+      "Build-A-Bear": 32
+    },
+    {
+      "date": "2022-02",
+      "Build-A-Bear": 38
+    },
+    {
+      "date": "2022-03",
+      "Build-A-Bear": 36
+    },
+    {
+      "date": "2022-04",
+      "Build-A-Bear": 37
+    },
+    {
+      "date": "2022-05",
+      "Build-A-Bear": 36
+    },
+    {
+      "date": "2022-06",
+      "Build-A-Bear": 36
+    },
+    {
+      "date": "2022-07",
+      "Build-A-Bear": 37
+    },
+    {
+      "date": "2022-08",
+      "Build-A-Bear": 32
+    },
+    {
+      "date": "2022-09",
+      "Build-A-Bear": 37
+    },
+    {
+      "date": "2022-10",
+      "Build-A-Bear": 32
+    },
+    {
+      "date": "2022-11",
+      "Build-A-Bear": 42
+    },
+    {
+      "date": "2022-12",
+      "Build-A-Bear": 46
+    },
+    {
+      "date": "2023-01",
+      "Build-A-Bear": 35
+    },
+    {
+      "date": "2023-02",
+      "Build-A-Bear": 42
+    },
+    {
+      "date": "2023-03",
+      "Build-A-Bear": 31
+    },
+    {
+      "date": "2023-04",
+      "Build-A-Bear": 31
+    },
+    {
+      "date": "2023-05",
+      "Build-A-Bear": 32
+    },
+    {
+      "date": "2023-06",
+      "Build-A-Bear": 22
+    },
+    {
+      "date": "2023-07",
+      "Build-A-Bear": 20
+    },
+    {
+      "date": "2023-08",
+      "Build-A-Bear": 16
+    },
+    {
+      "date": "2023-09",
+      "Build-A-Bear": 20
+    },
+    {
+      "date": "2023-10",
+      "Build-A-Bear": 16
+    },
+    {
+      "date": "2023-11",
+      "Build-A-Bear": 30
+    },
+    {
+      "date": "2023-12",
+      "Build-A-Bear": 38
+    },
+    {
+      "date": "2024-01",
+      "Build-A-Bear": 27
+    },
+    {
+      "date": "2024-02",
+      "Build-A-Bear": 38
+    },
+    {
+      "date": "2024-03",
+      "Build-A-Bear": 25
+    },
+    {
+      "date": "2024-04",
+      "Build-A-Bear": 20
+    },
+    {
+      "date": "2024-05",
+      "Build-A-Bear": 22
+    },
+    {
+      "date": "2024-06",
+      "Build-A-Bear": 25
+    },
+    {
+      "date": "2024-07",
+      "Build-A-Bear": 28
+    },
+    {
+      "date": "2024-08",
+      "Build-A-Bear": 17
+    },
+    {
+      "date": "2024-09",
+      "Build-A-Bear": 17
+    },
+    {
+      "date": "2024-10",
+      "Build-A-Bear": 14
+    },
+    {
+      "date": "2024-11",
+      "Build-A-Bear": 16
+    },
+    {
+      "date": "2024-12",
+      "Build-A-Bear": 26
+    },
+    {
+      "date": "2025-01",
+      "Build-A-Bear": 18
+    },
+    {
+      "date": "2025-02",
+      "Build-A-Bear": 22
+    },
+    {
+      "date": "2025-03",
+      "Build-A-Bear": 17
+    },
+    {
+      "date": "2025-04",
+      "Build-A-Bear": 14
+    },
+    {
+      "date": "2025-05",
+      "Build-A-Bear": 15
+    },
+    {
+      "date": "2025-06",
+      "Build-A-Bear": 18
+    },
+    {
+      "date": "2025-07",
+      "Build-A-Bear": 26
+    },
+    {
+      "date": "2025-08",
+      "Build-A-Bear": 22
+    },
+    {
+      "date": "2025-09",
+      "Build-A-Bear": 22
+    },
+    {
+      "date": "2025-10",
+      "Build-A-Bear": 18
+    },
+    {
+      "date": "2025-11",
+      "Build-A-Bear": 28
+    },
+    {
+      "date": "2025-12",
+      "Build-A-Bear": 32
+    },
+    {
+      "date": "2026-01",
+      "Build-A-Bear": 26
+    },
+    {
+      "date": "2026-02",
+      "Build-A-Bear": 35
+    },
+    {
+      "date": "2026-03",
+      "Build-A-Bear": 36
+    },
+    {
+      "date": "2026-04",
+      "Build-A-Bear": 73
+    },
+    {
+      "date": "2026-05",
+      "Build-A-Bear": 67
+    },
+    {
+      "date": "2026-06",
+      "Build-A-Bear": 36
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "project": "Build-A-Bear Workshop \u2014 Demand & Brand-Equity Tracker",
+  "ticker": "NYSE: BBW",
+  "generated": "2026-06-25",
+  "signals": [
+    "Social",
+    "Community",
+    "Search",
+    "Digital",
+    "Online",
+    "Resale",
+    "Retail"
+  ],
+  "summary": "Build-A-Bear has transitioned from a mall-based children's retailer into a diversified brand-equity business with a large, loyal ADULT fan base. Crucially, that adult demand is online- and community-led: grown fans engage through TikTok, Reddit, owned digital experiences and e-commerce rather than mall visits, and physical stores increasingly skew family and tourist traffic. This tracker monitors independent online demand signals \u2014 social, community, search, digital, and the secondary market \u2014 to assess whether adult-driven brand demand is durable and broadening.",
+  "convergence": "Most independent signals \u2014 search interest, the owned social footprint, the Reddit community, Roblox engagement, the online audience mix and secondary-market pricing \u2014 point the same way: a structural, adult-led brand. The notable exception is e-commerce ORDER VOLUME, which has softened recently \u2014 we flag it rather than smooth it. Convergence across unrelated platforms (with the divergence called out) is what distinguishes a durable demand shift from a single-channel fad.",
+  "disclaimer": "Internal research. Not investment advice.",
+  "bottom_line": "Bottom line: independent online signals \u2014 U.S. search interest at a 5-year high (trailing 12-month average ~+90% YoY), a TikTok-led social footprint, a compounding collector community, 24M+ Roblox visits, and four/five-figure resale clears \u2014 corroborate a real, adult-led demand base that is increasingly online and decoupled from mall foot traffic, while the P&L diversifies toward higher-margin commercial and franchising on record FY2025 revenue.",
+  "caveats": [
+    "E-commerce ORDER DEMAND has rolled over: negative for three straight quarters and \u221226.1% in Q1 FY26 on softer consumer traffic. The online audience is structurally adult (25\u201334, female-skewing), but volume re-acceleration is the key watch-item of the bull case.",
+    "The Reddit trajectory between its two verified anchors (27.4K Dec-2023 \u2192 ~37K today) is estimated; the Reddit themes are qualitative, not a measured breakdown.",
+    "Resale is a documented but small sample of notable sales, not a continuous price index.",
+    "Tariffs (~$11M in FY2025) and a maturing U.S. mall base are real margin/footprint headwinds."
+  ],
+  "last_updated": "2026-06-24"
+}

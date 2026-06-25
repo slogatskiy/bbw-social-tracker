@@ -1,0 +1,17 @@
+{
+  "stamp": "2026-06-25_0542",
+  "date": "2026-06-25",
+  "note": "v0.8.5 \u2014 honest e-commerce + online audience; objectivity pass session",
+  "files": [
+    "ecommerce.json",
+    "google_trends.json",
+    "kpis.json",
+    "manifest.json",
+    "reddit_subscribers.json",
+    "reddit_topics.json",
+    "resale.json",
+    "retail.json",
+    "roblox.json",
+    "social.json"
+  ]
+}

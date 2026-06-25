@@ -1,0 +1,43 @@
+{
+  "last_updated": "2026-06-25",
+  "is_illustrative": true,
+  "qualitative": true,
+  "note": "Recurring discussion themes observed in r/buildabear — qualitative, NOT a measured percentage breakdown. Run scripts/fetch_reddit_topics.py (with Reddit OAuth) to replace this with real, post-classified shares.",
+  "topics": [
+    {
+      "emoji": "🧸",
+      "name": "Hauls & Collections",
+      "insight": "Adults showing shelves of retired & limited bears."
+    },
+    {
+      "emoji": "🎨",
+      "name": "Customization & DIY",
+      "insight": "Restuffing, outfits, mods — hobby depth."
+    },
+    {
+      "emoji": "⭐",
+      "name": "Licensed drops & restocks",
+      "insight": "Pokémon, Sanrio, Star Wars hype and trades."
+    },
+    {
+      "emoji": "💰",
+      "name": "Resale, selling & trading",
+      "insight": "Buying, selling & swapping retired plush — and what a fair price is."
+    },
+    {
+      "emoji": "❓",
+      "name": "Help / identification",
+      "insight": "Dating & valuing older bears."
+    },
+    {
+      "emoji": "🛍️",
+      "name": "Stores & events",
+      "insight": "In-store drops, lines, exclusives."
+    },
+    {
+      "emoji": "💬",
+      "name": "General & off-topic",
+      "insight": "Community chatter."
+    }
+  ]
+}
