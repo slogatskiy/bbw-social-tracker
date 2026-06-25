@@ -50,6 +50,26 @@ function cagr(first, last, years) { return (Math.pow(last / first, 1 / years) - 
 function yearsBetween(d1, d2) {
   return (new Date(d2 + "-01") - new Date(d1 + "-01")) / (365.25 * 864e5);
 }
+/* axis-title helper so every chart states its unit of measure */
+function axT(text) { return { display: true, text, color: C.text, font: { size: 11, weight: "500" } }; }
+
+/* Clickable, attributed source badges. Wrap the existing label text in a link. */
+const SRC_LINKS = {
+  "social-src": "https://www.tiktok.com/@buildabear",
+  "reddit-src": "https://www.reddit.com/r/buildabear/",
+  "search-src": "https://trends.google.com/trends/explore?date=today%205-y&geo=US&q=Build-A-Bear",
+  "roblox-src": "https://www.roblox.com/games/11573230049/",
+  "ecom-src": "https://ir.buildabear.com/",
+  "resale-src": "https://www.ebay.com/sch/i.html?_nkw=build-a-bear&_sop=16&LH_Complete=1&LH_Sold=1",
+};
+function linkifySources() {
+  for (const [id, href] of Object.entries(SRC_LINKS)) {
+    const el = $(id);
+    if (el && !el.querySelector("a")) {
+      el.innerHTML = `<a href="${href}" target="_blank" rel="noopener">${el.textContent} ↗</a>`;
+    }
+  }
+}
 function scorecard(val, lab, cls = "") {
   return `<div class="scorecard"><div class="s-val ${cls}">${val}</div><div class="s-lab">${lab}</div></div>`;
 }
@@ -68,7 +88,8 @@ function renderHeader(m, kpis) {
     return `<div class="kpi">
       <div class="k-label">${c.label}</div>
       <div class="k-value">${c.value}<span class="arrow ${cls}">${g}</span></div>
-      <div class="k-sub">${c.sub}</div><div class="k-src">${c.source}</div></div>`;
+      <div class="k-sub">${c.sub}</div><div class="k-src">${c.url
+        ? `<a href="${c.url}" target="_blank" rel="noopener">${c.source} ↗</a>` : c.source}</div></div>`;
   }).join("");
 }
 
@@ -89,7 +110,13 @@ function renderTrends(gt) {
     ds.push({ label: `${q2} (monthly)`, data: gt.series.map(r => r[q2]),
       borderColor: "rgba(79,140,255,.7)", backgroundColor: "transparent", borderWidth: 1.5, pointRadius: 0, tension: .35, order: 2 });
   }
-  new Chart($("trendsChart"), { type: "line", data: { labels, datasets: ds }, options: chartBase() });
+  new Chart($("trendsChart"), { type: "line", data: { labels, datasets: ds }, options: chartBase({
+    scales: {
+      x: { grid: { color: C.grid }, ticks: { color: C.text, maxTicksLimit: 9, font: { size: 11 } } },
+      y: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 11 } }, beginAtZero: true, max: 100,
+        title: axT("Relative search interest (0–100)") },
+    },
+  }) });
 }
 
 /* ---------- 02 community ---------- */
@@ -101,14 +128,20 @@ function renderReddit(rd, topics) {
     type: "line",
     data: { labels, datasets: [{ label: "subscribers", data: values, borderColor: C.accent,
       backgroundColor: "rgba(245,166,35,.12)", borderWidth: 2, pointRadius: 2, fill: true, tension: .3 }] },
-    options: chartBase({ plugins: { legend: { display: false } } }),
+    options: chartBase({ plugins: { legend: { display: false } },
+      scales: { x: { grid: { color: C.grid }, ticks: { color: C.text, maxTicksLimit: 9, font: { size: 11 } } },
+        y: { grid: { color: C.grid }, beginAtZero: true,
+          ticks: { color: C.text, font: { size: 11 }, callback: v => (v / 1e3) + "K" }, title: axT("Subscribers") } } }),
   });
-  const first = values[0], last = values[values.length - 1];
-  const yrs = yearsBetween(rd.series[0].date, rd.series.at(-1).date);
+  // Anchor the headline stats on the two VERIFIED points only, not the illustrative early curve.
+  const reals = rd.series.filter(p => p.real);
+  const a0 = reals[0], a1 = reals.at(-1);
+  const yrs = yearsBetween(a0.date, a1.date);
   $("reddit-scorecards").innerHTML =
-    scorecard(fmt(last), "current members (latest point)", "amber") +
-    scorecard(`+${cagr(first, last, yrs).toFixed(1)}%`, `CAGR over ~${yrs.toFixed(0)} yrs`, "pos") +
-    scorecard(`${(last / first).toFixed(1)}×`, `since ${rd.series[0].date.slice(0, 4)}`);
+    scorecard(fmt(a1.value), "members (verified, Jun-2026)", "amber") +
+    scorecard(`+${((a1.value / a0.value - 1) * 100).toFixed(0)}%`,
+      `vs. verified Dec-2023 (${fmt(a0.value)})`, "pos") +
+    scorecard(`+${cagr(a0.value, a1.value, yrs).toFixed(0)}%`, "CAGR between verified anchors", "pos");
   $("reddit-tax").innerHTML = topics.topics.map(t => {
     const [g, cls] = TREND[t.trend] || TREND.flat;
     return `<div class="tax-row"><div class="emoji">${t.emoji}</div><div>
@@ -137,7 +170,7 @@ function renderSocial(s) {
       plugins: { legend: { display: false },
         tooltip: { callbacks: { label: (c) => " " + fmt(c.raw) + " followers" } } },
       scales: {
-        x: { grid: { color: C.grid }, beginAtZero: true,
+        x: { grid: { color: C.grid }, beginAtZero: true, title: axT("Followers"),
           ticks: { color: C.text, font: { size: 11 }, callback: v => v >= 1e6 ? (v / 1e6) + "M" : (v / 1e3) + "K" } },
         y: { grid: { display: false }, ticks: { color: C.text, font: { size: 12 } } },
       },
@@ -150,7 +183,8 @@ function renderSocial(s) {
     scorecard("13M+", "views on a single viral BBW TikTok", "pos") +
     scorecard("18+", "'Bear Cave' adults-only product line");
   $("social-grid").innerHTML = s.cards.map(c =>
-    `<div class="q-card"><h4>${c.h}</h4><p>${c.p}</p><div class="src">${c.s}</div></div>`).join("");
+    `<div class="q-card"><h4>${c.h}</h4><p>${c.p}</p><div class="src">${c.u
+      ? `<a href="${c.u}" target="_blank" rel="noopener">${c.s} ↗</a>` : c.s}</div></div>`).join("");
 }
 
 /* ---------- 04 digital (roblox) ---------- */
@@ -163,7 +197,7 @@ function renderRoblox(rb) {
       backgroundColor: "rgba(79,140,255,.12)", borderWidth: 2, pointRadius: 0, fill: true, tension: .3 }] },
     options: chartBase({ plugins: { legend: { display: false } },
       scales: { x: { grid: { color: C.grid }, ticks: { color: C.text, maxTicksLimit: 8, font: { size: 11 } } },
-        y: { grid: { color: C.grid }, beginAtZero: true,
+        y: { grid: { color: C.grid }, beginAtZero: true, title: axT("Cumulative visits"),
           ticks: { color: C.text, font: { size: 11 }, callback: v => (v / 1e6).toFixed(0) + "M" } } } }),
   });
   const cur = rb.current;
@@ -199,8 +233,8 @@ function renderResale(rs) {
         tooltip: { callbacks: { label: (c) => ` ${c.raw.item}: ${money(c.raw.y)} (${c.raw.date})` } },
       },
       scales: {
-        x: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 11 }, stepSize: 1, callback: v => Math.round(v) }, min: 2021, max: 2026 },
-        y: { type: "logarithmic", grid: { color: C.grid },
+        x: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 11 }, stepSize: 1, callback: v => Math.round(v) }, min: 2021, max: 2026, title: axT("Year sold") },
+        y: { type: "logarithmic", grid: { color: C.grid }, title: axT("Realized price (log scale)"),
           ticks: { color: C.text, font: { size: 11 }, callback: v => ([100, 250, 1000, 3000, 10000].includes(v) ? money(v) : null) } },
       },
     }),
@@ -237,9 +271,9 @@ function renderRetail(rt) {
   $("loc-note").textContent = loc.guidance;
 
   $("retail-scorecards").innerHTML =
-    scorecard(`$${rt.total_revenue}M`, `${rt.fiscal_year} total revenue — record`, "pos") +
-    scorecard(fmt(loc.total), "global experience locations", "amber") +
-    scorecard(`${loc.net_new_recent}`, "net new locations (2nd straight yr)", "pos") +
+    scorecard(`$${rt.total_revenue}M`, `${rt.fiscal_year} total revenue — record (+6.7%)`, "pos") +
+    (rt.pretax_income ? scorecard(`$${rt.pretax_income}M`, `${rt.fiscal_year} pre-tax income — record`, "pos") : "") +
+    scorecard(`${loc.net_new_recent}`, "net new locations (2nd straight yr)", "amber") +
     scorecard("+21.6%", "commercial + franchising rev YoY", "pos");
 }
 
@@ -255,7 +289,8 @@ function renderEcommerce(ec) {
     options: chartBase({
       plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.raw > 0 ? "+" : ""}${c.raw}% YoY` } } },
       scales: { x: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 12 } } },
-        y: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 11 }, callback: v => v + "%" } } },
+        y: { grid: { color: C.grid }, title: axT("E-commerce demand, YoY %"),
+          ticks: { color: C.text, font: { size: 11 }, callback: v => v + "%" } } },
     }),
   });
   const latest = ec.series.at(-1), best = ec.series.reduce((a, b) => b.change > a.change ? b : a);
@@ -306,6 +341,7 @@ function renderConvergence(m) {
     renderResale(rs);
     renderRetail(rt);
     renderConvergence(m);
+    linkifySources();
   } catch (e) {
     $("exec").innerHTML = `<b style="color:#ff6b6b">Failed to load data:</b> ${e.message}`;
     console.error(e);

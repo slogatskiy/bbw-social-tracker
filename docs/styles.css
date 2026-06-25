@@ -175,6 +175,9 @@ table.cmp tr:last-child td { border-bottom: none; }
 .method b { color: var(--text); }
 footer { margin-top: 54px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--faint); font-size: 12px; }
 footer .sources a { color: var(--muted); }
+/* source-attribution links: inherit the muted context, clearly clickable on hover */
+.k-src a, .q-card .src a, .chart-meta .badge a { color: inherit; border-bottom: 1px dotted currentColor; }
+.k-src a:hover, .q-card .src a:hover, .chart-meta .badge a:hover { color: var(--accent); text-decoration: none; }
 
 @media (max-width: 900px) {
   .kpi-strip { grid-template-columns: repeat(2, 1fr); }
