@@ -322,42 +322,9 @@ function renderConvergence(m) {
   }
 }
 
-/* ---------- 08b convergence: indexed chart + cross-signal table ---------- */
+/* ---------- 08b convergence: cross-signal growth table ---------- */
 function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
-  const BASE_YEAR = 2023.0; // common baseline: Jan 2023 = 100
-  const indexSeries = (pts) => {
-    const inWin = pts.filter(p => p.y != null).sort((a, b) => a.x - b.x).filter(p => p.x >= BASE_YEAR - 0.001);
-    if (!inWin.length) return [];
-    const base = inWin[0].y;
-    return inWin.map(p => ({ x: p.x, y: +(p.y / base * 100).toFixed(1) }));
-  };
   const sv = gt.series.map(r => r[gt.queries[0]]);
-  const s3 = movingAvg(sv, 3); // 3-mo avg keeps the spring-2026 spike visible (12-mo would flatten it)
-  const searchPts = gt.series.map((r, i) => ({ x: dateToYear(r.date), y: s3[i] }));
-  const redditPts = rd.series.map(r => ({ x: dateToYear(r.date), y: r.value }));
-  const robloxPts = rb.series.filter(r => r.visits > 0).map(r => ({ x: dateToYear(r.date), y: r.visits }));
-  const mk = (label, pts, color) => ({ label, data: indexSeries(pts), borderColor: color,
-    backgroundColor: "transparent", borderWidth: 2.5, pointRadius: 0, tension: .35 });
-  new Chart($("convChart"), {
-    type: "line",
-    data: { datasets: [
-      mk("Search (3-mo avg)", searchPts, C.accent),
-      mk("Reddit members", redditPts, "#ff5d9e"),
-      mk("Roblox visits", robloxPts, C.blue),
-    ] },
-    options: chartBase({
-      plugins: { legend: { labels: { color: C.text, usePointStyle: true, boxWidth: 8, font: { size: 11 } } },
-        tooltip: { callbacks: { label: c => ` ${c.dataset.label}: ${c.raw.y} (index)` } } },
-      scales: {
-        x: { type: "linear", min: 2023, max: 2026.5, grid: { color: C.grid },
-          ticks: { color: C.text, stepSize: 1, callback: v => Math.round(v), font: { size: 11 } }, title: axT("Year") },
-        y: { type: "logarithmic", min: 90, grid: { color: C.grid },
-          ticks: { color: C.text, font: { size: 11 }, callback: v => ([100, 200, 400, 800].includes(v) ? v : null) },
-          title: axT("Indexed, log scale (Jan 2023 = 100)") },
-      },
-    }),
-  });
-
   // ---- cross-signal growth table ----
   const pct = (a, b) => (b / a - 1) * 100;
   const cagrPct = (a, b, yrs) => (Math.pow(b / a, 1 / yrs) - 1) * 100;
