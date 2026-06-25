@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build-A-Bear Workshop (BBW) — Demand & Brand-Equity Tracker</title>
   <meta name="description" content="Independent demand signals on Build-A-Bear Workshop: social, community, search, digital, online and resale — the online-led adult fandom." />
-  <link rel="stylesheet" href="styles.css?v=0.8.4" />
+  <link rel="stylesheet" href="styles.css?v=0.8.5" />
 </head>
 <body>
   <div class="topnav">
@@ -106,16 +106,21 @@
     <!-- 05 Online demand / e-commerce -->
     <section id="ecommerce">
       <div class="sec-head"><span class="sec-num">05</span><h2>Online demand — e-commerce</h2><span class="badge real" id="ecom-badge">SEC filings</span></div>
-      <p class="sec-sub">Adults skew to buying online rather than visiting mall stores, so e-commerce is the clearest financial read on the adult channel. Demand is choppy quarter to quarter but is reported directly by the company.</p>
+      <p class="sec-sub">Two things are true at once, and both matter. <b>Who</b> shops online is decisively adult — the buildabear.com audience skews 25–34 and female. But the <b>volume</b> of online order demand has softened: after a record Q2 FY2025 it turned negative for three straight quarters and fell 26.1% in Q1 FY2026, with management citing weaker consumer traffic. So the online channel is structurally the adult channel — but its recent demand trend is a real risk to watch, not a tailwind.</p>
       <div class="grid-2">
         <div class="card">
-          <div class="chart-meta"><span class="chart-title">E-commerce demand growth by quarter (FY2025)</span><span class="badge" id="ecom-src">BBW results</span></div>
+          <div class="chart-meta"><span class="chart-title">E-commerce demand growth by quarter (YoY)</span><span class="badge" id="ecom-src">BBW results</span></div>
           <div class="chart-box"><canvas id="ecomChart"></canvas></div>
           <div class="chart-note" id="ecom-note"></div>
         </div>
         <div class="card scorecards" id="ecom-scorecards"></div>
       </div>
-      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>E-commerce demand is the adult-channel proxy: online buyers skew older and higher-spend, and the company explicitly leans on digital and social to reach them. Quarter-to-quarter volatility is expected around drop timing; the structural point is that the adult engine is online, not in-store.</p></div>
+      <div class="card" style="margin-top:16px">
+        <div class="chart-meta"><span class="chart-title">Who actually shops online — buildabear.com audience</span><span class="badge real" id="ecom-aud-src">SimilarWeb · May 2026</span></div>
+        <div class="statrow" id="ecom-audience"></div>
+        <div class="chart-note" id="ecom-aud-note"></div>
+      </div>
+      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>The online storefront's audience is adult and female-skewing, led by direct and organic (non-paid) traffic — i.e., loyal buyers coming straight to the brand. That confirms e-commerce is the adult channel. The honest counter-point: order demand has rolled over recently on softer traffic, so the bull case depends on this re-accelerating. We flag it as the key watch-item rather than smoothing it over.</p></div>
     </section>
 
     <!-- 06 Resale (compact) -->
@@ -195,6 +200,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js?v=0.8.4"></script>
+  <script src="app.js?v=0.8.5"></script>
 </body>
 </html>

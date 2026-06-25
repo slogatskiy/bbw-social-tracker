@@ -304,10 +304,21 @@ function renderEcommerce(ec) {
     }),
   });
   const latest = ec.series.at(-1), best = ec.series.reduce((a, b) => b.change > a.change ? b : a);
+  const declines = ec.series.filter(s => s.change < 0).length;
   $("ecom-scorecards").innerHTML =
-    scorecard(`${best.change > 0 ? "+" : ""}${best.change}%`, `best quarter (${best.q})`, "pos") +
-    scorecard(`${latest.change > 0 ? "+" : ""}${latest.change}%`, `latest (${latest.q})`, latest.change >= 0 ? "pos" : "") +
-    scorecard("online", "the adult purchase channel", "amber");
+    scorecard(`${latest.change}%`, `latest demand (${latest.q})`, "neg") +
+    scorecard(`${declines} of ${ec.series.length}`, "recent quarters with YoY decline", "") +
+    scorecard(`+${best.change}%`, `peak was ${best.q}`, "amber");
+  const a = ec.audience;
+  if (a) {
+    $("ecom-audience").innerHTML =
+      scorecard(a.monthly_visits, `monthly visits (${a.visits_trend})`, "amber") +
+      scorecard(a.top_age, "largest age cohort — adults", "pos") +
+      scorecard(`${a.female_pct}%`, "female audience", "pos") +
+      scorecard(a.traffic_lead, "lead traffic — non-paid", "amber");
+    const an = $("ecom-aud-note"); if (an) an.textContent = a.note || "";
+    const src = $("ecom-aud-src"); if (src && a.source) src.textContent = a.source.replace("SimilarWeb estimate — ", "SimilarWeb · ");
+  }
 }
 
 /* ---------- 07 convergence ---------- */
@@ -318,7 +329,7 @@ function renderConvergence(m) {
     { sig: "Community", read: "Subscribers compounding; collector mix", dir: "↑ growing", cls: "trend-up" },
     { sig: "Search", read: "Trend rising through seasonality", dir: "↑ structural", cls: "trend-up" },
     { sig: "Digital", read: "24M+ Roblox visits, always-on", dir: "↑ growing", cls: "trend-up" },
-    { sig: "Online / e-comm", read: "Adult channel; +15.1% in Q2 FY25", dir: "↑ choppy", cls: "trend-up" },
+    { sig: "Online / e-comm", read: "Adult audience, but demand softened (−26.1% Q1 FY26)", dir: "↓ watch-item", cls: "trend-down" },
     { sig: "Resale", read: "Four/five-figure clears for retired plush", dir: "↑ scarcity value", cls: "trend-up" },
     { sig: "Retail mix", read: "Asset-light commercial + franchise", dir: "↑ +21.6% FY25", cls: "trend-up" },
     { sig: "Loyalty", read: "~20M Bonus Club, early-access drops", dir: "→ large base", cls: "trend-flat" },
@@ -352,7 +363,7 @@ function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
     { sig: "Reddit members", base: `${fmt(r0.value)} · ${r0.date}`, now: `${fmt(r1.value)} · ${r1.date}`, chg: `+${pct(r0.value, r1.value).toFixed(0)}% · ${cagrPct(r0.value, r1.value, ryrs).toFixed(0)}%/yr`, win: `${ryrs.toFixed(1)}y`, conf: "✓", pos: true },
     { sig: "Roblox visits", base: `${(rb0.visits / 1e6).toFixed(1)}M · ${rb0.date}`, now: `${(rb.current.visits / 1e6).toFixed(1)}M · live`, chg: `+${pct(rb0.visits, rb.current.visits).toFixed(0)}% · ${cagrPct(rb0.visits, rb.current.visits, rbyrs).toFixed(0)}%/yr`, win: `${rbyrs.toFixed(1)}y`, conf: "~", pos: true },
     { sig: "TikTok followers", base: "—", now: `${(tt.followers / 1e3).toFixed(0)}K · ${tt.extra}`, chg: "—", win: "snapshot", conf: "—", pos: null },
-    { sig: "E-commerce demand", base: "—", now: `best +${best.change}% (${best.q})`, chg: `+${best.change}% / −10.8%`, win: "QoQ", conf: "✓", pos: true },
+    { sig: "E-commerce demand", base: `+${best.change}% peak (${best.q})`, now: `${ec.series.at(-1).change}% (${ec.series.at(-1).q})`, chg: "softening", win: "YoY", conf: "✓", pos: false },
     { sig: "Resale top clear", base: `~$${rs.retail_anchor} retail`, now: `${money(top.price)}`, chg: `~${Math.round(top.price / rs.retail_anchor)}×`, win: "sample", conf: "—", pos: true },
     { sig: "FY2025 revenue", base: `$${(rt.total_revenue / 1.067).toFixed(0)}M · FY24`, now: `$${rt.total_revenue}M`, chg: "+6.7% · record", win: "FY", conf: "✓", pos: true },
   ];

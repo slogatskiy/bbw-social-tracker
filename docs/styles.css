@@ -113,6 +113,8 @@ section { margin: 52px 0; scroll-margin-top: 64px; }
 .scorecard { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: var(--panel-2); }
 .scorecard .s-val { font-family: var(--mono); font-size: 27px; font-weight: 800; letter-spacing: -.02em; }
 .scorecard .s-val.pos { color: var(--good); } .scorecard .s-val.amber { color: var(--accent); }
+.scorecard .s-val.neg { color: var(--bad); }
+.statrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .scorecard .s-lab { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
 
 /* ---------- comparative table ---------- */
@@ -184,6 +186,7 @@ footer .sources a { color: var(--muted); }
   .conv-grid { grid-template-columns: repeat(2, 1fr); }
   .grid-2, .grid-2.even { grid-template-columns: 1fr; }
   .tax, .q-grid { grid-template-columns: 1fr; }
+  .statrow { grid-template-columns: repeat(2, 1fr); }
   .method { columns: 1; }
   .topnav nav { display: none; }
   h1 { font-size: 27px; }
