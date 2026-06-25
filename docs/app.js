@@ -142,6 +142,8 @@ function renderReddit(rd, topics) {
     scorecard(`+${((a1.value / a0.value - 1) * 100).toFixed(0)}%`,
       `vs. verified Dec-2023 (${fmt(a0.value)})`, "pos") +
     scorecard(`+${cagr(a0.value, a1.value, yrs).toFixed(0)}%`, "CAGR between verified anchors", "pos");
+  badge($("reddit-tax-badge"), topics.is_illustrative);
+  if (topics.note) { const n = $("reddit-tax-note"); if (n) n.textContent = topics.note; }
   $("reddit-tax").innerHTML = topics.topics.map(t => {
     const [g, cls] = TREND[t.trend] || TREND.flat;
     return `<div class="tax-row"><div class="emoji">${t.emoji}</div><div>
