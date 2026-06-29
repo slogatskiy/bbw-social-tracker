@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build-A-Bear Workshop (BBW) — Demand & Brand-Equity Tracker</title>
   <meta name="description" content="Independent demand signals on Build-A-Bear Workshop: social, community, search, digital, online and resale — the online-led adult fandom." />
-  <link rel="stylesheet" href="styles.css?v=0.8.11" />
+  <link rel="stylesheet" href="styles.css?v=0.8.12" />
 </head>
 <body>
   <div class="topnav">
@@ -94,13 +94,10 @@
     <section id="digital">
       <div class="sec-head"><span class="sec-num">04</span><h2>Digital engagement — Roblox</h2><span class="badge real" id="roblox-badge">live anchor</span></div>
       <p class="sec-sub"><b>What it is:</b> "Build-A-Bear Tycoon" is an official Roblox game built by Gamefam (a top Roblox studio) in partnership with BBW, launched Dec 2022. A "tycoon" is a build-and-manage game — here players run their own virtual Build-A-Bear workshop, which keeps the brand and its products in front of a teen/tween audience for hours at a time. <b>What 24M means:</b> cumulative visits — the total number of times players have entered the experience since launch — pulled live from the Roblox API. It's an independent, hard-to-game engagement signal (note: cumulative visits only ever rise; what matters is the pace of new visits).</p>
-      <div class="grid-2">
-        <div class="card">
-          <div class="chart-meta"><span class="chart-title">Cumulative visits — Build-A-Bear Tycoon</span><span class="badge" id="roblox-src">Roblox API</span></div>
-          <div class="chart-box"><canvas id="robloxChart"></canvas></div>
-          <div class="chart-note" id="roblox-note"></div>
-        </div>
-        <div class="card scorecards" id="roblox-scorecards"></div>
+      <div class="card">
+        <div class="chart-meta"><span class="chart-title">Live engagement — Build-A-Bear Tycoon</span><span class="badge real" id="roblox-src">Roblox API · live</span></div>
+        <div class="statrow" id="roblox-stats"></div>
+        <div class="chart-note" id="roblox-note"></div>
       </div>
       <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A 24M-visit owned game keeps the brand resident in the digital lives of the next cohort of buyers at near-zero marginal cost — the same compounding fan-recruitment dynamic that powers durable franchises.</p></div>
     </section>
@@ -235,6 +232,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js?v=0.8.11"></script>
+  <script src="app.js?v=0.8.12"></script>
 </body>
 </html>

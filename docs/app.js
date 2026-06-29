@@ -230,22 +230,15 @@ function renderYouTube(yt) {
 
 /* ---------- 04 digital (roblox) ---------- */
 function renderRoblox(rb) {
-  $("roblox-note").textContent = rb.note || "";
-  const labels = rb.series.map(r => r.date), values = rb.series.map(r => r.visits);
-  new Chart($("robloxChart"), {
-    type: "line",
-    data: { labels, datasets: [{ label: "cumulative visits", data: values, borderColor: C.blue,
-      backgroundColor: "rgba(79,140,255,.12)", borderWidth: 2, pointRadius: 0, fill: true, tension: .3 }] },
-    options: chartBase({ plugins: { legend: { display: false } },
-      scales: { x: { grid: { color: C.grid }, ticks: { color: C.text, maxTicksLimit: 8, font: { size: 11 } } },
-        y: { grid: { color: C.grid }, beginAtZero: true, title: axT("Cumulative visits"),
-          ticks: { color: C.text, font: { size: 11 }, callback: v => (v / 1e6).toFixed(0) + "M" } } } }),
-  });
-  const cur = rb.current;
-  $("roblox-scorecards").innerHTML =
-    scorecard(fmt(cur.visits), "cumulative visits (live)", "amber") +
-    scorecard(fmt(cur.favorites), "favorites") +
-    scorecard(fmt(cur.playing), "playing now");
+  // Cumulative visits has no honest month-by-month history available, so we show
+  // the live figures rather than draw a fabricated curve.
+  const c = rb.current;
+  $("roblox-stats").innerHTML =
+    scorecard(compact(c.visits), "cumulative visits (live)", "amber") +
+    scorecard(compact(c.favorites), "favorites", "pos") +
+    scorecard(fmt(c.playing), "playing right now", "") +
+    scorecard("Dec 2022", "launched · Gamefam", "");
+  const n = $("roblox-note"); if (n) n.textContent = rb.note || "";
 }
 
 /* ---------- 05 resale ---------- */
@@ -405,15 +398,13 @@ function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
   const prev12 = sv.slice(-24, -12).reduce((x, y) => x + y, 0) / 12;
   const reals = rd.series.filter(p => p.real), r0 = reals[0], r1 = reals.at(-1);
   const ryrs = yearsBetween(r0.date, r1.date);
-  const rb0 = rb.series.find(p => p.date === "2023-12") || rb.series.filter(p => p.visits > 0)[0];
-  const rbyrs = yearsBetween(rb0.date, rb.current.updated.slice(0, 7));
   const best = ec.series.reduce((a, b) => b.change > a.change ? b : a);
   const top = rs.sales.slice().sort((a, b) => b.price - a.price)[0];
   const tt = social.platforms.find(p => p.platform === "TikTok");
   const rows = [
     { sig: "Search interest", base: `${prev12.toFixed(0)} (12-mo)`, now: `${last12.toFixed(0)} (12-mo)`, chg: `+${pct(prev12, last12).toFixed(0)}%`, win: "YoY", conf: "✓", pos: true },
     { sig: "Reddit members", base: `${fmt(r0.value)} · ${r0.date}`, now: `${fmt(r1.value)} · ${r1.date}`, chg: `+${pct(r0.value, r1.value).toFixed(0)}% · ${cagrPct(r0.value, r1.value, ryrs).toFixed(0)}%/yr`, win: `${ryrs.toFixed(1)}y`, conf: "✓", pos: true },
-    { sig: "Roblox visits", base: `${(rb0.visits / 1e6).toFixed(1)}M · ${rb0.date}`, now: `${(rb.current.visits / 1e6).toFixed(1)}M · live`, chg: `+${pct(rb0.visits, rb.current.visits).toFixed(0)}% · ${cagrPct(rb0.visits, rb.current.visits, rbyrs).toFixed(0)}%/yr`, win: `${rbyrs.toFixed(1)}y`, conf: "~", pos: true },
+    { sig: "Roblox visits", base: "0 · Dec-2022 launch", now: `${(rb.current.visits / 1e6).toFixed(1)}M · live`, chg: "24M+ cumulative", win: "since launch", conf: "✓", pos: true },
     { sig: "TikTok followers", base: "—", now: `${(tt.followers / 1e3).toFixed(0)}K · ${tt.extra}`, chg: "—", win: "snapshot", conf: "—", pos: null },
     { sig: "E-commerce demand", base: `+${best.change}% peak (${best.q})`, now: `${ec.series.at(-1).change}% (${ec.series.at(-1).q})`, chg: "softening", win: "YoY", conf: "✓", pos: false },
     { sig: "Resale top clear", base: `~$${rs.retail_anchor} retail`, now: `${money(top.price)}`, chg: `~${Math.round(top.price / rs.retail_anchor)}×`, win: "sample", conf: "—", pos: true },
