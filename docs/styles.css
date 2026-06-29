@@ -128,6 +128,16 @@ section { margin: 52px 0; scroll-margin-top: 64px; }
 .theme-chips .chip { font-size: 12px; color: var(--muted); background: var(--panel-2);
   border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px; cursor: default; }
 @media (max-width: 640px) { .hotrow { grid-template-columns: 52px 1fr; } .hot-tag { display: none; } }
+/* release timeline */
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 10px; width: 2px; background: var(--line); }
+.tl-item { position: relative; padding: 0 0 20px; }
+.tl-item:last-child { padding-bottom: 2px; }
+.tl-item::before { content: ""; position: absolute; left: -23px; top: 4px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); box-shadow: 0 0 0 3px rgba(245,166,35,.12); }
+.tl-date { font-family: var(--mono); font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: .02em; }
+.tl-title { font-weight: 700; font-size: 15px; margin: 3px 0 4px; }
+.tl-why { color: var(--muted); font-size: 13px; line-height: 1.5; max-width: 760px; }
+.tl-tag { font-size: 11px; color: var(--faint); font-family: var(--mono); margin-top: 5px; }
 .scorecard .s-lab { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
 
 /* ---------- comparative table ---------- */

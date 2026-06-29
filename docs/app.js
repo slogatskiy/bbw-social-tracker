@@ -214,6 +214,15 @@ function renderYouTube(yt) {
     scorecard("Dec 2025", "series debut", "") +
     scorecard("weekly", "release cadence", "");
   const n = $("yt-kabu-note"); if (n) n.textContent = k.note || "";
+  if ($("yt-kabu-eps") && k.top_episodes) {
+    $("yt-kabu-eps").innerHTML = k.top_episodes.map(e =>
+      `<a class="hotrow" href="${e.url}" target="_blank" rel="noopener">
+        <span class="hot-score">${compact(e.views)}</span>
+        <span class="hot-title">${e.title}</span>
+        <span class="hot-tag">episode ↗</span>
+      </a>`).join("");
+    const en = $("yt-kabu-eps-note"); if (en) en.textContent = k.episodes_note || "";
+  }
   const av = yt.anchor_videos || [];
   $("yt-anchors").innerHTML = av.map(v =>
     `<a class="hotrow" href="${v.url}" target="_blank" rel="noopener">
@@ -373,12 +382,15 @@ function renderHype(h) {
         d.url ? ` · <a href="${d.url}" target="_blank" rel="noopener">source ↗</a>` : ""}</div>
     </div>`;
   }).join("");
-  const sn = $("hype-screen-note"); if (sn && h.screen_tieins_note) sn.textContent = h.screen_tieins_note;
-  if ($("hype-screen") && h.screen_tieins) {
-    $("hype-screen").innerHTML = h.screen_tieins.map(d =>
-      `<div class="q-card"><h4>${d.name}</h4><p>${d.what}</p>
-        <div class="src">${d.kind}${d.url ? ` · <a href="${d.url}" target="_blank" rel="noopener">source ↗</a>` : ""}</div>
-      </div>`).join("");
+  const sn = $("hype-screen-note"); if (sn && h.timeline_note) sn.textContent = h.timeline_note;
+  if ($("hype-timeline") && h.timeline) {
+    $("hype-timeline").innerHTML = `<div class="timeline">` + h.timeline.map(t =>
+      `<div class="tl-item">
+        <div class="tl-date">${t.date}</div>
+        <div class="tl-title">${t.title}</div>
+        <div class="tl-why">${t.why}</div>
+        <div class="tl-tag">${t.tag}${t.url ? ` · <a href="${t.url}" target="_blank" rel="noopener">source ↗</a>` : ""}</div>
+      </div>`).join("") + `</div>`;
   }
 }
 

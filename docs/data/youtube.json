@@ -19,7 +19,15 @@
     "views_as_of": "2026-02-11",
     "note": "Build-A-Bear's first original animated YouTube series (Build-A-Bear Entertainment + Foundation Media + Laughing Dragon Studios), kawaii art style, with a tie-in plush line. It passed 500K views within ~7 weeks of its Dec-26-2025 debut — a real surge in owned-content engagement. (500K+ is the last company-disclosed figure; there is no public live per-series counter.)",
     "url": "https://www.buildabear.com/content/kabu",
-    "source_url": "https://buildabear.gcs-web.com/news-releases/news-release-details/build-bears-kabu-soars-past-half-million-views-toy-fair-2026"
+    "source_url": "https://buildabear.gcs-web.com/news-releases/news-release-details/build-bears-kabu-soars-past-half-million-views-toy-fair-2026",
+    "episodes_note": "Per-video view counts read live from YouTube (Jun 2026). The company's 500K+ milestone counts all KABU content incl. shorts/clips; the episodes themselves run ~20–40K views each, with the most-watched near 41K.",
+    "top_episodes": [
+      { "title": "Visiting the KABU Animation Studios (+ a TORNADO!)", "views": 41377, "url": "https://youtu.be/kO2ViLc0Vg0" },
+      { "title": "Happy Birthday Bearnice & Bearnard — Episode 1", "views": 31614, "url": "https://youtu.be/TbLNRF7MQ9Y" },
+      { "title": "Our NEW cartoon is launching soon! (teaser)", "views": 28962, "url": "https://youtu.be/EJKB9BhjKJY" },
+      { "title": "Meet the KABU Crew", "views": 25841, "url": "https://youtu.be/H7kEjgC9ZPs" },
+      { "title": "Giant Baby Zombies — the Kabuville Portal", "views": 22619, "url": "https://youtu.be/LTEesDDXaYc" }
+    ]
   },
   "anchor_videos_source": "YouTube search 'build a bear' by view count (live), May 2026",
   "anchor_videos": [
