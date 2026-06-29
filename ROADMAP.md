@@ -1,7 +1,7 @@
 # BBW Tracker — Status & Resume Handoff
 
 **Live:** https://slogatskiy.github.io/bbw-social-tracker/ · **Repo:** https://github.com/slogatskiy/bbw-social-tracker
-**Current version:** v0.8.14 (2026-06-29). Roll back: `git checkout vX.Y.Z`. Assets cache-busted via `?v=0.8.14` in `index.html` — **bump this on every JS/CSS change.**
+**Current version:** v0.8.16 (2026-06-29). Roll back: `git checkout vX.Y.Z`. Assets cache-busted via `?v=0.8.16` in `index.html` — **bump this on every JS/CSS change.**
 **Deploy:** push → GitHub Pages rebuilds (~1–2 min lag). Nudge: `gh api -X POST repos/slogatskiy/bbw-social-tracker/pages/builds`. Always poll the live `?v=` before saying "it's live."
 
 ## Thesis
@@ -20,7 +20,7 @@ Build-A-Bear is a diversified brand-equity business with a large, loyal **adult*
 - **Social** — TikTok @buildabear 834.7K/14.1M likes, IG 813K, FB 2.8M (dated snapshots).
 - **Reddit subs** — 15 REAL Wayback points, ~6.6K (2022) → 72,067 (Jan-2026). +163% since Dec-2023.
 - **Reddit "What's hot"** — 10 REAL live top posts (last 30d) + qualitative theme chips.
-- **YouTube** — official channel 132K subs / 193.2M views (live); anchor videos (25M/17M/11.8M…) with real upload dates; KABU subsection w/ real per-episode views (~41K top); KABU 500K+ (company PR, counts all formats).
+- **YouTube** — official channel 132K subs / 193.2M views (live); anchor videos (25M/17M/11.8M…) with real upload dates; KABU subsection w/ real per-episode views (~41K top); KABU 500K+ (company PR, counts all formats) + a short sourced series description (v0.8.15 added a cast/CEO-quote card; v0.8.16 removed it per user — kept only the one-paragraph description).
 - **E-commerce** — quarterly demand: Q1FY25 +0.5, Q2 +15.1, Q3 −10.8, Q4 ≈−5.5, **Q1FY26 −26.1** (rolled over; honest two-sided). SimilarWeb audience: ~870K visits/mo, 68% female, top cohort 25–34.
 - **Roblox** — live: 24.3M cumulative visits, 115K favorites; Gamefam-built, launched Dec-2022.
 - **Resale** — 7 documented eBay sold comps (top $11,600 My Melody).

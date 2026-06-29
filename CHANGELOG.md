@@ -3,6 +3,13 @@
 Named save points for the whole project. Roll the entire repo back to any of
 these with `git checkout <tag>` (see README → "Saving & rollback").
 
+## v0.8.16 — 2026-06-29
+- **KABU** — added a short, sourced one-paragraph series description (Kabuville,
+  kawaii style, screen-to-shelf plush tie-in) in the YouTube section. Removed the
+  character-cast list and CEO "branded IP company" quote card (v0.8.15) per
+  request — kept just the compact description. No fabricated content.
+- Prepared the Oleg/PM update note summarizing this session's changes.
+
 ## v0.7.0 — 2026-06-24
 - **Search is now REAL** — ingested the live Google Trends export (U.S., 5y).
   Headline finding: U.S. "Build-A-Bear" search hit a 5-year high in spring 2026,

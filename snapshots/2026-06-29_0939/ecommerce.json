@@ -1,0 +1,23 @@
+{
+  "last_updated": "2026-06-25",
+  "is_illustrative": false,
+  "source": "BBW quarterly results (e-commerce demand) + SimilarWeb (audience)",
+  "note": "E-commerce demand = online orders fulfilled from the company's warehouses or its stores (YoY). After a record Q2 FY25, demand turned negative for three straight quarters and fell sharply in Q1 FY26 (−26.1%); management cited softer consumer traffic. Q4 FY25 ≈ −5.5%.",
+  "series": [
+    { "q": "Q1 FY25", "change": 0.5 },
+    { "q": "Q2 FY25", "change": 15.1 },
+    { "q": "Q3 FY25", "change": -10.8 },
+    { "q": "Q4 FY25", "change": -5.5 },
+    { "q": "Q1 FY26", "change": -26.1 }
+  ],
+  "audience": {
+    "source": "SimilarWeb estimate — buildabear.com, May 2026",
+    "monthly_visits": "~870K",
+    "visits_trend": "+4% MoM",
+    "female_pct": 68,
+    "male_pct": 32,
+    "top_age": "25–34",
+    "traffic_lead": "Organic + direct",
+    "note": "SimilarWeb estimate for buildabear.com. The online storefront skews adult and female and is led by non-paid traffic — evidence that e-commerce is the adult channel, even as order volume has softened."
+  }
+}

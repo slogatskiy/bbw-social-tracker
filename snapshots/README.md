@@ -8,6 +8,7 @@ cp snapshots/<stamp>/<file>.json docs/data/<file>.json
 
 | Snapshot | Date | Note |
 |---|---|---|
+| `2026-06-29_0939` | 2026-06-29 | v0.8.16 — KABU short description, cast/quote removed |
 | `2026-06-25_0542` | 2026-06-25 | v0.8.5 — honest e-commerce + online audience; objectivity pass session |
 | `2026-06-24_1259` | 2026-06-24 | v0.7 — real Google Trends (Search now live, +90% YoY, 5-yr high spring 2026) |
 | `2026-06-24_1245` | 2026-06-24 | v0.6 — real Reddit anchor 37k + TL;DR + caveats |

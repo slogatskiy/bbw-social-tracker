@@ -1,0 +1,19 @@
+{
+  "stamp": "2026-06-29_0939",
+  "date": "2026-06-29",
+  "note": "v0.8.16 \u2014 KABU short description, cast/quote removed",
+  "files": [
+    "ecommerce.json",
+    "google_trends.json",
+    "hype.json",
+    "kpis.json",
+    "manifest.json",
+    "reddit_subscribers.json",
+    "reddit_topics.json",
+    "resale.json",
+    "retail.json",
+    "roblox.json",
+    "social.json",
+    "youtube.json"
+  ]
+}
