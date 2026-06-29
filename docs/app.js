@@ -342,6 +342,20 @@ function renderEcommerce(ec) {
   }
 }
 
+/* ---------- 09 what's dropping — pipeline & hype ---------- */
+function renderHype(h) {
+  const BUZZ = { high: "trend-up", strategic: "trend-up", medium: "trend-flat" };
+  $("hype-grid").innerHTML = h.drops.map(d => {
+    const cls = BUZZ[d.buzz] || "";
+    return `<div class="q-card">
+      <h4>${d.name}</h4>
+      <p>${d.what}</p>
+      <div class="src">${d.when} · ${d.tag} · buzz: <span class="${cls}">${d.buzz}</span>${
+        d.url ? ` · <a href="${d.url}" target="_blank" rel="noopener">source ↗</a>` : ""}</div>
+    </div>`;
+  }).join("");
+}
+
 /* ---------- 07 convergence ---------- */
 function renderConvergence(m) {
   $("conv-lead").textContent = m.convergence;
@@ -397,12 +411,12 @@ function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
 /* ---------- boot ---------- */
 (async function () {
   try {
-    const [m, kpis, gt, rd, topics, social, rb, rs, rt, ec, yt] = await Promise.all([
+    const [m, kpis, gt, rd, topics, social, rb, rs, rt, ec, yt, hype] = await Promise.all([
       loadJSON("data/manifest.json"), loadJSON("data/kpis.json"),
       loadJSON("data/google_trends.json"), loadJSON("data/reddit_subscribers.json"),
       loadJSON("data/reddit_topics.json"), loadJSON("data/social.json"),
       loadJSON("data/roblox.json"), loadJSON("data/resale.json"), loadJSON("data/retail.json"),
-      loadJSON("data/ecommerce.json"), loadJSON("data/youtube.json"),
+      loadJSON("data/ecommerce.json"), loadJSON("data/youtube.json"), loadJSON("data/hype.json"),
     ]);
     renderHeader(m, kpis);
     renderTrends(gt);
@@ -413,6 +427,7 @@ function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
     renderEcommerce(ec);
     renderResale(rs);
     renderRetail(rt);
+    renderHype(hype);
     renderConvergence(m);
     renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt);
     linkifySources();

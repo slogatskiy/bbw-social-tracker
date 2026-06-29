@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build-A-Bear Workshop (BBW) — Demand & Brand-Equity Tracker</title>
   <meta name="description" content="Independent demand signals on Build-A-Bear Workshop: social, community, search, digital, online and resale — the online-led adult fandom." />
-  <link rel="stylesheet" href="styles.css?v=0.8.7" />
+  <link rel="stylesheet" href="styles.css?v=0.8.8" />
 </head>
 <body>
   <div class="topnav">
@@ -21,6 +21,7 @@
         <a href="#ecommerce">Online</a>
         <a href="#resale">Resale</a>
         <a href="#retail">Retail</a>
+        <a href="#hype">Pipeline</a>
         <a href="#convergence">Convergence</a>
         <a href="#method">Method</a>
       </nav>
@@ -174,9 +175,17 @@
       <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>With the U.S. mall base mature, growth is shifting to capital-light channels — commercial and international franchising grew 21.6% in FY2025 (Q4 +37.5%) on a record $529.8M of revenue. This re-rates the business from a melting mall retailer toward a brand-licensing model with structurally higher returns on capital.</p></div>
     </section>
 
-    <!-- 08 Convergence -->
+    <!-- 09 What's dropping — 2026 pipeline & hype -->
+    <section id="hype">
+      <div class="sec-head"><span class="sec-num">09</span><h2>What's dropping — 2026 pipeline &amp; hype</h2><span class="badge real" id="hype-badge">press + trade</span></div>
+      <p class="sec-sub">What the brand is shipping in 2026 and what the collector crowd is reacting to. Demand here is catalyst-driven — licensed drops (Pokémon, Bluey), new product formats and a first-ever Walmart wholesale deal are what pull adults back to the brand. The "buzz" tag is a qualitative read of collector attention, not a measured ranking.</p>
+      <div class="q-grid" id="hype-grid"></div>
+      <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A deep, rotating pipeline of licensed and own-IP drops is the engine of a collector brand: each release is a fresh reason for adults to buy again, and the new Walmart wholesale channel widens distribution well beyond BBW's own ~500 stores and site. This is the supply side of the adult-demand thesis — and the thing to watch for whether online order demand re-accelerates.</p></div>
+    </section>
+
+    <!-- 10 Convergence -->
     <section id="convergence">
-      <div class="sec-head"><span class="sec-num">09</span><h2>Signal convergence</h2></div>
+      <div class="sec-head"><span class="sec-num">10</span><h2>Signal convergence</h2></div>
       <div class="converge">
         <p class="lead" id="conv-lead">Loading…</p>
         <div class="card" style="margin-bottom:18px">
@@ -191,7 +200,7 @@
 
     <!-- 09 Method -->
     <section id="method">
-      <div class="sec-head"><span class="sec-num">10</span><h2>Methodology &amp; data sources</h2></div>
+      <div class="sec-head"><span class="sec-num">11</span><h2>Methodology &amp; data sources</h2></div>
       <div class="method">
         <p><b>Social.</b> Owned-audience follower counts from the official TikTok, Instagram and Facebook profiles (dated snapshots, manually updated). Public TikTok hashtag view counts are no longer exposed; #buildabear scale is tracked via TikTok Creative Center (roadmap).</p>
         <p><b>Community.</b> Subscriber history reconstructed from Wayback Machine snapshots of old.reddit.com (run <code>scripts/backfill_reddit_wayback.py</code> from an open network); the Dec-2023 point (27,351) is verified. Conversation taxonomy is illustrative pending a classification pass.</p>
@@ -217,6 +226,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js?v=0.8.7"></script>
+  <script src="app.js?v=0.8.8"></script>
 </body>
 </html>
