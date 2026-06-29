@@ -215,17 +215,6 @@ function renderYouTube(yt) {
     scorecard("weekly", "release cadence", "");
   const n = $("yt-kabu-note"); if (n) n.textContent = k.note || "";
   const prem = $("yt-kabu-premise"); if (prem) prem.textContent = k.premise || "";
-  const ch = $("yt-kabu-chars");
-  if (ch && k.characters) ch.innerHTML = k.characters.map(p =>
-    `<div class="charrow"><span class="char-name">${p.name}</span><span class="char-desc">${p.desc}</span></div>`).join("");
-  const strat = $("yt-kabu-strategy");
-  if (strat && k.strategy) {
-    const s = k.strategy;
-    strat.innerHTML =
-      `<blockquote>“${s.quote}”<cite>— ${s.by}</cite></blockquote>` +
-      `<p class="chart-note" style="margin-top:10px">${s.note}${s.source_url
-        ? ` <a href="${s.source_url}" target="_blank" rel="noopener">source ↗</a>` : ""}</p>`;
-  }
   if ($("yt-kabu-eps") && k.top_episodes) {
     $("yt-kabu-eps").innerHTML = k.top_episodes.map(e =>
       `<a class="hotrow" href="${e.url}" target="_blank" rel="noopener">
@@ -247,8 +236,6 @@ function renderYouTube(yt) {
   const an = $("yt-anchors-note"); if (an) an.textContent = yt.creators_note || "";
   const src = $("yt-kabu-src");
   if (src && k.source_url) src.innerHTML = `<a href="${k.source_url}" target="_blank" rel="noopener">BBW press release ↗</a>`;
-  const wsrc = $("yt-kabu-world-src");
-  if (wsrc && k.url) wsrc.innerHTML = `<a href="${k.url}" target="_blank" rel="noopener">buildabear.com/kabu ↗</a>`;
   const b = $("yt-badge");
   if (b && c.url) b.innerHTML = `<a href="${c.url}" target="_blank" rel="noopener">live + PR ↗</a>`;
 }
