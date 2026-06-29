@@ -133,15 +133,16 @@ function renderReddit(rd, topics) {
         y: { grid: { color: C.grid }, beginAtZero: true,
           ticks: { color: C.text, font: { size: 11 }, callback: v => (v / 1e3) + "K" }, title: axT("Subscribers") } } }),
   });
-  // Anchor the headline stats on the two VERIFIED points only, not the illustrative early curve.
+  // Every point is a real Wayback archive value now — stats run over the full archived history.
   const reals = rd.series.filter(p => p.real);
   const a0 = reals[0], a1 = reals.at(-1);
   const yrs = yearsBetween(a0.date, a1.date);
+  const dec23 = rd.series.find(p => p.date === "2023-12") || a0;
   $("reddit-scorecards").innerHTML =
-    scorecard(fmt(a1.value), "members (verified, Jun-2026)", "amber") +
-    scorecard(`+${((a1.value / a0.value - 1) * 100).toFixed(0)}%`,
-      `vs. verified Dec-2023 (${fmt(a0.value)})`, "pos") +
-    scorecard(`+${cagr(a0.value, a1.value, yrs).toFixed(0)}%`, "CAGR between verified anchors", "pos");
+    scorecard(fmt(a1.value), `members · ${a1.date} · archived`, "amber") +
+    scorecard(`+${((a1.value / dec23.value - 1) * 100).toFixed(0)}%`,
+      `since Dec-2023 (${fmt(dec23.value)})`, "pos") +
+    scorecard(`+${cagr(a0.value, a1.value, yrs).toFixed(0)}%/yr`, `CAGR since ${a0.date.slice(0, 4)} (archived)`, "pos");
   // Qualitative mode (no real post classification yet): show themes WITHOUT
   // invented percentages or trend arrows. The collector flips this to real shares.
   const qualitative = topics.qualitative || topics.is_illustrative;

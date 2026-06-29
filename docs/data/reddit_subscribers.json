@@ -2,61 +2,25 @@
   "signal": "reddit_subscribers",
   "subreddit": "buildabear",
   "unit": "subscribers",
-  "source": "Wayback Machine snapshots of old.reddit.com/r/buildabear + Reddit API (live)",
-  "is_illustrative": true,
-  "anchor": "Dec-2023 value (27,351) is REAL (subredditstats.com). Other points are illustrative until backfill_reddit_wayback.py runs.",
-  "note": "Two verified anchors \u2014 Dec-2023: 27,351 (subredditstats) and Jun-2026: ~37,000 (current sidebar count). Intermediate points are an estimated trajectory between them; run scripts/backfill_reddit_wayback.py for exact archived history.",
-  "last_updated": "2026-06-24",
+  "source": "Wayback Machine archived snapshots of reddit.com/r/buildabear",
+  "is_illustrative": false,
+  "note": "Real subscriber history reconstructed from Wayback Machine archives of r/buildabear (old.reddit.com + www.reddit.com). Every point is an archived snapshot value — no interpolation. ~6.6K (Mar-2022) → ~72K (Jan-2026).",
+  "last_updated": "2026-06-29",
   "series": [
-    {
-      "date": "2019-02",
-      "value": 6000,
-      "real": false
-    },
-    {
-      "date": "2020-02",
-      "value": 9200,
-      "real": false
-    },
-    {
-      "date": "2021-02",
-      "value": 13000,
-      "real": false
-    },
-    {
-      "date": "2022-02",
-      "value": 18000,
-      "real": false
-    },
-    {
-      "date": "2023-02",
-      "value": 23200,
-      "real": false
-    },
-    {
-      "date": "2023-12",
-      "value": 27351,
-      "real": true
-    },
-    {
-      "date": "2024-08",
-      "value": 30500,
-      "real": false
-    },
-    {
-      "date": "2025-04",
-      "value": 33200,
-      "real": false
-    },
-    {
-      "date": "2025-12",
-      "value": 35500,
-      "real": false
-    },
-    {
-      "date": "2026-06",
-      "value": 37000,
-      "real": true
-    }
+    { "date": "2022-03", "value": 6569, "real": true },
+    { "date": "2023-12", "value": 27351, "real": true },
+    { "date": "2024-01", "value": 28339, "real": true },
+    { "date": "2024-09", "value": 43728, "real": true },
+    { "date": "2024-10", "value": 44222, "real": true },
+    { "date": "2024-12", "value": 48847, "real": true },
+    { "date": "2025-01", "value": 50746, "real": true },
+    { "date": "2025-03", "value": 55789, "real": true },
+    { "date": "2025-04", "value": 57934, "real": true },
+    { "date": "2025-05", "value": 60165, "real": true },
+    { "date": "2025-06", "value": 61473, "real": true },
+    { "date": "2025-07", "value": 63314, "real": true },
+    { "date": "2025-10", "value": 66000, "real": true },
+    { "date": "2025-11", "value": 68615, "real": true },
+    { "date": "2026-01", "value": 72067, "real": true }
   ]
 }
