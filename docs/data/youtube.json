@@ -32,5 +32,13 @@
     { "title": "Build A Bear for Britain and Baylaa's birthday!!", "channel": "Nisha Noelle", "views": 2774469, "url": "https://youtu.be/cRHq2mqQMsM" },
     { "title": "Using my 'Dress to Impress' skills at Build A Bear", "channel": "Lana's Life", "views": 2225600, "url": "https://youtu.be/Dr4d5uPxhOY" }
   ],
-  "creators_note": "Build-A-Bear has no single dominant fan channel (unlike Warhammer's painting scene); instead the brand surfaces as huge one-off videos across many creators — stuffing-station ASMR (25M), parody/comedy (17M), challenges and 'took my mom' vlogs — plus a long tail of adult-collector hauls and unboxings."
+  "creators_note": "Build-A-Bear has no single dominant fan channel (unlike Warhammer's painting scene); instead the brand surfaces as huge one-off videos across many creators — stuffing-station ASMR (25M), parody/comedy (17M), challenges and 'took my mom' vlogs — plus a long tail of adult-collector hauls and unboxings. (YouTube comment text is not reliably scrapeable without the paid Data API, so we characterise discourse by video format rather than fabricate comment percentages.)",
+  "video_formats": [
+    { "emoji": "🧸", "name": "Hauls & collections" },
+    { "emoji": "📦", "name": "Unboxing & reviews" },
+    { "emoji": "🎯", "name": "Challenges (one-colour, budget)" },
+    { "emoji": "👩‍👧", "name": "'First time' / family vlogs" },
+    { "emoji": "😴", "name": "ASMR stuffing" },
+    { "emoji": "😂", "name": "Parody & comedy" }
+  ]
 }

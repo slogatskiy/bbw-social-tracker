@@ -52,5 +52,38 @@
       "buzz": "niche",
       "url": "https://usfigureskating.org/news/2025/12/22/press-releases-build-a-bear-takes-center-ice-as-the-official-stuffed-animal-of-the-2026-prevagen-us-figure-skating-championships.aspx"
     }
+  ],
+  "screen_tieins_note": "Screen tie-ins are a repeatable demand catalyst — a hit film or series reliably drives a sold-out BBW drop (the Grogu / 'Baby Yoda' plush after The Mandalorian is the classic case). Build-A-Bear now also makes its OWN screen IP (the KABU series, the Glisten film) to own the flywheel end-to-end.",
+  "screen_tieins": [
+    {
+      "name": "The Mandalorian — Grogu",
+      "what": "Grogu / 'Baby Yoda' is one of BBW's biggest-ever licensed hits. A theatrical film, 'The Mandalorian and Grogu,' is slated for 2026 — a likely fresh catalyst given the existing Grogu line.",
+      "kind": "Licensed · film/TV",
+      "url": "https://www.buildabear.com/star-wars-grogu-plush/028747.html"
+    },
+    {
+      "name": "IF (Paramount, 2024)",
+      "what": "Official collaboration on John Krasinski's film 'IF' — an 'IF Blue' plush plus in-store experiences.",
+      "kind": "Licensed · film",
+      "url": "https://buildabear.gcs-web.com/news-releases/news-release-details/build-bear-and-paramount-pictures-forge-creative-collaboration"
+    },
+    {
+      "name": "How to Train Your Dragon",
+      "what": "Toothless & Light Fury plush; rode the 2025 live-action remake.",
+      "kind": "Licensed · film",
+      "url": "https://www.buildabear.com/stuffed-animals/shop-by-character/how-to-train-your-dragon"
+    },
+    {
+      "name": "KABU (own animated series)",
+      "what": "BBW's own YouTube series → its own plush line. Owns the IP end-to-end instead of licensing it.",
+      "kind": "Owned IP",
+      "url": "https://www.buildabear.com/content/kabu"
+    },
+    {
+      "name": "Glisten and the Merry Mission (own film)",
+      "what": "Build-A-Bear Entertainment feature film (with Foundation Media) — own screen IP with a holiday plush line.",
+      "kind": "Owned IP",
+      "url": "https://buildabear.gcs-web.com/news-releases/news-release-details/build-bear-entertainment-and-foundation-media-partners-begin"
+    }
   ]
 }

@@ -219,6 +219,8 @@ function renderYouTube(yt) {
       <span class="hot-title">${v.title}</span>
       <span class="hot-tag">${v.channel}</span>
     </a>`).join("");
+  const fc = $("yt-formats");
+  if (fc && yt.video_formats) fc.innerHTML = yt.video_formats.map(f => `<span class="chip">${f.emoji} ${f.name}</span>`).join("");
   const an = $("yt-anchors-note"); if (an) an.textContent = yt.creators_note || "";
   const src = $("yt-kabu-src");
   if (src && k.source_url) src.innerHTML = `<a href="${k.source_url}" target="_blank" rel="noopener">BBW press release ↗</a>`;
@@ -362,6 +364,13 @@ function renderHype(h) {
         d.url ? ` · <a href="${d.url}" target="_blank" rel="noopener">source ↗</a>` : ""}</div>
     </div>`;
   }).join("");
+  const sn = $("hype-screen-note"); if (sn && h.screen_tieins_note) sn.textContent = h.screen_tieins_note;
+  if ($("hype-screen") && h.screen_tieins) {
+    $("hype-screen").innerHTML = h.screen_tieins.map(d =>
+      `<div class="q-card"><h4>${d.name}</h4><p>${d.what}</p>
+        <div class="src">${d.kind}${d.url ? ` · <a href="${d.url}" target="_blank" rel="noopener">source ↗</a>` : ""}</div>
+      </div>`).join("");
+  }
 }
 
 /* ---------- 07 convergence ---------- */
