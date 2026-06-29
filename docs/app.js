@@ -12,6 +12,7 @@ const TREND = { up: ["↑", "trend-up"], flat: ["→", "trend-flat"], down: ["�
 const $ = (id) => document.getElementById(id);
 const fmt = (n) => Number(n).toLocaleString("en-US");
 const money = (n) => "$" + fmt(n);
+const compact = (n) => n >= 1e9 ? (n / 1e9).toFixed(1) + "B" : n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : "" + n;
 
 async function loadJSON(p) {
   const r = await fetch(p, { cache: "no-store" });
@@ -198,6 +199,25 @@ function renderSocial(s) {
       ? `<a href="${c.u}" target="_blank" rel="noopener">${c.s} ↗</a>` : c.s}</div></div>`).join("");
 }
 
+/* ---------- 05 youtube & owned content ---------- */
+function renderYouTube(yt) {
+  const c = yt.channel, k = yt.kabu;
+  $("yt-scorecards").innerHTML =
+    scorecard(compact(c.subscribers), "channel subscribers (@buildabear)", "amber") +
+    scorecard(compact(c.total_views), "lifetime channel views", "pos") +
+    scorecard(`since ${c.since}`, "owned brand channel", "");
+  $("yt-kabu").innerHTML =
+    scorecard(k.views_milestone, `views by ${k.views_as_of}`, "pos") +
+    scorecard(k.episodes, "episodes (season 1)", "amber") +
+    scorecard("Dec 2025", "series debut", "") +
+    scorecard("weekly", "release cadence", "");
+  const n = $("yt-kabu-note"); if (n) n.textContent = k.note || "";
+  const src = $("yt-kabu-src");
+  if (src && k.source_url) src.innerHTML = `<a href="${k.source_url}" target="_blank" rel="noopener">BBW press release ↗</a>`;
+  const b = $("yt-badge");
+  if (b && c.url) b.innerHTML = `<a href="${c.url}" target="_blank" rel="noopener">live + PR ↗</a>`;
+}
+
 /* ---------- 04 digital (roblox) ---------- */
 function renderRoblox(rb) {
   $("roblox-note").textContent = rb.note || "";
@@ -377,18 +397,19 @@ function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
 /* ---------- boot ---------- */
 (async function () {
   try {
-    const [m, kpis, gt, rd, topics, social, rb, rs, rt, ec] = await Promise.all([
+    const [m, kpis, gt, rd, topics, social, rb, rs, rt, ec, yt] = await Promise.all([
       loadJSON("data/manifest.json"), loadJSON("data/kpis.json"),
       loadJSON("data/google_trends.json"), loadJSON("data/reddit_subscribers.json"),
       loadJSON("data/reddit_topics.json"), loadJSON("data/social.json"),
       loadJSON("data/roblox.json"), loadJSON("data/resale.json"), loadJSON("data/retail.json"),
-      loadJSON("data/ecommerce.json"),
+      loadJSON("data/ecommerce.json"), loadJSON("data/youtube.json"),
     ]);
     renderHeader(m, kpis);
     renderTrends(gt);
     renderReddit(rd, topics);
     renderSocial(social);
     renderRoblox(rb);
+    renderYouTube(yt);
     renderEcommerce(ec);
     renderResale(rs);
     renderRetail(rt);
