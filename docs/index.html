@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build-A-Bear Workshop (BBW) — Demand & Brand-Equity Tracker</title>
   <meta name="description" content="Independent demand signals on Build-A-Bear Workshop: social, community, search, digital, online and resale — the online-led adult fandom." />
-  <link rel="stylesheet" href="styles.css?v=0.8.8" />
+  <link rel="stylesheet" href="styles.css?v=0.8.9" />
 </head>
 <body>
   <div class="topnav">
@@ -71,7 +71,7 @@
         <div class="card scorecards" id="reddit-scorecards"></div>
       </div>
       <div class="card" style="margin-top:16px">
-        <div class="chart-meta"><span class="chart-title">What the community discusses — recurring themes</span><span class="badge illustrative" id="reddit-tax-badge">qualitative</span></div>
+        <div class="chart-meta"><span class="chart-title">What's hot on r/buildabear — top posts, last 30 days</span><span class="badge real" id="reddit-tax-badge">real · live</span></div>
         <div class="tax" id="reddit-tax"></div>
         <div class="chart-note" id="reddit-tax-note"></div>
       </div>
@@ -108,7 +108,7 @@
     <!-- 05 YouTube & original content -->
     <section id="youtube">
       <div class="sec-head"><span class="sec-num">05</span><h2>Owned media &amp; content — YouTube</h2><span class="badge real" id="yt-badge">live + PR</span></div>
-      <p class="sec-sub">Build-A-Bear is building its own media flywheel. Its brand YouTube channel has run since 2007 and now sits at 132K subscribers and 193M+ lifetime views; on top of that, it launched <b>KABU</b> — its first original animated series — on YouTube in Dec 2025, and it crossed 500K views within weeks. Owned content keeps the brand resident in fans' feeds at near-zero marginal cost, and a separate adult-collector creator scene amplifies it.</p>
+      <p class="sec-sub">Build-A-Bear is building its own media flywheel. Its brand YouTube channel has run since 2007 and now sits at 132K subscribers and 193M+ lifetime views; on top of that, it launched <b>KABU</b> — its first original animated series — on YouTube in Dec 2025, and it crossed 500K views within weeks. Owned content keeps the brand resident in fans' feeds at near-zero marginal cost — and beyond its own channel, Build-A-Bear pulls tens of millions of views across independent creators (a 25M-view stuffing-station video, a 17M-view parody), showing cultural reach far past its own follower count.</p>
       <div class="grid-2">
         <div class="card">
           <div class="chart-meta"><span class="chart-title">KABU — first original animated series (new)</span><span class="badge real" id="yt-kabu-src">BBW press release</span></div>
@@ -116,6 +116,11 @@
           <div class="chart-note" id="yt-kabu-note"></div>
         </div>
         <div class="card scorecards" id="yt-scorecards"></div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div class="chart-meta"><span class="chart-title">Biggest Build-A-Bear videos on YouTube — by views, across all creators</span><span class="badge real" id="yt-anchor-src">YouTube search</span></div>
+        <div class="hotlist" id="yt-anchors"></div>
+        <div class="chart-note" id="yt-anchors-note"></div>
       </div>
       <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A 132K-subscriber owned channel plus a brand-new animated series that hit 500K views in ~7 weeks shows Build-A-Bear converting IP into a self-owned content engine — the same flywheel (own the characters → own the audience → sell the plush) that powers durable franchises, at near-zero marginal cost and aimed squarely at the fan base rather than paid acquisition.</p></div>
     </section>
@@ -203,7 +208,7 @@
       <div class="sec-head"><span class="sec-num">11</span><h2>Methodology &amp; data sources</h2></div>
       <div class="method">
         <p><b>Social.</b> Owned-audience follower counts from the official TikTok, Instagram and Facebook profiles (dated snapshots, manually updated). Public TikTok hashtag view counts are no longer exposed; #buildabear scale is tracked via TikTok Creative Center (roadmap).</p>
-        <p><b>Community.</b> Subscriber history reconstructed from Wayback Machine snapshots of old.reddit.com (run <code>scripts/backfill_reddit_wayback.py</code> from an open network); the Dec-2023 point (27,351) is verified. Conversation taxonomy is illustrative pending a classification pass.</p>
+        <p><b>Community.</b> Subscriber history is real, reconstructed from Wayback Machine archive snapshots of r/buildabear (<code>scripts/backfill_reddit_wayback.py</code>) — every point is an archived value. "What's hot" lists the real current top posts (last 30 days) scraped live from old.reddit.com via <code>scripts/fetch_reddit_topics.py</code> (no API key needed). Theme labels are a qualitative read of that feed.</p>
         <p><b>Search.</b> Google Trends, U.S., monthly, normalized 0–100; manual CSV export ingested via <code>scripts/ingest_google_trends.py</code>. A 12-month moving average isolates trend from seasonality.</p>
         <p><b>Digital.</b> Cumulative visits for "Build-A-Bear Tycoon" (universe 4107870885) pulled live from the Roblox public games API via <code>scripts/fetch_roblox.py</code>. The game was built by Roblox studio Gamefam in official partnership with BBW (launched Dec 2022).</p>
         <p><b>Owned media / YouTube.</b> Official <a href="https://www.youtube.com/@buildabear" target="_blank" rel="noopener">@buildabear</a> channel subscriber and lifetime-view counts read live from YouTube; KABU series milestone (500K+ views) from BBW press releases.</p>
@@ -226,6 +231,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js?v=0.8.8"></script>
+  <script src="app.js?v=0.8.9"></script>
 </body>
 </html>

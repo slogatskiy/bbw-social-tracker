@@ -115,6 +115,19 @@ section { margin: 52px 0; scroll-margin-top: 64px; }
 .scorecard .s-val.pos { color: var(--good); } .scorecard .s-val.amber { color: var(--accent); }
 .scorecard .s-val.neg { color: var(--bad); }
 .statrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+/* reddit 'what's hot' live post list */
+.hotlist { display: flex; flex-direction: column; gap: 2px; }
+.hotrow { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 12px;
+  padding: 9px 10px; border-radius: 9px; color: var(--text); border: 1px solid transparent; }
+.hotrow:hover { background: var(--panel-2); border-color: var(--line); text-decoration: none; }
+.hot-score { font-family: var(--mono); font-size: 13px; color: var(--accent); font-weight: 700; text-align: right; }
+.hot-score .up { font-size: 9px; margin-left: 1px; }
+.hot-title { font-size: 13.5px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hot-tag { font-size: 11px; color: var(--muted); font-family: var(--mono); white-space: nowrap; }
+.theme-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.theme-chips .chip { font-size: 12px; color: var(--muted); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px; cursor: default; }
+@media (max-width: 640px) { .hotrow { grid-template-columns: 52px 1fr; } .hot-tag { display: none; } }
 .scorecard .s-lab { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
 
 /* ---------- comparative table ---------- */

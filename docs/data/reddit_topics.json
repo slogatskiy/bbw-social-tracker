@@ -1,43 +1,25 @@
 {
-  "last_updated": "2026-06-25",
-  "is_illustrative": true,
-  "qualitative": true,
-  "note": "Recurring discussion themes observed in r/buildabear — qualitative, NOT a measured percentage breakdown. Run scripts/fetch_reddit_topics.py (with Reddit OAuth) to replace this with real, post-classified shares.",
-  "topics": [
-    {
-      "emoji": "🧸",
-      "name": "Hauls & Collections",
-      "insight": "Adults showing shelves of retired & limited bears."
-    },
-    {
-      "emoji": "🎨",
-      "name": "Customization & DIY",
-      "insight": "Restuffing, outfits, mods — hobby depth."
-    },
-    {
-      "emoji": "⭐",
-      "name": "Licensed drops & restocks",
-      "insight": "Pokémon, Sanrio, Star Wars hype and trades."
-    },
-    {
-      "emoji": "💰",
-      "name": "Resale, selling & trading",
-      "insight": "Buying, selling & swapping retired plush — and what a fair price is."
-    },
-    {
-      "emoji": "❓",
-      "name": "Help / identification",
-      "insight": "Dating & valuing older bears."
-    },
-    {
-      "emoji": "🛍️",
-      "name": "Stores & events",
-      "insight": "In-store drops, lines, exclusives."
-    },
-    {
-      "emoji": "💬",
-      "name": "General & off-topic",
-      "insight": "Community chatter."
-    }
+  "last_updated": "2026-06-29",
+  "is_illustrative": false,
+  "source": "old.reddit.com/r/buildabear — top posts of the last 30 days (live scrape, no API key)",
+  "note": "Real current top posts of r/buildabear (last ~30 days, by upvotes). The feed is dominated by adults showing off and customizing their bears; licensed characters (Sanrio/Pochacco, KABU) and new releases recur, alongside strikingly personal/emotional posts.",
+  "hot": [
+    { "title": "New bear available — 9th June 2026 (Anglerfish)", "score": 996, "url": "https://reddit.com/r/buildabear/comments/1u0o5s2/new_bear_available_9th_june_2026_anglerfish/", "tag": "🆕 new release" },
+    { "title": "My girlfriend is getting top surgery so Mothman did too!", "score": 947, "url": "https://reddit.com/r/buildabear/comments/1uam5hs/my_girlfriend_is_getting_top_surgery_so_mothman/", "tag": "💞 personal" },
+    { "title": "🎀 my two new vanilla fudge bunnies!", "score": 946, "url": "https://reddit.com/r/buildabear/comments/1twtx98/my_two_new_vanilla_fudge_bunnies/", "tag": "🧸 haul / show-off" },
+    { "title": "I customized a Pochacco to look like my Chihuahua Mix", "score": 789, "url": "https://reddit.com/r/buildabear/comments/1u37m6j/i_customized_a_pochacco_to_look_like_my_chihuahua/", "tag": "⭐ licensed" },
+    { "title": "Who is this cutie?!?", "score": 730, "url": "https://reddit.com/r/buildabear/comments/1tsaoj7/who_is_this_cutie/", "tag": "❓ help / ID" },
+    { "title": "Pochacco differences", "score": 711, "url": "https://reddit.com/r/buildabear/comments/1tsj6t4/pochacco_differences/", "tag": "⭐ licensed" },
+    { "title": "My very first bab turns 20 today 🥹❤️", "score": 689, "url": "https://reddit.com/r/buildabear/comments/1u7hpd6/my_very_first_bab_turns_20_today/", "tag": "💞 personal" },
+    { "title": "This is KABU Catrina without her glasses!", "score": 671, "url": "https://reddit.com/r/buildabear/comments/1u9q29v/this_is_kabu_catrina_without_her_glasses/", "tag": "⭐ licensed" },
+    { "title": "Kitty loves build-a-bear ❤️ 🐱", "score": 632, "url": "https://reddit.com/r/buildabear/comments/1u2dvqv/kitty_loves_buildabear/", "tag": "🧸 haul / show-off" },
+    { "title": "Found one", "score": 595, "url": "https://reddit.com/r/buildabear/comments/1udqpjp/found_one/", "tag": "🧸 haul / show-off" }
+  ],
+  "themes": [
+    { "emoji": "🧸", "name": "Hauls & show-off", "note": "Adults photographing their bears & collections — the dominant activity." },
+    { "emoji": "🎨", "name": "Customization & art", "note": "Restuffs, custom outfits, fan art, dye jobs." },
+    { "emoji": "⭐", "name": "Licensed characters", "note": "Sanrio/Pochacco, Pokémon and KABU recur in the top posts." },
+    { "emoji": "🆕", "name": "New releases", "note": "Drops (e.g. the Anglerfish bear) hit the front page on day one." },
+    { "emoji": "💞", "name": "Personal & emotional", "note": "Bears tied to milestones, identity, comfort & memory." }
   ]
 }

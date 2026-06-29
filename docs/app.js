@@ -144,22 +144,22 @@ function renderReddit(rd, topics) {
     scorecard(`+${((a1.value / dec23.value - 1) * 100).toFixed(0)}%`,
       `since Dec-2023 (${fmt(dec23.value)})`, "pos") +
     scorecard(`+${cagr(a0.value, a1.value, yrs).toFixed(0)}%/yr`, `CAGR since ${a0.date.slice(0, 4)} (archived)`, "pos");
-  // Qualitative mode (no real post classification yet): show themes WITHOUT
-  // invented percentages or trend arrows. The collector flips this to real shares.
-  const qualitative = topics.qualitative || topics.is_illustrative;
+  // Real, live top posts of the last 30 days (scraped no-API) + a qualitative theme read.
   const tb = $("reddit-tax-badge");
-  if (tb) { tb.textContent = qualitative ? "qualitative" : "real"; tb.className = "badge " + (qualitative ? "illustrative" : "real"); }
+  if (tb) { tb.textContent = "real · live"; tb.className = "badge real"; }
   if (topics.note) { const n = $("reddit-tax-note"); if (n) n.textContent = topics.note; }
-  $("reddit-tax").innerHTML = topics.topics.map(t => {
-    let nums = "";
-    if (!qualitative && t.share != null) {
-      const [g, cls] = TREND[t.trend] || TREND.flat;
-      nums = ` <span class="t-share">${t.share}%</span> <span class="${cls}">${g}</span>`;
-    }
-    return `<div class="tax-row"><div class="emoji">${t.emoji}</div><div>
-      <div class="t-name">${t.name}${nums}</div>
-      <div class="t-ins">${t.insight}</div></div></div>`;
-  }).join("");
+  const hot = topics.hot || [];
+  const list = `<div class="hotlist">` + hot.map(p =>
+    `<a class="hotrow" href="${p.url}" target="_blank" rel="noopener">
+      <span class="hot-score">${fmt(p.score)}<span class="up">▲</span></span>
+      <span class="hot-title">${p.title}</span>
+      <span class="hot-tag">${p.tag}</span>
+    </a>`).join("") + `</div>`;
+  const chips = (topics.themes || []).length
+    ? `<div class="theme-chips">` + topics.themes.map(t =>
+        `<span class="chip" title="${t.note || ""}">${t.emoji} ${t.name}</span>`).join("") + `</div>`
+    : "";
+  $("reddit-tax").innerHTML = list + chips;
 }
 
 /* ---------- 03 social ---------- */
@@ -212,6 +212,14 @@ function renderYouTube(yt) {
     scorecard("Dec 2025", "series debut", "") +
     scorecard("weekly", "release cadence", "");
   const n = $("yt-kabu-note"); if (n) n.textContent = k.note || "";
+  const av = yt.anchor_videos || [];
+  $("yt-anchors").innerHTML = av.map(v =>
+    `<a class="hotrow" href="${v.url}" target="_blank" rel="noopener">
+      <span class="hot-score">${compact(v.views)}</span>
+      <span class="hot-title">${v.title}</span>
+      <span class="hot-tag">${v.channel}</span>
+    </a>`).join("");
+  const an = $("yt-anchors-note"); if (an) an.textContent = yt.creators_note || "";
   const src = $("yt-kabu-src");
   if (src && k.source_url) src.innerHTML = `<a href="${k.source_url}" target="_blank" rel="noopener">BBW press release ↗</a>`;
   const b = $("yt-badge");

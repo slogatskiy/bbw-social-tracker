@@ -21,5 +21,16 @@
     "url": "https://www.buildabear.com/content/kabu",
     "source_url": "https://buildabear.gcs-web.com/news-releases/news-release-details/build-bears-kabu-soars-past-half-million-views-toy-fair-2026"
   },
-  "creators_note": "An active independent collector-creator scene posts hauls, unboxings and reviews (e.g. 70+ bear collection showcases) — adult-collector content, not kids' marketing."
+  "anchor_videos_source": "YouTube search 'build a bear' by view count (live), May 2026",
+  "anchor_videos": [
+    { "title": "2016 Build-a-Bear Stuffing Station 🧸", "channel": "ASMR Playroom", "views": 25123260, "url": "https://youtu.be/AGDGErZaVNw" },
+    { "title": "✨BUILD-A-BEAR✨ (parody / comedy)", "channel": "Akana", "views": 17111266, "url": "https://youtu.be/xdbm-dYOvoQ" },
+    { "title": "Build a Bear CHALLENGE?!🙉", "channel": "Anna and Erin", "views": 11821144, "url": "https://youtu.be/KuGoVl4beHI" },
+    { "title": "i took my mom to build a bear for the first time", "channel": "Mattie Westbrouck", "views": 3328736, "url": "https://youtu.be/jmLC7BEVsL0" },
+    { "title": "Turning my house into a Build a Bear FACTORY?!", "channel": "Anna Altamirano", "views": 3296865, "url": "https://youtu.be/za1lIKcxRpY" },
+    { "title": "POV you have build-a-bear at home!! (unboxing & review)", "channel": "Melissa Metrano", "views": 3101843, "url": "https://youtu.be/PbgDSfsDCgs" },
+    { "title": "Build A Bear for Britain and Baylaa's birthday!!", "channel": "Nisha Noelle", "views": 2774469, "url": "https://youtu.be/cRHq2mqQMsM" },
+    { "title": "Using my 'Dress to Impress' skills at Build A Bear", "channel": "Lana's Life", "views": 2225600, "url": "https://youtu.be/Dr4d5uPxhOY" }
+  ],
+  "creators_note": "Build-A-Bear has no single dominant fan channel (unlike Warhammer's painting scene); instead the brand surfaces as huge one-off videos across many creators — stuffing-station ASMR (25M), parody/comedy (17M), challenges and 'took my mom' vlogs — plus a long tail of adult-collector hauls and unboxings."
 }
