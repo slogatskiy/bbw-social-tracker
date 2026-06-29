@@ -23,16 +23,16 @@
   },
   "anchor_videos_source": "YouTube search 'build a bear' by view count (live), May 2026",
   "anchor_videos": [
-    { "title": "2016 Build-a-Bear Stuffing Station 🧸", "channel": "ASMR Playroom", "views": 25123260, "url": "https://youtu.be/AGDGErZaVNw" },
-    { "title": "✨BUILD-A-BEAR✨ (parody / comedy)", "channel": "Akana", "views": 17111266, "url": "https://youtu.be/xdbm-dYOvoQ" },
-    { "title": "Build a Bear CHALLENGE?!🙉", "channel": "Anna and Erin", "views": 11821144, "url": "https://youtu.be/KuGoVl4beHI" },
-    { "title": "i took my mom to build a bear for the first time", "channel": "Mattie Westbrouck", "views": 3328736, "url": "https://youtu.be/jmLC7BEVsL0" },
-    { "title": "Turning my house into a Build a Bear FACTORY?!", "channel": "Anna Altamirano", "views": 3296865, "url": "https://youtu.be/za1lIKcxRpY" },
-    { "title": "POV you have build-a-bear at home!! (unboxing & review)", "channel": "Melissa Metrano", "views": 3101843, "url": "https://youtu.be/PbgDSfsDCgs" },
-    { "title": "Build A Bear for Britain and Baylaa's birthday!!", "channel": "Nisha Noelle", "views": 2774469, "url": "https://youtu.be/cRHq2mqQMsM" },
-    { "title": "Using my 'Dress to Impress' skills at Build A Bear", "channel": "Lana's Life", "views": 2225600, "url": "https://youtu.be/Dr4d5uPxhOY" }
+    { "title": "2016 Build-a-Bear Stuffing Station 🧸", "channel": "ASMR Playroom", "views": 25123260, "date": "2023-03", "url": "https://youtu.be/AGDGErZaVNw" },
+    { "title": "✨BUILD-A-BEAR✨ (parody / comedy)", "channel": "Akana", "views": 17111266, "date": "2023-09", "url": "https://youtu.be/xdbm-dYOvoQ" },
+    { "title": "Build a Bear CHALLENGE?!🙉", "channel": "Anna and Erin", "views": 11821144, "date": "2025-01", "url": "https://youtu.be/KuGoVl4beHI" },
+    { "title": "i took my mom to build a bear for the first time", "channel": "Mattie Westbrouck", "views": 3328736, "date": "2023-06", "url": "https://youtu.be/jmLC7BEVsL0" },
+    { "title": "Turning my house into a Build a Bear FACTORY?!", "channel": "Anna Altamirano", "views": 3296865, "date": "2025-10", "url": "https://youtu.be/za1lIKcxRpY" },
+    { "title": "POV you have build-a-bear at home!! (unboxing & review)", "channel": "Melissa Metrano", "views": 3101843, "date": "2025-08", "url": "https://youtu.be/PbgDSfsDCgs" },
+    { "title": "Build A Bear for Britain and Baylaa's birthday!!", "channel": "Nisha Noelle", "views": 2774469, "date": "2024-07", "url": "https://youtu.be/cRHq2mqQMsM" },
+    { "title": "Using my 'Dress to Impress' skills at Build A Bear", "channel": "Lana's Life", "views": 2225600, "date": "2025-03", "url": "https://youtu.be/Dr4d5uPxhOY" }
   ],
-  "creators_note": "Build-A-Bear has no single dominant fan channel (unlike Warhammer's painting scene); instead the brand surfaces as huge one-off videos across many creators — stuffing-station ASMR (25M), parody/comedy (17M), challenges and 'took my mom' vlogs — plus a long tail of adult-collector hauls and unboxings. (YouTube comment text is not reliably scrapeable without the paid Data API, so we characterise discourse by video format rather than fabricate comment percentages.)",
+  "creators_note": "Build-A-Bear has no single dominant fan channel (unlike Warhammer's painting scene); instead the brand surfaces as huge one-off videos across many creators — stuffing-station ASMR (25M), parody/comedy (17M), challenges and 'took my mom' vlogs — plus a long tail of adult-collector hauls and unboxings. The dates show the brand keeps generating fresh viral moments — breakout videos span 2023 through 2025 (the 11.8M-view challenge is from Jan 2025), not just old hits. (YouTube comment text is not reliably scrapeable without the paid Data API, so we characterise discourse by video format rather than fabricate comment percentages.)",
   "video_formats": [
     { "emoji": "🧸", "name": "Hauls & collections" },
     { "emoji": "📦", "name": "Unboxing & reviews" },

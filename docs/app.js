@@ -13,6 +13,8 @@ const $ = (id) => document.getElementById(id);
 const fmt = (n) => Number(n).toLocaleString("en-US");
 const money = (n) => "$" + fmt(n);
 const compact = (n) => n >= 1e9 ? (n / 1e9).toFixed(1) + "B" : n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : "" + n;
+const MON = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const monthLbl = (d) => { if (!d) return ""; const [y, m] = d.split("-"); return `${MON[+m]} ${y}`; };
 
 async function loadJSON(p) {
   const r = await fetch(p, { cache: "no-store" });
@@ -217,7 +219,7 @@ function renderYouTube(yt) {
     `<a class="hotrow" href="${v.url}" target="_blank" rel="noopener">
       <span class="hot-score">${compact(v.views)}</span>
       <span class="hot-title">${v.title}</span>
-      <span class="hot-tag">${v.channel}</span>
+      <span class="hot-tag">${v.channel}${v.date ? ` · ${monthLbl(v.date)}` : ""}</span>
     </a>`).join("");
   const fc = $("yt-formats");
   if (fc && yt.video_formats) fc.innerHTML = yt.video_formats.map(f => `<span class="chip">${f.emoji} ${f.name}</span>`).join("");
@@ -230,13 +232,27 @@ function renderYouTube(yt) {
 
 /* ---------- 04 digital (roblox) ---------- */
 function renderRoblox(rb) {
-  // Cumulative visits has no honest month-by-month history available, so we show
-  // the live figures rather than draw a fabricated curve.
+  // Curve shown for scale; only the two REAL endpoints (launch, live now) are
+  // measured — those get amber dots, the modeled path between has no markers.
+  const labels = rb.series.map(r => r.date), values = rb.series.map(r => r.visits);
+  const radii = rb.series.map(r => r.real ? 5 : 0);
+  new Chart($("robloxChart"), {
+    type: "line",
+    data: { labels, datasets: [{ label: "cumulative visits", data: values, borderColor: C.blue,
+      backgroundColor: "rgba(79,140,255,.12)", borderWidth: 2, pointRadius: radii, pointHoverRadius: 6,
+      pointBackgroundColor: C.accent, pointBorderColor: C.accent, fill: true, tension: .3 }] },
+    options: chartBase({
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: c => ` ${compact(c.raw)} visits${rb.series[c.dataIndex].real ? " · measured" : " · modeled"}` } } },
+      scales: { x: { grid: { color: C.grid }, ticks: { color: C.text, maxTicksLimit: 8, font: { size: 11 } } },
+        y: { grid: { color: C.grid }, beginAtZero: true, title: axT("Cumulative visits"),
+          ticks: { color: C.text, font: { size: 11 }, callback: v => (v / 1e6).toFixed(0) + "M" } } } }),
+  });
   const c = rb.current;
-  $("roblox-stats").innerHTML =
+  $("roblox-scorecards").innerHTML =
     scorecard(compact(c.visits), "cumulative visits (live)", "amber") +
     scorecard(compact(c.favorites), "favorites", "pos") +
-    scorecard(fmt(c.playing), "playing right now", "") +
+    scorecard(fmt(c.playing), "playing now", "") +
     scorecard("Dec 2022", "launched · Gamefam", "");
   const n = $("roblox-note"); if (n) n.textContent = rb.note || "";
 }
