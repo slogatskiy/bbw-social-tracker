@@ -8,6 +8,7 @@ cp snapshots/<stamp>/<file>.json docs/data/<file>.json
 
 | Snapshot | Date | Note |
 |---|---|---|
+| `2026-06-30_0243` | 2026-06-30 | v0.8.17a — TikTok/FB/IG second real points logged |
 | `2026-06-30_0219` | 2026-06-30 | v0.8.17 — forward owned-audience tracker + YouTube charts |
 | `2026-06-29_0939` | 2026-06-29 | v0.8.16 — KABU short description, cast/quote removed |
 | `2026-06-25_0542` | 2026-06-25 | v0.8.5 — honest e-commerce + online audience; objectivity pass session |

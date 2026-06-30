@@ -78,11 +78,11 @@ def main() -> int:
     if manual_path.exists():
         manual = json.loads(manual_path.read_text())
         for key, value in manual.items():
-            if value in (None, "", 0):
+            if key.startswith("_") or " " not in key or value in (None, "", 0):
                 continue
             platform, metric = key.split(" ", 1)
-            # follower-type metrics are rounded by us → log monthly
-            append_point(tracked, platform, metric, value, month)
+            # each pasted reading is its own dated point (day granularity)
+            append_point(tracked, platform, metric, value, day)
     else:
         print(f"(no {manual_path.name}; TikTok/IG/FB left as-is — paste current values there to log them)")
 
