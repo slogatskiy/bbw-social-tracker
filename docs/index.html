@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build-A-Bear Workshop (BBW) — Demand & Brand-Equity Tracker</title>
   <meta name="description" content="Independent demand signals on Build-A-Bear Workshop: social, community, search, digital, online and resale — the online-led adult fandom." />
-  <link rel="stylesheet" href="styles.css?v=0.8.16" />
+  <link rel="stylesheet" href="styles.css?v=0.8.17" />
 </head>
 <body>
   <div class="topnav">
@@ -45,7 +45,7 @@
     <!-- 01 Social & TikTok -->
     <section id="social">
       <div class="sec-head"><span class="sec-num">01</span><h2>Social &amp; TikTok</h2><span class="badge real" id="social-badge">owned audience</span></div>
-      <p class="sec-sub">The adult Build-A-Bear fandom lives online, and it is largely a TikTok phenomenon — "stuffing parties," limited-drop hype, and collector hauls. The brand's owned footprint is large and TikTok-led, and it markets an explicit adults-only line.</p>
+      <p class="sec-sub">The adult Build-A-Bear fandom lives online, and it is largely a TikTok phenomenon — "stuffing parties," limited-drop hype, and collector hauls. The brand's owned footprint is large and TikTok-led, and it markets an explicit adults-only line. We now also <b>track these owned-audience counts forward</b>: each refresh logs a real, dated reading (YouTube total views already shows two consecutive measured points). We deliberately do <em>not</em> reconstruct a back-history — unlike Reddit, TikTok/Facebook/YouTube don't expose an archivable historical counter, so the series start now and grow rather than being fabricated.</p>
       <div class="grid-2">
         <div class="card">
           <div class="chart-meta"><span class="chart-title">Owned audience by platform</span><span class="badge" id="social-src">Official profiles</span></div>
@@ -53,6 +53,18 @@
           <div class="chart-note" id="social-note"></div>
         </div>
         <div class="card scorecards" id="social-scorecards"></div>
+      </div>
+      <div class="grid-2" style="margin-top:16px">
+        <div class="card">
+          <div class="chart-meta"><span class="chart-title">YouTube total channel views — measured over time</span><span class="badge real">live · forward</span></div>
+          <div class="chart-box"><canvas id="ytViewsTimeChart"></canvas></div>
+          <div class="chart-note" id="yt-views-time-note"></div>
+        </div>
+        <div class="card">
+          <div class="chart-meta"><span class="chart-title">Owned-audience collection log (started Jun 2026)</span><span class="badge real">real readings</span></div>
+          <div id="social-track-log"></div>
+          <div class="chart-note" id="social-track-note"></div>
+        </div>
       </div>
       <div class="q-grid" id="social-grid" style="margin-top:16px"></div>
       <div class="why"><div class="wt">What this shows &amp; why it matters</div><p>A TikTok-led owned audience plus an 18+ product line shows the brand actively cultivating adults online — lowering customer-acquisition cost and converting passive 90%+ awareness into active, higher-spend demand that does not depend on mall foot traffic.</p></div>
@@ -125,7 +137,8 @@
       </div>
       <div class="card" style="margin-top:16px">
         <div class="chart-meta"><span class="chart-title">Biggest Build-A-Bear videos on YouTube — by views, across all creators</span><span class="badge real" id="yt-anchor-src">YouTube search</span></div>
-        <div class="hotlist" id="yt-anchors"></div>
+        <div class="chart-box"><canvas id="ytVideoChart"></canvas></div>
+        <div class="hotlist" id="yt-anchors" style="margin-top:16px"></div>
         <div class="theme-chips" id="yt-formats"></div>
         <div class="chart-note" id="yt-anchors-note"></div>
       </div>
@@ -217,7 +230,7 @@
     <section id="method">
       <div class="sec-head"><span class="sec-num">11</span><h2>Methodology &amp; data sources</h2></div>
       <div class="method">
-        <p><b>Social.</b> Owned-audience follower counts from the official TikTok, Instagram and Facebook profiles (dated snapshots, manually updated). Public TikTok hashtag view counts are no longer exposed; #buildabear scale is tracked via TikTok Creative Center (roadmap).</p>
+        <p><b>Social.</b> Owned-audience follower counts from the official TikTok, Instagram and Facebook profiles (dated snapshots). These are now logged as a <b>forward time-series</b> via <code>scripts/track_social.py</code> — YouTube total views &amp; subscribers are fetched live (no key); TikTok/Instagram/Facebook are pasted in from the live profiles at refresh (they block scraping and expose no archivable history, so we measure forward rather than fabricate a back-curve). Public TikTok hashtag view counts are no longer exposed; #buildabear scale is tracked via TikTok Creative Center (roadmap).</p>
         <p><b>Community.</b> Subscriber history is real, reconstructed from Wayback Machine archive snapshots of r/buildabear (<code>scripts/backfill_reddit_wayback.py</code>) — every point is an archived value. "What's hot" lists the real current top posts (last 30 days) scraped live from old.reddit.com via <code>scripts/fetch_reddit_topics.py</code> (no API key needed). Theme labels are a qualitative read of that feed.</p>
         <p><b>Search.</b> Google Trends, U.S., monthly, normalized 0–100; manual CSV export ingested via <code>scripts/ingest_google_trends.py</code>. A 12-month moving average isolates trend from seasonality.</p>
         <p><b>Digital.</b> Cumulative visits for "Build-A-Bear Tycoon" (universe 4107870885) pulled live from the Roblox public games API via <code>scripts/fetch_roblox.py</code>. The game was built by Roblox studio Gamefam in official partnership with BBW (launched Dec 2022).</p>
@@ -241,6 +254,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="app.js?v=0.8.16"></script>
+  <script src="app.js?v=0.8.17"></script>
 </body>
 </html>

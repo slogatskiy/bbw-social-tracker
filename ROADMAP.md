@@ -1,7 +1,7 @@
 # BBW Tracker — Status & Resume Handoff
 
 **Live:** https://slogatskiy.github.io/bbw-social-tracker/ · **Repo:** https://github.com/slogatskiy/bbw-social-tracker
-**Current version:** v0.8.16 (2026-06-29). Roll back: `git checkout vX.Y.Z`. Assets cache-busted via `?v=0.8.16` in `index.html` — **bump this on every JS/CSS change.**
+**Current version:** v0.8.17 (2026-06-30). Roll back: `git checkout vX.Y.Z`. Assets cache-busted via `?v=0.8.17` in `index.html` — **bump this on every JS/CSS change.**
 **Deploy:** push → GitHub Pages rebuilds (~1–2 min lag). Nudge: `gh api -X POST repos/slogatskiy/bbw-social-tracker/pages/builds`. Always poll the live `?v=` before saying "it's live."
 
 ## Thesis
@@ -17,7 +17,7 @@ Build-A-Bear is a diversified brand-equity business with a large, loyal **adult*
 
 **Real data per signal:**
 - **Search** — Google Trends CSV. 12-mo avg +90% YoY, 5-yr high spring 2026 (peak Apr-2026=73).
-- **Social** — TikTok @buildabear 834.7K/14.1M likes, IG 813K, FB 2.8M (dated snapshots).
+- **Social** — TikTok @buildabear 834.7K/14.1M likes, IG 813K, FB 2.8M (dated snapshots). **Forward owned-audience tracker (v0.8.17):** `social_timeseries.json` + `scripts/track_social.py` logs real dated readings — YouTube total views (193.17M) auto-fetched live (already 2 real points), TikTok/IG/FB pasted from `data_raw/social_manual.json` at refresh. NO back-history reconstructed (probed Wayback: TikTok blocks scraping, FB login-walled, YouTube counts are JS shells in the archive). Rendered as a line chart (YT views) + collection-log table in §01 + a biggest-videos bar chart in §05.
 - **Reddit subs** — 15 REAL Wayback points, ~6.6K (2022) → 72,067 (Jan-2026). +163% since Dec-2023.
 - **Reddit "What's hot"** — 10 REAL live top posts (last 30d) + qualitative theme chips.
 - **YouTube** — official channel 132K subs / 193.2M views (live); anchor videos (25M/17M/11.8M…) with real upload dates; KABU subsection w/ real per-episode views (~41K top); KABU 500K+ (company PR, counts all formats) + a short sourced series description (v0.8.15 added a cast/CEO-quote card; v0.8.16 removed it per user — kept only the one-paragraph description).

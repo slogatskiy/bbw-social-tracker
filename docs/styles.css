@@ -140,6 +140,15 @@ section { margin: 52px 0; scroll-margin-top: 64px; }
 .tl-tag { font-size: 11px; color: var(--faint); font-family: var(--mono); margin-top: 5px; }
 .scorecard .s-lab { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
 
+/* ---------- owned-audience collection log ---------- */
+table.track-log { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 4px; }
+table.track-log th, table.track-log td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--line-soft); }
+table.track-log th.num, table.track-log td.num { text-align: right; font-family: var(--mono); }
+table.track-log thead th { color: var(--faint); font-weight: 600; font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; }
+table.track-log tr:last-child td { border-bottom: none; }
+table.track-log .pos { color: var(--good); } table.track-log .neg { color: var(--bad); }
+table.track-log a { color: inherit; border-bottom: 1px dotted currentColor; }
+table.track-log a:hover { color: var(--accent); }
 /* ---------- comparative table ---------- */
 table.cmp { width: 100%; border-collapse: collapse; font-size: 13px; }
 table.cmp th, table.cmp td { text-align: right; padding: 9px 10px; border-bottom: 1px solid var(--line-soft); }

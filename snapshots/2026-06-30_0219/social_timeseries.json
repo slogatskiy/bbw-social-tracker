@@ -1,0 +1,89 @@
+{
+  "last_updated": "2026-06-30",
+  "is_illustrative": false,
+  "collection_started": "2026-06",
+  "source": "Live owned-account readings (YouTube auto; TikTok/Instagram/Facebook logged at refresh)",
+  "note": "Owned-audience counts are measured FORWARD from real, dated readings. No back-history is reconstructed: unlike Reddit (whose subreddit publicly archives its subscriber count, so Wayback could rebuild it), TikTok / Facebook / YouTube do not expose an archivable historical counter \u2014 verified by probing the Web Archive. So each point here is a value we actually measured; the lines lengthen every time the collector is re-run. YouTube total views already shows two consecutive real readings.",
+  "tracked": [
+    {
+      "platform": "YouTube",
+      "metric": "total channel views",
+      "unit": "views",
+      "accent": true,
+      "chart": true,
+      "auto": true,
+      "url": "https://www.youtube.com/@buildabear/about",
+      "points": [
+        {
+          "date": "2026-06-29",
+          "value": 193150502
+        },
+        {
+          "date": "2026-06-30",
+          "value": 193169244
+        }
+      ]
+    },
+    {
+      "platform": "YouTube",
+      "metric": "subscribers",
+      "unit": "subscribers",
+      "auto": true,
+      "url": "https://www.youtube.com/@buildabear",
+      "points": [
+        {
+          "date": "2026-06",
+          "value": 132000
+        }
+      ]
+    },
+    {
+      "platform": "TikTok",
+      "metric": "followers",
+      "unit": "followers",
+      "url": "https://www.tiktok.com/@buildabear",
+      "points": [
+        {
+          "date": "2026-06",
+          "value": 834700
+        }
+      ]
+    },
+    {
+      "platform": "TikTok",
+      "metric": "total likes",
+      "unit": "likes",
+      "url": "https://www.tiktok.com/@buildabear",
+      "points": [
+        {
+          "date": "2026-06",
+          "value": 14100000
+        }
+      ]
+    },
+    {
+      "platform": "Instagram",
+      "metric": "followers",
+      "unit": "followers",
+      "url": "https://www.instagram.com/buildabear/",
+      "points": [
+        {
+          "date": "2025-11",
+          "value": 813000
+        }
+      ]
+    },
+    {
+      "platform": "Facebook",
+      "metric": "followers",
+      "unit": "followers",
+      "url": "https://www.facebook.com/buildabear/",
+      "points": [
+        {
+          "date": "2025-11",
+          "value": 2800000
+        }
+      ]
+    }
+  ]
+}

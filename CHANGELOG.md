@@ -3,6 +3,20 @@
 Named save points for the whole project. Roll the entire repo back to any of
 these with `git checkout <tag>` (see README → "Saving & rollback").
 
+## v0.8.17 — 2026-06-30
+- **PM ask: more charts/interactivity for FB/TikTok/YouTube engagement.** Probed
+  whether a Reddit-style historical curve is possible for these — it is NOT
+  (TikTok blocks scraping, FB is behind login, YouTube's count is JS-rendered and
+  the Web Archive only captured empty shells). So instead of fabricating history:
+  - **YouTube views-over-time line chart** (real, measured forward): total channel
+    views with two consecutive real readings (193,150,502 → 193,169,244, +18.7K/day).
+  - **Owned-audience collection log**: every platform/metric with latest value,
+    delta, point count and date — framed as forward-collection.
+  - **Biggest-videos bar chart** in the YouTube section (real per-video views).
+  - New `scripts/track_social.py` (YouTube auto-fetch live; TikTok/IG/FB from a
+    pasted `data_raw/social_manual.json`) + `docs/data/social_timeseries.json`.
+  - No back-history is invented; series start now and grow at each refresh.
+
 ## v0.8.16 — 2026-06-29
 - **KABU** — added a short, sourced one-paragraph series description (Kabuville,
   kawaii style, screen-to-shelf plush tie-in) in the YouTube section. Removed the

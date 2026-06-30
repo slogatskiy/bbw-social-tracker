@@ -1,0 +1,53 @@
+{
+  "last_updated": "2026-06-29",
+  "is_illustrative": false,
+  "source": "YouTube official channel (live) + BBW press releases (KABU)",
+  "channel": {
+    "name": "Build-A-Bear (official)",
+    "handle": "@buildabear",
+    "subscribers": 132000,
+    "total_views": 193150502,
+    "since": 2007,
+    "url": "https://www.youtube.com/@buildabear"
+  },
+  "kabu": {
+    "title": "KABU — original animated series",
+    "debut": "2025-12-26",
+    "episodes": 13,
+    "cadence": "weekly (Fridays)",
+    "views_milestone": "500K+",
+    "views_as_of": "2026-02-11",
+    "note": "Build-A-Bear's first original animated YouTube series (Build-A-Bear Entertainment with Foundation Media Partners + Laughing Dragon Studios), kawaii art style, with a tie-in plush line. It passed 500K views within ~7 weeks of its Dec-26-2025 debut — a real surge in owned-content engagement. (500K+ is the last company-disclosed figure; there is no public live per-series counter.)",
+    "premise": "Set in Kabuville, a bright world built on \"PAWsitivity,\" KABU follows a group of young stuffed-animal friends — reimagined from classic Build-A-Bear plush in a kawaii art style — navigating friendship, disagreements and growing up. The series runs screen-to-shelf, with a tie-in KABU plush collection launched alongside it.",
+    "url": "https://www.buildabear.com/content/kabu",
+    "source_url": "https://buildabear.gcs-web.com/news-releases/news-release-details/build-bears-kabu-soars-past-half-million-views-toy-fair-2026",
+    "episodes_note": "Per-video view counts read live from YouTube (Jun 2026). The company's 500K+ milestone counts all KABU content incl. shorts/clips; the episodes themselves run ~20–40K views each, with the most-watched near 41K.",
+    "top_episodes": [
+      { "title": "Visiting the KABU Animation Studios (+ a TORNADO!)", "views": 41377, "url": "https://youtu.be/kO2ViLc0Vg0" },
+      { "title": "Happy Birthday Bearnice & Bearnard — Episode 1", "views": 31614, "url": "https://youtu.be/TbLNRF7MQ9Y" },
+      { "title": "Our NEW cartoon is launching soon! (teaser)", "views": 28962, "url": "https://youtu.be/EJKB9BhjKJY" },
+      { "title": "Meet the KABU Crew", "views": 25841, "url": "https://youtu.be/H7kEjgC9ZPs" },
+      { "title": "Giant Baby Zombies — the Kabuville Portal", "views": 22619, "url": "https://youtu.be/LTEesDDXaYc" }
+    ]
+  },
+  "anchor_videos_source": "YouTube search 'build a bear' by view count (live), May 2026",
+  "anchor_videos": [
+    { "title": "2016 Build-a-Bear Stuffing Station 🧸", "channel": "ASMR Playroom", "views": 25123260, "date": "2023-03", "url": "https://youtu.be/AGDGErZaVNw" },
+    { "title": "✨BUILD-A-BEAR✨ (parody / comedy)", "channel": "Akana", "views": 17111266, "date": "2023-09", "url": "https://youtu.be/xdbm-dYOvoQ" },
+    { "title": "Build a Bear CHALLENGE?!🙉", "channel": "Anna and Erin", "views": 11821144, "date": "2025-01", "url": "https://youtu.be/KuGoVl4beHI" },
+    { "title": "i took my mom to build a bear for the first time", "channel": "Mattie Westbrouck", "views": 3328736, "date": "2023-06", "url": "https://youtu.be/jmLC7BEVsL0" },
+    { "title": "Turning my house into a Build a Bear FACTORY?!", "channel": "Anna Altamirano", "views": 3296865, "date": "2025-10", "url": "https://youtu.be/za1lIKcxRpY" },
+    { "title": "POV you have build-a-bear at home!! (unboxing & review)", "channel": "Melissa Metrano", "views": 3101843, "date": "2025-08", "url": "https://youtu.be/PbgDSfsDCgs" },
+    { "title": "Build A Bear for Britain and Baylaa's birthday!!", "channel": "Nisha Noelle", "views": 2774469, "date": "2024-07", "url": "https://youtu.be/cRHq2mqQMsM" },
+    { "title": "Using my 'Dress to Impress' skills at Build A Bear", "channel": "Lana's Life", "views": 2225600, "date": "2025-03", "url": "https://youtu.be/Dr4d5uPxhOY" }
+  ],
+  "creators_note": "Build-A-Bear has no single dominant fan channel (unlike Warhammer's painting scene); instead the brand surfaces as huge one-off videos across many creators — stuffing-station ASMR (25M), parody/comedy (17M), challenges and 'took my mom' vlogs — plus a long tail of adult-collector hauls and unboxings. The dates show the brand keeps generating fresh viral moments — breakout videos span 2023 through 2025 (the 11.8M-view challenge is from Jan 2025), not just old hits. (YouTube comment text is not reliably scrapeable without the paid Data API, so we characterise discourse by video format rather than fabricate comment percentages.)",
+  "video_formats": [
+    { "emoji": "🧸", "name": "Hauls & collections" },
+    { "emoji": "📦", "name": "Unboxing & reviews" },
+    { "emoji": "🎯", "name": "Challenges (one-colour, budget)" },
+    { "emoji": "👩‍👧", "name": "'First time' / family vlogs" },
+    { "emoji": "😴", "name": "ASMR stuffing" },
+    { "emoji": "😂", "name": "Parody & comedy" }
+  ]
+}

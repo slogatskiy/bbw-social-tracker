@@ -1,0 +1,91 @@
+{
+  "last_updated": "2026-06-29",
+  "is_illustrative": false,
+  "source": "BBW press releases + trade coverage (2025–2026)",
+  "note": "Notable 2026 drops, partnerships and catalysts. The 'buzz' label is a qualitative read of collector attention (licensed-IP strength + Reddit/TikTok/trade coverage), NOT a measured ranking.",
+  "drops": [
+    {
+      "name": "Pokémon — Eevee Evolutions (yearlong campaign)",
+      "what": "Rotating limited Eevee-evolution plush across 2026–27 — Vaporeon, Jolteon and Flareon first, more chapters to follow.",
+      "when": "2026 (ongoing)",
+      "tag": "Licensed collab",
+      "buzz": "high",
+      "url": "https://www.stocktitan.net/news/BBW/build-a-bear-turns-new-pokemon-collection-launch-into-yearlong-eevee-f6vwp18cfwaz.html"
+    },
+    {
+      "name": "Bluey (with BBC Studios)",
+      "what": "Six characters in Mini Bean / Micro Mini Bean + full-size plush — sold through 1,500+ Walmarts as well as BBW.",
+      "when": "2026 (to mid-May)",
+      "tag": "Licensed / mass-retail",
+      "buzz": "high",
+      "url": "https://www.thestreet.com/retail/build-a-bear-expands-its-retail-profile-with-huge-new-partnership"
+    },
+    {
+      "name": "Walmart wholesale debut",
+      "what": "First-ever wholesale: Build-A-Bear plush now sold through Walmart (1,500+ stores) — a major new distribution channel beyond its own stores and site.",
+      "when": "2026",
+      "tag": "Distribution",
+      "buzz": "strategic",
+      "url": "https://www.prnewswire.com/news-releases/build-a-bear-workshop-expands-its-paw-print-with-first-ever-wholesale-debut-at-walmart-302714879.html"
+    },
+    {
+      "name": "Slushie Plushies + Summer 'Stuff You Love'",
+      "what": "First-ever wearable plush and a nostalgic summer-drinks line (Blue Raspberry Cow, Coconut Lime Koala, etc.) — expanding into new product formats.",
+      "when": "Summer 2026",
+      "tag": "New format",
+      "buzz": "medium",
+      "url": "https://ir.buildabear.com/news-releases/news-release-details/build-bear-debuts-its-first-ever-wearable-plush-it-expands-three"
+    },
+    {
+      "name": "KABU plush line (series tie-in)",
+      "what": "Plush collection tied to the new KABU animated series — owned-IP merchandising launched alongside the show.",
+      "when": "2026",
+      "tag": "Owned IP",
+      "buzz": "medium",
+      "url": "https://www.buildabear.com/content/kabu"
+    },
+    {
+      "name": "2026 U.S. Figure Skating Championships",
+      "what": "Official Plush & 'Tossie' of the 2026 Prevagen U.S. Figure Skating Championships (St. Louis, Jan 2026).",
+      "when": "Jan 2026",
+      "tag": "Brand partnership",
+      "buzz": "niche",
+      "url": "https://usfigureskating.org/news/2025/12/22/press-releases-build-a-bear-takes-center-ice-as-the-official-stuffed-animal-of-the-2026-prevagen-us-figure-skating-championships.aspx"
+    }
+  ],
+  "timeline_note": "Screen releases are Build-A-Bear's most predictable attention-spike, and the calendar is known years out. The Grogu-plush boom after The Mandalorian is the template; the IF (Paramount) collab and BBW's own KABU series + Glisten film show it now runs the playbook on both licensed and owned IP. Below: upcoming releases for franchises BBW *already sells* — each is a re-hype + new-drop trigger. Dates are studio-confirmed.",
+  "timeline": [
+    {
+      "date": "May 22, 2026",
+      "sort": "2026-05",
+      "title": "The Mandalorian & Grogu — first feature film",
+      "why": "Grogu / 'Baby Yoda' is one of BBW's biggest-ever licensed hits, and BBW already sells a 'Grogu Class of 2026' set. The franchise's first theatrical movie is the clearest near-term re-hype.",
+      "tag": "Star Wars · BBW has the line",
+      "url": "https://www.buildabear.com/star-wars-grogu-plush/028747.html"
+    },
+    {
+      "date": "2026–2027 (rolling)",
+      "sort": "2026-07",
+      "title": "Pokémon — Eevee Evolutions yearlong campaign",
+      "why": "Rotating limited Eevee-evolution drops across the whole year. Pokémon is BBW's single biggest collector-collab driver — each chapter is its own mini-catalyst.",
+      "tag": "Pokémon · live drops",
+      "url": "https://www.stocktitan.net/news/BBW/build-a-bear-turns-new-pokemon-collection-launch-into-yearlong-eevee-f6vwp18cfwaz.html"
+    },
+    {
+      "date": "June 11, 2027",
+      "sort": "2027-06",
+      "title": "How to Train Your Dragon 2 — live-action film",
+      "why": "BBW sells Toothless & Light Fury. The 2025 live-action remake drove a demand spike; Universal has dated the sequel for summer 2027, setting up a repeat.",
+      "tag": "DreamWorks · BBW has the line",
+      "url": "https://www.empireonline.com/movies/news/how-to-train-your-dragon-2-live-action-remake-confirmed-for-summer-2027-release/"
+    },
+    {
+      "date": "July 21, 2028",
+      "sort": "2028-07",
+      "title": "Hello Kitty — first theatrical movie (WB / New Line)",
+      "why": "Sanrio is one of BBW's hottest collabs right now — Pochacco & Sanrio characters dominate r/buildabear's current top posts. A first-ever Hello Kitty feature film is a major future catalyst for that line.",
+      "tag": "Sanrio · BBW has the line",
+      "url": "https://variety.com/2025/film/news/hello-kitty-movie-2028-release-date-warner-bros-1236565206/"
+    }
+  ]
+}

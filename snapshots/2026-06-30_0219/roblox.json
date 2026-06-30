@@ -1,0 +1,238 @@
+{
+  "last_updated": "2026-06-29",
+  "is_illustrative": false,
+  "experience": "Build-A-Bear Tycoon",
+  "universe_id": 4107870885,
+  "place_id": 11573230049,
+  "launched": "2022-12",
+  "source": "Roblox public games API (live current point); trajectory modeled",
+  "note": "Cumulative visits since the Dec-2022 Gamefam launch. Only the two dotted points are measured \u2014 the launch (\u22480) and the live current point (24.3M, Roblox API). The curve between them is a modeled front-loaded shape (no public month-by-month visit history exists), shown for scale, not as data.",
+  "current": {
+    "visits": 24319234,
+    "playing": 43,
+    "favorites": 115488,
+    "updated": "2026-06-23"
+  },
+  "series": [
+    {
+      "date": "2022-11",
+      "visits": 0,
+      "real": true
+    },
+    {
+      "date": "2022-12",
+      "visits": 1451880,
+      "real": false
+    },
+    {
+      "date": "2023-01",
+      "visits": 2824944,
+      "real": false
+    },
+    {
+      "date": "2023-02",
+      "visits": 4123472,
+      "real": false
+    },
+    {
+      "date": "2023-03",
+      "visits": 5351509,
+      "real": false
+    },
+    {
+      "date": "2023-04",
+      "visits": 6512882,
+      "real": false
+    },
+    {
+      "date": "2023-05",
+      "visits": 7611210,
+      "real": false
+    },
+    {
+      "date": "2023-06",
+      "visits": 8649916,
+      "real": false
+    },
+    {
+      "date": "2023-07",
+      "visits": 9632235,
+      "real": false
+    },
+    {
+      "date": "2023-08",
+      "visits": 10561229,
+      "real": false
+    },
+    {
+      "date": "2023-09",
+      "visits": 11439793,
+      "real": false
+    },
+    {
+      "date": "2023-10",
+      "visits": 12270664,
+      "real": false
+    },
+    {
+      "date": "2023-11",
+      "visits": 13056432,
+      "real": false
+    },
+    {
+      "date": "2023-12",
+      "visits": 13799544,
+      "real": false
+    },
+    {
+      "date": "2024-01",
+      "visits": 14502316,
+      "real": false
+    },
+    {
+      "date": "2024-02",
+      "visits": 15166938,
+      "real": false
+    },
+    {
+      "date": "2024-03",
+      "visits": 15795482,
+      "real": false
+    },
+    {
+      "date": "2024-04",
+      "visits": 16389904,
+      "real": false
+    },
+    {
+      "date": "2024-05",
+      "visits": 16952059,
+      "real": false
+    },
+    {
+      "date": "2024-06",
+      "visits": 17483697,
+      "real": false
+    },
+    {
+      "date": "2024-07",
+      "visits": 17986475,
+      "real": false
+    },
+    {
+      "date": "2024-08",
+      "visits": 18461960,
+      "real": false
+    },
+    {
+      "date": "2024-09",
+      "visits": 18911634,
+      "real": false
+    },
+    {
+      "date": "2024-10",
+      "visits": 19336896,
+      "real": false
+    },
+    {
+      "date": "2024-11",
+      "visits": 19739074,
+      "real": false
+    },
+    {
+      "date": "2024-12",
+      "visits": 20119419,
+      "real": false
+    },
+    {
+      "date": "2025-01",
+      "visits": 20479117,
+      "real": false
+    },
+    {
+      "date": "2025-02",
+      "visits": 20819289,
+      "real": false
+    },
+    {
+      "date": "2025-03",
+      "visits": 21140995,
+      "real": false
+    },
+    {
+      "date": "2025-04",
+      "visits": 21445237,
+      "real": false
+    },
+    {
+      "date": "2025-05",
+      "visits": 21732963,
+      "real": false
+    },
+    {
+      "date": "2025-06",
+      "visits": 22005070,
+      "real": false
+    },
+    {
+      "date": "2025-07",
+      "visits": 22262406,
+      "real": false
+    },
+    {
+      "date": "2025-08",
+      "visits": 22505772,
+      "real": false
+    },
+    {
+      "date": "2025-09",
+      "visits": 22735928,
+      "real": false
+    },
+    {
+      "date": "2025-10",
+      "visits": 22953589,
+      "real": false
+    },
+    {
+      "date": "2025-11",
+      "visits": 23159434,
+      "real": false
+    },
+    {
+      "date": "2025-12",
+      "visits": 23354106,
+      "real": false
+    },
+    {
+      "date": "2026-01",
+      "visits": 23538209,
+      "real": false
+    },
+    {
+      "date": "2026-02",
+      "visits": 23712318,
+      "real": false
+    },
+    {
+      "date": "2026-03",
+      "visits": 23876976,
+      "real": false
+    },
+    {
+      "date": "2026-04",
+      "visits": 24032696,
+      "real": false
+    },
+    {
+      "date": "2026-05",
+      "visits": 24179962,
+      "real": false
+    },
+    {
+      "date": "2026-06",
+      "visits": 24319234,
+      "real": true
+    }
+  ]
+}

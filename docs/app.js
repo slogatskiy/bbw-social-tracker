@@ -201,6 +201,51 @@ function renderSocial(s) {
       ? `<a href="${c.u}" target="_blank" rel="noopener">${c.s} ↗</a>` : c.s}</div></div>`).join("");
 }
 
+/* ---------- owned-audience forward tracker ---------- */
+function renderSocialTS(ts) {
+  const tracked = ts.tracked || [];
+  // headline line chart: the metric flagged chart:true (YouTube total views), measured forward
+  const lc = tracked.find(t => t.chart) || tracked.find(t => (t.points || []).length >= 2);
+  if (lc && $("ytViewsTimeChart")) {
+    const pts = lc.points;
+    new Chart($("ytViewsTimeChart"), {
+      type: "line",
+      data: { labels: pts.map(p => p.date), datasets: [{
+        label: `${lc.platform} ${lc.metric}`, data: pts.map(p => p.value),
+        borderColor: C.accent, backgroundColor: "rgba(245,166,35,.12)", borderWidth: 2,
+        pointRadius: 5, pointHoverRadius: 7, pointBackgroundColor: C.accent, fill: true, tension: .25 }] },
+      options: chartBase({
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: { label: c => " " + fmt(c.raw) + ` ${lc.unit} · measured` } } },
+        scales: {
+          x: { grid: { color: C.grid }, ticks: { color: C.text, font: { size: 11 } } },
+          y: { grid: { color: C.grid }, beginAtZero: false, title: axT(`${lc.platform} ${lc.metric}`),
+            ticks: { color: C.text, font: { size: 11 }, callback: v => compact(v) } } } }),
+    });
+    const n = $("yt-views-time-note");
+    if (n) {
+      const first = pts[0], last = pts[pts.length - 1], d = last.value - first.value;
+      n.textContent = pts.length >= 2
+        ? `${pts.length} measured readings ${first.date} → ${last.date}: ${d >= 0 ? "+" : ""}${fmt(d)} ${lc.unit}. This series is collected forward and lengthens at every refresh.`
+        : `Collection started ${last.date}; the line grows as readings are added.`;
+    }
+  }
+  // collection log: every tracked owned-audience metric, latest value + how many real points
+  const log = $("social-track-log");
+  if (log) {
+    log.innerHTML =
+      `<table class="track-log"><thead><tr><th>Platform</th><th>Metric</th><th class="num">Latest</th><th class="num">Δ</th><th class="num">Pts</th><th>Since</th></tr></thead><tbody>` +
+      tracked.map(t => {
+        const pts = t.points || [], last = pts[pts.length - 1], first = pts[0];
+        const delta = pts.length >= 2 ? last.value - first.value : null;
+        const dStr = delta == null ? "—" : `<span class="${delta >= 0 ? "pos" : "neg"}">${delta >= 0 ? "+" : ""}${compact(delta)}</span>`;
+        const name = t.url ? `<a href="${t.url}" target="_blank" rel="noopener">${t.platform} ↗</a>` : t.platform;
+        return `<tr><td>${name}</td><td>${t.metric}</td><td class="num">${fmt(last.value)}</td><td class="num">${dStr}</td><td class="num">${pts.length}</td><td>${last.date}</td></tr>`;
+      }).join("") + `</tbody></table>`;
+  }
+  const note = $("social-track-note"); if (note) note.textContent = ts.note || "";
+}
+
 /* ---------- 05 youtube & owned content ---------- */
 function renderYouTube(yt) {
   const c = yt.channel, k = yt.kabu;
@@ -225,6 +270,26 @@ function renderYouTube(yt) {
     const en = $("yt-kabu-eps-note"); if (en) en.textContent = k.episodes_note || "";
   }
   const av = yt.anchor_videos || [];
+  if ($("ytVideoChart") && av.length) {
+    const top = av.slice().sort((a, b) => b.views - a.views).slice(0, 8);
+    const short = top.map(v => v.title.length > 30 ? v.title.slice(0, 29) + "…" : v.title);
+    new Chart($("ytVideoChart"), {
+      type: "bar",
+      data: { labels: short, datasets: [{ label: "views", data: top.map(v => v.views),
+        backgroundColor: top.map((_, i) => i === 0 ? C.accent : "rgba(79,140,255,.7)"),
+        borderRadius: 5 }] },
+      options: chartBase({
+        indexAxis: "y",
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: {
+            title: items => top[items[0].dataIndex].title,
+            label: c => " " + fmt(c.raw) + ` views · ${top[c.dataIndex].channel}` } } },
+        scales: {
+          x: { grid: { color: C.grid }, beginAtZero: true, title: axT("Lifetime YouTube views"),
+            ticks: { color: C.text, font: { size: 11 }, callback: v => compact(v) } },
+          y: { grid: { display: false }, ticks: { color: C.text, font: { size: 11 } } } } }),
+    });
+  }
   $("yt-anchors").innerHTML = av.map(v =>
     `<a class="hotrow" href="${v.url}" target="_blank" rel="noopener">
       <span class="hot-score">${compact(v.views)}</span>
@@ -455,10 +520,12 @@ function renderConvergenceCharts(gt, rd, rb, social, ec, rs, rt) {
       loadJSON("data/roblox.json"), loadJSON("data/resale.json"), loadJSON("data/retail.json"),
       loadJSON("data/ecommerce.json"), loadJSON("data/youtube.json"), loadJSON("data/hype.json"),
     ]);
+    const sts = await loadJSON("data/social_timeseries.json").catch(() => null);
     renderHeader(m, kpis);
     renderTrends(gt);
     renderReddit(rd, topics);
     renderSocial(social);
+    if (sts) renderSocialTS(sts);
     renderRoblox(rb);
     renderYouTube(yt);
     renderEcommerce(ec);
